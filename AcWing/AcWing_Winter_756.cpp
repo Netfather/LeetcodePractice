@@ -134,3 +134,41 @@ using namespace std;
 //	system("Pause");
 //	return 0;
 //}
+
+
+//使用方向控制向量dx dy来解题
+//int main()
+//{
+//	int M, N = -1;
+//	cin >> M >> N;
+//
+//	vector<vector<int>> Matrix(M, vector<int>(N, INT_MIN));
+//	定义偏移向量
+//	int dy[] = { 0,1,0,-1 }, dx[] = {-1,0,1,0};
+//	int d = 1; //初始方向为1  
+//	int x = 0, y = 0;
+//
+//	for (int cnt = 1; cnt <= M * N; cnt++)
+//	{
+//		Matrix[x][y] = cnt;
+//		int a = x + dx[d], b = y + dy[d];
+//		if (a < 0 || a > M - 1 || b < 0 || b > N - 1 || Matrix[a][b] != INT_MIN)
+//		{
+//			d = (d + 1) % 4; //如果满足撞墙条件，那么调整d的方向
+//			a = x + dx[d];
+//			b = y + dy[d]; //修正下一次的坐标
+//		}
+//		x = a;
+//		y = b;
+//	}
+//	for (auto i : Matrix)
+//	{
+//		for (auto j : i)
+//		{
+//			cout << j << " ";
+//		}
+//		cout << endl;
+//	}
+//	system("Pause");
+//	return 0;
+//}
