@@ -1,3 +1,5 @@
+//思路： 使用flood fill算法  加上 dfs 和  bfs 的通用模板，具体模板参看OneDrive中的配图，是一种解决flood fill问题非常好用的一种方法
+
 #include <iostream>
 #include <algorithm>
 #include <set>
@@ -156,3 +158,52 @@ typedef pair<int, int> PII;
 //	}
 //	return 0;
 //}
+
+
+
+//法3 使用flood fill的 dfs写法
+int dfs(vector<vector<char>>& Blocks, int x, int y, int width, int height)
+{
+	int res = 1; //当前自己这块要计算上
+	//将当前块标记为红色砖块
+	Blocks[x][y] = '#';
+
+	for (int d = 0; d < 4; d++)
+	{
+		int new_x = x + dx[d], new_y = y + dy[d];
+		if (new_x >= 0 && new_x < height && new_y >= 0 && new_y < width && Blocks[new_x][new_y] == '.')
+		{
+			res += dfs(Blocks, new_x, new_y, width, height);
+		}
+	}
+	return res;
+}
+
+
+//int main()
+//{
+//	int width = -1, height = -1;
+//	while (cin >> width >> height && width!= 0)
+//	{
+//		int start_x = 0, start_y = 0;
+//		vector<vector<char>> Blocks(height, vector<char>(width, 'a'));
+//		for (int i = 0; i < height; i++)
+//		{
+//			for (int j = 0; j < width; j++)
+//			{
+//
+//				cin >> Blocks[i][j];
+//				if (Blocks[i][j] == '@')
+//				{
+//					start_x = i;
+//					start_y = j;
+//					Blocks[i][j] = '.';
+//				}
+//			}
+//		}
+//		int res = dfs(Blocks, start_x, start_y, width, height);
+//		cout << res << endl;
+//	}
+//	return 0;
+//}
+
