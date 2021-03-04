@@ -19,24 +19,45 @@
 using namespace std;
 
 const int N = 100010;
-int w[N];
+int w[N], tmp[N];
 
-//快排： 给定左右起点，包含，根据一个随机得到的key值来将这个区间内的所有数字划分成左右两边，并同时保证以这个数字为界
-void QuickSort(int l, int r)
+void MergeSort(int start, int end)
 {
-	if (l >= r) return; //递归终止条件不能忘
-	int key = w[l + r >> 1];
-
-	int start = l - 1, end = r + 1; //指定双指针的左右起始点
-	while (start < end)
+	//终止条件判断
+	if (start >= end) return;
+	// 划分两个子问题
+	int m = start + end >> 1;
+	// 分别进行归并
+	MergeSort(start, m);
+	MergeSort(m + 1, end);
+	//完成归并后进行排序
+	int l_1 = start, l_2 = m + 1;
+	int cur = 0;
+	// 先用双指针，将两个数组进行首元素比较，将比较结果存入tmp中
+	while (l_2 <= end && l_1 <= m)
 	{
-		while (w[++start] < key) {};
-		while (w[--end] > key) {};
-		if (start < end) swap(w[start], w[end]);
+		if (w[l_1] >= w[l_2])
+		{
+			tmp[cur++] = w[l_2++];
+		}
+		else if (w[l_1] < w[l_2])
+		{
+			tmp[cur++] = w[l_1++];
+		}
+	}
+	// 再查缺补漏，将两个分开的组中，其中没有跑完的数组接到tmp后面
+	while (l_1<= m) tmp[cur++] = w[l_1++];
+
+
+	while (l_2 <= end) tmp[cur++] = w[l_2++];
+
+
+	//将排序好的数组排到后面
+	for (int i = start, k = 0;i <= end; i++,k++)
+	{
+		w[i] = tmp[k];
 	}
 
-	QuickSort(l, end);
-	QuickSort(end + 1, r);
 	return;
 }
 
@@ -49,10 +70,14 @@ int main()
 	{
 		cin >> w[i];
 	}
-	QuickSort(1, n);
+	MergeSort(1, n);
 	for (int i = 1; i <= n; i++)
 	{
 		cout << w[i] << " ";
 	}
+	cout << endl;
+
+
+
 	return 0;
 }
