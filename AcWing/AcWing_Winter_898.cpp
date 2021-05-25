@@ -10,6 +10,7 @@
 #include <map>
 #include <stack>
 #include <string>
+#include <cstring>
 #include <vector>
 #include <queue>
 #include <list>
@@ -88,3 +89,35 @@ using namespace std;
 //
 //	return 0;
 //}
+
+
+//法3 dp分析法
+const int N = 510;
+int f[N][N]; //走到第i行j列的所有路径
+int g[N][N];
+
+int main()
+{
+	int n;
+	cin >> n;
+	memset(f, -0x3f, sizeof f);
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++) cin >> g[i][j];
+	}
+	//当ij都为0 此时不存在路径一i那次和为0 
+	f[1][1] = g[1][1];
+	for (int i = 2; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			if(j == 1) f[i][j] = max(f[i - 1][j], f[i][j]) + g[i][j];
+			else if(j == i) f[i][j] = max(f[i - 1][j - 1], f[i][j]) + g[i][j];
+			else f[i][j] = max(f[i-1][j], f[i - 1][j - 1]) + g[i][j];
+		}
+	}
+	int res = INT_MIN;
+	for (int j = 1; j <= n; j++) res = max(res, f[n][j]);
+	cout << res << endl;
+	return 0;
+}
