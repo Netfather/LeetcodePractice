@@ -34,8 +34,7 @@ vector<int> Add2(vector<int>& A)
 		else tmp = A[i] + t + 1;
 		if (tmp % 2 == 0) C.push_back(0);
 		else C.push_back(1);
-		if (tmp > 1) t = tmp - 1;
-		else t = 0;
+		t = tmp / 2;
 	}
 	//如果进位没有完全 还需要处理进位
 	while (t)
