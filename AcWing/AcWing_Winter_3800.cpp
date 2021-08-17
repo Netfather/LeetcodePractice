@@ -35,6 +35,7 @@ int main()
 		int b, k;
 		cin >> b >> k;
 		for (int i = 1; i <= k; i++) cin >> a[i];
+		//根据奇偶相乘性质 判断每一项是奇数还是偶数
 		for (int i = 1; i < k; i++)
 		{
 			if (b % 2 == 1 && a[i] % 2 == 1) a[i] = 0;
@@ -43,12 +44,10 @@ int main()
 		//处理一下尾巴
 		if (a[k] % 2 == 1) a[k] = 0;
 		else a[k] = 1;
-
+		// 根据同或操作 从左到右判断结果的奇偶性质
 		int res = a[1];
-		for (int i = 2; i <= k; i++)
-		{
-			res = !(res ^ a[i]);
-		}
+		for (int i = 2; i <= k; i++) res = !(res ^ a[i]);
+		// 根据res 的 0 1 输出结果
 		if (res == 0) cout << "odd" << endl;
 		else cout << "even " << endl;
 
