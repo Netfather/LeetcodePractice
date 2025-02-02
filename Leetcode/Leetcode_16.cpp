@@ -33,7 +33,7 @@ int threeSumClosest(vector<int>& nums, int target) {
 			if (nums[l] + nums[r] == target_new) return target;
 			else if (nums[l] + nums[r] < target_new)
 			{
-				//Èç¹ûµ½Í·ÁË Ö±½Ó½øĞĞ±£´æ
+				//å¦‚æœåˆ°å¤´äº† ç›´æ¥è¿›è¡Œä¿å­˜
 				if (l == r - 1)
 				{
 					pre_res =  nums[i] + nums[l] + nums[r];
@@ -44,7 +44,7 @@ int threeSumClosest(vector<int>& nums, int target) {
 			}
 			else if (nums[l] + nums[r] > target_new)
 			{
-				//Èç¹ûµ½Í·ÁË Ö±½Ó½øĞĞ±£´æ
+				//å¦‚æœåˆ°å¤´äº† ç›´æ¥è¿›è¡Œä¿å­˜
 				if (l == r - 1)
 				{
 					pre_res = nums[i] + nums[l] + nums[r];
@@ -65,11 +65,11 @@ int threeSumClosest(vector<int>& nums, int target) {
 				{
 					pre_res = nums[i]+ temp_r;
 				}
-				//Èç¹ûµ½Í·ÁË Ö±½Ó½øĞĞ±£´æÔÚÍê³ÉÒ»´ÎÖ®ºó£¬Ö±½Ó½øĞĞ¸²¸Ç
+				//å¦‚æœåˆ°å¤´äº† ç›´æ¥è¿›è¡Œä¿å­˜åœ¨å®Œæˆä¸€æ¬¡ä¹‹åï¼Œç›´æ¥è¿›è¡Œè¦†ç›–
 				if (abs(temp_res - target) > abs(pre_res - target)) temp_res = pre_res;
 			}
 		}
-		//Ö±½Ó½øĞĞ¸²¸Ç
+		//ç›´æ¥è¿›è¡Œè¦†ç›–
 		if (abs(temp_res - target) > abs(pre_res - target)) temp_res = pre_res;
 		flag_r = 0;
 		flag_l = 0;

@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -20,7 +20,7 @@ using namespace std;
 
 const int N = 210;
 char g[N][N];
-int dis[N][N]; //±ê¼ÇÕâ¸öijÕâ¸öÎ»ÖÃ¾àÀëÆğµãµÄ¾àÀëÊÇ¶àÉÙ
+int dis[N][N]; //æ ‡è®°è¿™ä¸ªijè¿™ä¸ªä½ç½®è·ç¦»èµ·ç‚¹çš„è·ç¦»æ˜¯å¤šå°‘
 int res = -1;
 
 int dx[] = { 0,1,0,-1 };
@@ -29,7 +29,7 @@ int dy[] = { 1,0,-1,0 };
 
 int bfs(int x, int y, int R, int C)
 {
-	//ÆğÊ¼Î»ÖÃ¸³ÖµÇø
+	//èµ·å§‹ä½ç½®èµ‹å€¼åŒº
 	queue<int> cur_x;
 	queue<int> cur_y;
 	cur_x.push(x);
@@ -37,7 +37,7 @@ int bfs(int x, int y, int R, int C)
 	dis[x][y] = 0;
 
 
-	//¶ÓÁĞÅĞ¶ÏÇø
+	//é˜Ÿåˆ—åˆ¤æ–­åŒº
 	while (!cur_x.empty())
 	{
 		int now_x = cur_x.front();

@@ -1,4 +1,4 @@
-//˼·��������Ȼ��ͨ��pre_right��pre_left��ά��ÿһ�κϲ������������ʼλ�ú���ֹλ�ã�ע�� pre_right ��Ҫ��max������ά���ģ�������
+//思路：先排序，然后通过pre_right和pre_left来维护每一次合并的子区间的起始位置和终止位置，注意 pre_right 是要用max来进行维护的！！！！
 
 
 #include <iostream>
@@ -75,7 +75,7 @@ int main()
 	{
 		if (Points[i].x <= pre_right)
 		{
-			pre_right = max(pre_right,Points[i].y);  //ǧ���������һ����������
+			pre_right = max(pre_right,Points[i].y);  //千万别忘了这一步！！！！
 			continue;
 		}
 		else

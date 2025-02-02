@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -21,10 +21,10 @@ using namespace std;
 const int N = 45;
 int g[N][N];
 
-//¶¨Òå¼ì²é¾ØÕó£¬
-int HengTable[45][37]; //±íÊ¾µÚ¼¸ĞĞµÄ Êı×Ö j ÊÇ·ñ³öÏÖ¹ı 
-int ShuTable[45][37]; //±íÊ¾µÚ¼¸ÁĞµÄ Êı×Ö j ÊÇ·ñ³öÏÖ¹ı
-int CellTable[6][6][37]; //±íÊ¾µÚ¼¸¸öcellÀïÃæµÄ  Êı×ÖÊÇ·ñ³öÏÖ¹ı
+//å®šä¹‰æ£€æŸ¥çŸ©é˜µï¼Œ
+int HengTable[45][37]; //è¡¨ç¤ºç¬¬å‡ è¡Œçš„ æ•°å­— j æ˜¯å¦å‡ºç°è¿‡ 
+int ShuTable[45][37]; //è¡¨ç¤ºç¬¬å‡ åˆ—çš„ æ•°å­— j æ˜¯å¦å‡ºç°è¿‡
+int CellTable[6][6][37]; //è¡¨ç¤ºç¬¬å‡ ä¸ªcellé‡Œé¢çš„  æ•°å­—æ˜¯å¦å‡ºç°è¿‡
 
 
 int main()
@@ -51,7 +51,7 @@ int main()
 				if (tmp > len || tmp <= 0) flag = true;
 				if (!flag)
 				{
-					//Ò»±ß¶ÁÈëÒ»±ß×ö¼ì²â
+					//ä¸€è¾¹è¯»å…¥ä¸€è¾¹åšæ£€æµ‹
 					++HengTable[i][tmp];
 					if (HengTable[i][tmp] > 1)
 					{

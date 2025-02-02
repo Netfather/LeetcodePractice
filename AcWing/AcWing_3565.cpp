@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,12 +18,12 @@
 #include <climits>
 using namespace std;
 
-// �������յľ�����һ�������к������ж��ǻ������еľ�����˽����󻮷�Ϊ1/4  Ȼ�������1/4����
-// �ҵ���Ӧ�������㣬��������ͱ�� ���ʵ��ĸ��������С�ľ����Ƕ��٣� ��Ч�ڻ���ѡַ���⡣
-// �ð� ��������˼·�Ǵ����   
-// ©������   ����ѡַ������Ч����ƽ����  ��Ϊ�������Сֵ����λ������   ���ź������м�һ��ֵ
+// 由于最终的矩阵是一个所有行和所有列都是回文序列的矩阵，因此将矩阵划分为1/4  然后遍历这1/4矩阵
+// 找到对应的三个点，因此这道题就变成 求问到四个点距离最小的距离是多少？ 等效于货舱选址问题。
+// 好吧 这道题这个思路是错误的   
+// 漏洞在于   货舱选址并不等效于求平均数  因为距离的最小值是中位数！！   是排好序后的中间一个值
 
-//��ȷ���
+//正确题解
 
 
 const int N = 110;
@@ -39,13 +39,13 @@ int main()
 		cin >> n >> m;
 		for (int i = 1; i <= n; i++)
 			for (int j = 1; j <= m; j++) cin >> g[i][j];
-		//��ʼ�������ϵ�1/4����  ��������� ��ô�м���һ�ж�Ӧ��3������ʵ�������Լ����ǲ���Ҫ�仯��
+		//开始遍历左上的1/4区域  如果是奇数 那么中间这一行对应的3个点其实就是他自己，是不需要变化的
 		long long  res = 0;
 		for (int i = 1; i <= n / 2; i++)
 		{
 			for (int j = 1; j <= m / 2; j++)
 			{
-				//�ҵ���Ӧ������������
+				//找到对应的其余三个点
 				int right_up_i = i, right_up_j = m - j + 1;
 				int left_down_i = n - i + 1, left_down_j = j;
 				int right_down_i = n - i + 1, right_down_j = m - j + 1;
@@ -59,7 +59,7 @@ int main()
 				q.clear();
 			}
 		}
-		//����һ���м��Ǹ���
+		//特判一下中间那个线
 		if (n % 2 && m % 2)
 		{
 			for (int i = 1; i <= n / 2; i++)

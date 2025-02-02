@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,9 +18,9 @@
 #include <climits>
 using namespace std;
 
-//ͬ�� �������ذ�dij�㷨���Ż�������ͬ������ָ������Ż�Prim�㷨  
-// Kruskal�㷨��ʱ�临�Ӷ��Ϸǳ������ƣ���������㷨��ĳ�̶ֳ�����̰�ĺͲ��鼯����ĺϲ�
-// ���ǽ����еı߱�����������һ������Ȼ��������еı�Ȩ����������Ȩ���ӵ�������û����ͨ ��ֱ�Ӽ�����С����������
+//同样 根据朴素版dij算法的优化启发，同样可以指导如何优化Prim算法  
+// Kruskal算法在时间复杂度上非常有优势，并且这个算法在某种程度上是贪心和并查集问题的合并
+// 我们将所有的边保存下来，做一个排序，然后遍历所有的边权，如果这个边权连接的两个点没有联通 就直接加入最小生成树即可
 
 const int N = 200010;
 struct Edges
@@ -34,7 +34,7 @@ struct Edges
 		return w < tmp.w;
 	}
 }edges[N];
-int p[N]; //���鼯ʹ�� ���ڲ�ѯ��ŵ����ڽڵ�
+int p[N]; //并查集使用 用于查询编号的祖宗节点
 int find(int x)
 {
 	if (x != p[x]) p[x] = find(p[x]);
@@ -46,7 +46,7 @@ int main()
 	int res = 0;
 	int cnt = 1;
 	cin >> n >> m;
-	//��ʼ�����е����ڽڵ�
+	//初始化所有的祖宗节点
 	for (int i = 1; i <= n; i++) p[i] = i;
 	for(int i = 0; i < m; i++)
 	{

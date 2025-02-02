@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,9 +18,9 @@
 #include <climits>
 using namespace std;
 
-//����ϲ����⣬ ���Ȱ����������������Ȼ������õ�����һһ������Ȼ��ͨ�� l �� r����ȷ��
-// ÿ��rȡȡ������������Ҷ˵� �� ������������ֵ�нϴ��һ��
-// ��� ���� ȡ��������Ե���˵� ���� ���ڴ洢��r ��ô˵��һ�������Ѿ��ϲ���ɡ�
+//区间合并问题， 首先按照首坐标进行排序，然后将排序好的坐标一一遍历，然后通过 l 和 r进行确认
+// 每次r取取出来的坐标对右端点 和 本身保存的最大值中较大的一个
+// 如果 发现 取出的坐标对的左端点 大于 现在存储的r 那么说明一个区间已经合并完成。
 typedef pair<int, int> PII;
 
 vector<PII> a;
@@ -47,11 +47,11 @@ int main()
 		else
 		{
 			++res;
-			//����l �� r
+			//更新l 和 r
 			l = a[i].first, r = a[i].second;
 		}
 	}
-	//��󻹻�ʣ�����һ������
+	//最后还会剩下最后一个区间
 	cout << ++res << endl;
 
 	return 0;

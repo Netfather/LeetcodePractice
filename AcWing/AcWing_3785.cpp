@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,20 +18,20 @@
 #include <climits>
 using namespace std;
 
-// ÓÉÓÚÕ½½¢±¾Éí±Ø¶¨ÊÇ ÔÚÄ³¸ö·½ÏòÕ¼¾Ý1¸ö¸ñ×Ó£¬Òò´Ë  µ±Õ½½¢ÊÇºá×Å·ÅµÄÊ±ºò   ×ÝÏòÆðÊ¼ÊÇÍêÈ«²»¹ÜµÄ£¬Ò²¾ÍÊÇ¸îÁÑ¿ªµÄ
-// ÄÇÃ´¿ÉÒÔÍ¨¹ýÈçÏÂ·½Ê½Ö´ÐÐËÑË÷   
-// ÏÈºáÏòËÑË÷  ËÑË÷Á¬ÐøµÄ . ÇøÓò  ÊýÁ¿
-// ÈôÊýÁ¿  < k  ÔòÎÞ·¨·ÅÈë  
-// ÈôÊýÁ¿  >= k   <  2k - 1 Ôò²»ÄÜÍêÈ«Ìî³äÂú  ´ËÊ± ÐèÒª ¸ù¾Ý [ Ä©Î² - k + 1       , base + k - 1 ] À´·Ö±ð¸³Öµ
-// ÈôÊýÁ¿ >= 2k -1  Ôò [base + k - 1, Ä©Î²  - k + 1]  À´·Ö±ð¸³Öµ
-// È»ºó»ùÓÚÉÏÊöËÑË÷µ½µÄ×ø±ê Í¬ÑùÖ´ÐÐ×ÝÏòËÑË÷
+// ç”±äºŽæˆ˜èˆ°æœ¬èº«å¿…å®šæ˜¯ åœ¨æŸä¸ªæ–¹å‘å æ®1ä¸ªæ ¼å­ï¼Œå› æ­¤  å½“æˆ˜èˆ°æ˜¯æ¨ªç€æ”¾çš„æ—¶å€™   çºµå‘èµ·å§‹æ˜¯å®Œå…¨ä¸ç®¡çš„ï¼Œä¹Ÿå°±æ˜¯å‰²è£‚å¼€çš„
+// é‚£ä¹ˆå¯ä»¥é€šè¿‡å¦‚ä¸‹æ–¹å¼æ‰§è¡Œæœç´¢   
+// å…ˆæ¨ªå‘æœç´¢  æœç´¢è¿žç»­çš„ . åŒºåŸŸ  æ•°é‡
+// è‹¥æ•°é‡  < k  åˆ™æ— æ³•æ”¾å…¥  
+// è‹¥æ•°é‡  >= k   <  2k - 1 åˆ™ä¸èƒ½å®Œå…¨å¡«å……æ»¡  æ­¤æ—¶ éœ€è¦ æ ¹æ® [ æœ«å°¾ - k + 1       , base + k - 1 ] æ¥åˆ†åˆ«èµ‹å€¼
+// è‹¥æ•°é‡ >= 2k -1  åˆ™ [base + k - 1, æœ«å°¾  - k + 1]  æ¥åˆ†åˆ«èµ‹å€¼
+// ç„¶åŽåŸºäºŽä¸Šè¿°æœç´¢åˆ°çš„åæ ‡ åŒæ ·æ‰§è¡Œçºµå‘æœç´¢
 
-// ÕâµÀÌâËÆºõÖ»ÄÜ ºáÏòËÑÒ»´Î ×ÝÏòËÑÒ»´Î È»ºó×îºó¿´×ÜµÄ´óÐ¡ 
+// è¿™é“é¢˜ä¼¼ä¹Žåªèƒ½ æ¨ªå‘æœä¸€æ¬¡ çºµå‘æœä¸€æ¬¡ ç„¶åŽæœ€åŽçœ‹æ€»çš„å¤§å° 
 const int N = 110;
 typedef pair<int, int> PII;
-int res[N][N];  //´æ´¢Ã¿¸öµãµÄ·½°¸Êý
+int res[N][N];  //å­˜å‚¨æ¯ä¸ªç‚¹çš„æ–¹æ¡ˆæ•°
 int n, k;
-string g[N];  //´æ´¢ º£ÓòµØÍ¼
+string g[N];  //å­˜å‚¨ æµ·åŸŸåœ°å›¾
 
 int main()
 {
@@ -39,20 +39,20 @@ int main()
 	for (int i = 1; i <= n; i++)
 	{
 		cin >> g[i];
-		g[i] = "?" + g[i]; //Ìí¼Ó¶¥²¿ÉÚ±ø
+		g[i] = "?" + g[i]; //æ·»åŠ é¡¶éƒ¨å“¨å…µ
 	}
-	//Í³¼ÆºáÏòµÄÁ¬ÐøµÄ.µÄ¸öÊý
+	//ç»Ÿè®¡æ¨ªå‘çš„è¿žç»­çš„.çš„ä¸ªæ•°
 	for (int i = 1; i <= n; i++)
 	{
-		int base = 0; //ÆðÊ¼Î»ÖÃ
-		int cnt = 0; //¼ÇÂ¼.µÄ¸öÊý
+		int base = 0; //èµ·å§‹ä½ç½®
+		int cnt = 0; //è®°å½•.çš„ä¸ªæ•°
 		for (int j = 1; j <= n; j++)
 		{
 			if (g[i][j] == '.') cnt++;
 			else
 			{
 				base = base + 1;
-				if (cnt >= k && cnt < 2 * k - 1)  //´ËÊ± ÀàËÆÓÚ  1 2 3 4 5 °´ÕÕ4µÄ´°¿Ú ½á¹ûÊÇ  1 2 2 2 1
+				if (cnt >= k && cnt < 2 * k - 1)  //æ­¤æ—¶ ç±»ä¼¼äºŽ  1 2 3 4 5 æŒ‰ç…§4çš„çª—å£ ç»“æžœæ˜¯  1 2 2 2 1
 				{
 					int temp_cnt = 1;
 					for (int u = base; u < j - k; u++) res[i][u] += temp_cnt, temp_cnt++;
@@ -60,7 +60,7 @@ int main()
 					--temp_cnt;
 					for (int u = base + k; u < j; u++) res[i][u] += temp_cnt, temp_cnt--;
 				}
-				else if (cnt >= 2 * k - 1) //´ËÊ± ÀàËÆÓÚ  1 2 3 4 5 6°´ÕÕ3µÄ´°¿Ú ½á¹ûÊÇ 1 2 3 3 2 1 
+				else if (cnt >= 2 * k - 1) //æ­¤æ—¶ ç±»ä¼¼äºŽ  1 2 3 4 5 6æŒ‰ç…§3çš„çª—å£ ç»“æžœæ˜¯ 1 2 3 3 2 1 
 				{
 					int temp_cnt = 1;
 					for (int u = base; u < base + k - 1; u++) res[i][u] += temp_cnt, temp_cnt++;
@@ -68,11 +68,11 @@ int main()
 					--temp_cnt;
 					for (int u = j - k + 1; u < j; u++) res[i][u] += temp_cnt, temp_cnt--;
 				}
-				base = j; //ÖØÖÃÆðÊ¼Î»ÖÃ
-				cnt = 0; //Çå¿Õ ÀÛ¼ÓÆ÷
+				base = j; //é‡ç½®èµ·å§‹ä½ç½®
+				cnt = 0; //æ¸…ç©º ç´¯åŠ å™¨
 			}
 		}
-		//´¦ÀíÒ»ÏÂÎ²°Í
+		//å¤„ç†ä¸€ä¸‹å°¾å·´
 		if (cnt)
 		{
 			base = base + 1;
@@ -96,11 +96,11 @@ int main()
 		}
 	}
 
-	//Í³¼Æ×ÝÏòµÄÁ¬ÐøµÄ.µÄ¸öÊý  ÕâÀïµÄÂß¼­ºÍÉÏÃæµÄÂß¼­ÊÇÍêÈ«Ò»ÑùµÄ  Í¬Ñù»¹¿ÉÒÔÔÚ¶ÁÈëµÄÊ±ºò¾Í´æÁ½·Ý  ÕâÑù¾Í²»ÓÃÕâÃ´ÈÆÁË
+	//ç»Ÿè®¡çºµå‘çš„è¿žç»­çš„.çš„ä¸ªæ•°  è¿™é‡Œçš„é€»è¾‘å’Œä¸Šé¢çš„é€»è¾‘æ˜¯å®Œå…¨ä¸€æ ·çš„  åŒæ ·è¿˜å¯ä»¥åœ¨è¯»å…¥çš„æ—¶å€™å°±å­˜ä¸¤ä»½  è¿™æ ·å°±ä¸ç”¨è¿™ä¹ˆç»•äº†
 	for (int j = 1; j <= n; j++)
 	{
-		int base = 0; //ÆðÊ¼Î»ÖÃ
-		int cnt = 0; //¼ÇÂ¼.µÄ¸öÊý
+		int base = 0; //èµ·å§‹ä½ç½®
+		int cnt = 0; //è®°å½•.çš„ä¸ªæ•°
 		for (int i = 1; i <= n; i++)
 		{
 			if (g[i][j] == '.') cnt++;
@@ -123,11 +123,11 @@ int main()
 					--temp_cnt;
 					for (int u = i - k + 1; u < i; u++) res[u][j] += temp_cnt, temp_cnt--;
 				}
-				base = i; //ÖØÖÃÆðÊ¼Î»ÖÃ
-				cnt = 0; //Çå¿Õ ÀÛ¼ÓÆ÷
+				base = i; //é‡ç½®èµ·å§‹ä½ç½®
+				cnt = 0; //æ¸…ç©º ç´¯åŠ å™¨
 			}
 		}
-		//´¦ÀíÒ»ÏÂÎ²°Í
+		//å¤„ç†ä¸€ä¸‹å°¾å·´
 		if (cnt)
 		{
 			base = base + 1;
@@ -151,7 +151,7 @@ int main()
 		}
 	}
 
-	//ÕÒµ½resÖÐ×î´óµÄÄÇ¸ö ¸Ã×ø±êÎ»ÖÃ¼´ÎªËùÇó
+	//æ‰¾åˆ°resä¸­æœ€å¤§çš„é‚£ä¸ª è¯¥åæ ‡ä½ç½®å³ä¸ºæ‰€æ±‚
 	PII loc = { 1,1 };
 	int len_res = INT_MIN;
 	for (int i = 1; i <= n; i++)

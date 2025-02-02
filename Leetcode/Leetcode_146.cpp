@@ -15,21 +15,21 @@
 //using namespace std;
 //
 //
-////Way1: Ê¹ÓÃList  ²åÈë£¬É¾³ı·Ç³£¿ìËÙ£¬µ«ÊÇÔÚfind¹ı³ÌÖĞ·Ç³£ºÄÊ±
+////Way1: ä½¿ç”¨List  æ’å…¥ï¼Œåˆ é™¤éå¸¸å¿«é€Ÿï¼Œä½†æ˜¯åœ¨findè¿‡ç¨‹ä¸­éå¸¸è€—æ—¶
 ////class LRUCache {
 ////public:
-////	unordered_map<int, int> HashMap;  //´æ·ÅÊı¾İ
-////	list<int> List;  //Ã¿Ò»´Î²Ù×÷ºó£¬Ê×ÔªËØÒ»¶¨ÊÇ´ıÉ¾³ıµÄÔªËØ
+////	unordered_map<int, int> HashMap;  //å­˜æ”¾æ•°æ®
+////	list<int> List;  //æ¯ä¸€æ¬¡æ“ä½œåï¼Œé¦–å…ƒç´ ä¸€å®šæ˜¯å¾…åˆ é™¤çš„å…ƒç´ 
 ////	int size;
 ////public:
 ////	LRUCache(int capacity) {
-////		this->size = capacity;  //µ±Ç°ÄÚÈİ
+////		this->size = capacity;  //å½“å‰å†…å®¹
 ////	}
 ////
 ////	void MaintainList(list<int> &List, int key)
 ////	{
-////		list<int>::iterator temp; //µü´úÆ÷
-////			//Î¬»¤List
+////		list<int>::iterator temp; //è¿­ä»£å™¨
+////			//ç»´æŠ¤List
 ////		for (temp = List.begin(); temp != List.end(); temp++) if (*temp == key) break;
 ////		List.erase(temp);
 ////		List.push_back(key);
@@ -72,16 +72,16 @@
 ////};
 //
 //
-////Way2£º ·½·¨1ÖĞ×îµ¢ÎóÊ±¼äµÄµØ·½ÔÚÓÚMaintain²¿·Ö£¬Òò´ËÎÒÃÇ¿ÉÒÔÊ¹ÓÃÒ»¸ö¹şÏ£±í°ÑÃ¿´ÎList²åÈëÖ®ºóµÄkeyÖµºÍµØÖ·±£´æÆğÀ´
+////Way2ï¼š æ–¹æ³•1ä¸­æœ€è€½è¯¯æ—¶é—´çš„åœ°æ–¹åœ¨äºMaintainéƒ¨åˆ†ï¼Œå› æ­¤æˆ‘ä»¬å¯ä»¥ä½¿ç”¨ä¸€ä¸ªå“ˆå¸Œè¡¨æŠŠæ¯æ¬¡Listæ’å…¥ä¹‹åçš„keyå€¼å’Œåœ°å€ä¿å­˜èµ·æ¥
 //class LRUCache {
 //private:
-//	unordered_map<int, int> HashMap;  //´æ·ÅÊı¾İ
+//	unordered_map<int, int> HashMap;  //å­˜æ”¾æ•°æ®
 //	unordered_map<int, list<int>::iterator> HashListAddress;
-//	list<int> List;  //Ã¿Ò»´Î²Ù×÷ºó£¬Ê×ÔªËØÒ»¶¨ÊÇ´ıÉ¾³ıµÄÔªËØ
+//	list<int> List;  //æ¯ä¸€æ¬¡æ“ä½œåï¼Œé¦–å…ƒç´ ä¸€å®šæ˜¯å¾…åˆ é™¤çš„å…ƒç´ 
 //	int size;
 //public:
 //	LRUCache(int capacity) {
-//		this->size = capacity;  //µ±Ç°ÄÚÈİ
+//		this->size = capacity;  //å½“å‰å†…å®¹
 //	}
 //	void Maintain(unordered_map<int, int> &HashMap, unordered_map<int, list<int>::iterator> &HashListAddress, list<int> &List,int key)
 //	{

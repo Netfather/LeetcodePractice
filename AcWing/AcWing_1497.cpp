@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,20 +18,20 @@
 #include <climits>
 using namespace std;
 
-// Ê÷µÄ±éÀú  ÕâµÀÌâÊÇ·Ç³£¾­µäµÄ ³£¿¼µÄ¹ØÓÚ¶þ²æÊ÷µÄÎÊÌâ ÈçºÎÊ¹ÓÃ ÖÐÐòºÍºóÐò±éÀú À´ÖØ½¨Ò»¸ö¶þ²æÊ÷ È»ºóÔÙÊä³öÕâ¸öÐÂµÄ¶þ²æÊ÷µÄ²ãÐò±éÀú 
-// »òÕßÊä³öÕâ¸öÐÂµÄ¶þ²æÊ÷µÄ Ç°Ðò±éÀú¡£
-// ÕâÀïÎÒÃÇ¿ÉÒÔÓÃ¾­µäµÝ¹éË¼ÏëÀ´¿¼ÂÇ   ¶¨ÒåÒ»¸öº¯Êý  Ö´ÐÐÒ»´Î·µ»Øµ±Ç°Õâ¸öÊ÷ÖÐÐò ºÍ ºóÐø±éÀúµÄ¸ù½Úµã
-// ¸ù¾ÝÖÐÐò±éÀúµÄÌØµã£¬Í¨¹ýºóÐò±éÀúÄÃµ½¸ù½Úµã ÎÒÃÇ¿ÉÒÔÕÒµ½ÖÐÐò±éÀúÖÐ¶ÔÓ¦Î»ÖÃ ÄÇÃ´Ç°Ò»°ë¾ÍÊÇ×ó×ÓÊ÷£¬ºóÒ»°ë¾ÍÊÇÓÒ×ÓÊ÷
-unordered_map<int,int> inorder_index; //ÓÃÓÚÖ¸¶¨ÖÐÐò±éÀúµÄÎ»ÖÃ
+// æ ‘çš„éåŽ†  è¿™é“é¢˜æ˜¯éžå¸¸ç»å…¸çš„ å¸¸è€ƒçš„å…³äºŽäºŒå‰æ ‘çš„é—®é¢˜ å¦‚ä½•ä½¿ç”¨ ä¸­åºå’ŒåŽåºéåŽ† æ¥é‡å»ºä¸€ä¸ªäºŒå‰æ ‘ ç„¶åŽå†è¾“å‡ºè¿™ä¸ªæ–°çš„äºŒå‰æ ‘çš„å±‚åºéåŽ† 
+// æˆ–è€…è¾“å‡ºè¿™ä¸ªæ–°çš„äºŒå‰æ ‘çš„ å‰åºéåŽ†ã€‚
+// è¿™é‡Œæˆ‘ä»¬å¯ä»¥ç”¨ç»å…¸é€’å½’æ€æƒ³æ¥è€ƒè™‘   å®šä¹‰ä¸€ä¸ªå‡½æ•°  æ‰§è¡Œä¸€æ¬¡è¿”å›žå½“å‰è¿™ä¸ªæ ‘ä¸­åº å’Œ åŽç»­éåŽ†çš„æ ¹èŠ‚ç‚¹
+// æ ¹æ®ä¸­åºéåŽ†çš„ç‰¹ç‚¹ï¼Œé€šè¿‡åŽåºéåŽ†æ‹¿åˆ°æ ¹èŠ‚ç‚¹ æˆ‘ä»¬å¯ä»¥æ‰¾åˆ°ä¸­åºéåŽ†ä¸­å¯¹åº”ä½ç½® é‚£ä¹ˆå‰ä¸€åŠå°±æ˜¯å·¦å­æ ‘ï¼ŒåŽä¸€åŠå°±æ˜¯å³å­æ ‘
+unordered_map<int,int> inorder_index; //ç”¨äºŽæŒ‡å®šä¸­åºéåŽ†çš„ä½ç½®
 const int N = 35;
-int l[N];  //´æ´¢×Å Ä³¸ö½Úµã ËûµÄ×ó×ÓÊ÷µÄ±àºÅ
-int r[N]; // ´æ´¢×Å Ä³¸ö½Úµã ËûµÄÓÒ×ÓÊ÷µÄ±àºÅ
+int l[N];  //å­˜å‚¨ç€ æŸä¸ªèŠ‚ç‚¹ ä»–çš„å·¦å­æ ‘çš„ç¼–å·
+int r[N]; // å­˜å‚¨ç€ æŸä¸ªèŠ‚ç‚¹ ä»–çš„å³å­æ ‘çš„ç¼–å·
 int inorder[N], postorder[N];
 
-// l1 l2 ´ú±íÔÚÖÐÐò±éÀúÖÐ µ±Ç°ÊäÈëµÄÕâ¿ÃÊ÷µÄÎ»ÖÃ  r1 r2 ´ú±íÔÚºóÐø±éÀúÖÐ µ±Ç°Õâ¿ÃÊ÷ÊäÈëµÄÎ»ÖÃ   //·µ»ØµÄÊÇµ±Ç°Õâ¿ÃÊ÷µÄ¸ù½Úµã
+// l1 l2 ä»£è¡¨åœ¨ä¸­åºéåŽ†ä¸­ å½“å‰è¾“å…¥çš„è¿™æ£µæ ‘çš„ä½ç½®  r1 r2 ä»£è¡¨åœ¨åŽç»­éåŽ†ä¸­ å½“å‰è¿™æ£µæ ‘è¾“å…¥çš„ä½ç½®   //è¿”å›žçš„æ˜¯å½“å‰è¿™æ£µæ ‘çš„æ ¹èŠ‚ç‚¹
 int Rebuild(int l1, int l2, int r1, int r2)
 {
-	//µÝ¹éÖÕÖ¹Ìõ¼þ
+	//é€’å½’ç»ˆæ­¢æ¡ä»¶
 	if (l1 > l2 || r1 > r2) return 0;
 
 	int root = postorder[r2];
@@ -64,7 +64,7 @@ int main()
 	for (int i = 1; i <= n; i++)
 	{
 		cin >> inorder[i];
-		//Ô¤´¦ÀíÒ»ÏÂ index
+		//é¢„å¤„ç†ä¸€ä¸‹ index
 		inorder_index.insert({inorder[i], i});
 	}
 	int root = Rebuild(1, n, 1, n);

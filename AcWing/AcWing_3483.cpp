@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,8 +18,8 @@
 #include <climits>
 using namespace std;
 
-// ����֤�� ������������� Ҫ��ֽ�Ϊ 2���ݴκ���ʽ ֻ��Ҫ�ҵ����������λ�� ��ȥ��Ӧ������ Ȼ�󲻶��ظ�����
-// ��Ԥ����һ��string���͵Ĺ�ϣ���ұ� ������ൽ 2��14�η�  �����Ԥ����һ��
+// 可以证明 对于任意的数字 要想分解为 2的幂次和形式 只需要找到离他最近的位数 减去对应的数字 然后不断重复即可
+// 先预处理一个string类型的哈希查找表 由于最多到 2的14次方  因此先预处理一下
 unordered_map<int, string> table = {
 	{3,"2+2(0)"},
 	{4,"2(2)"},
@@ -34,7 +34,7 @@ unordered_map<int, string> table = {
 	{13,"2(2+2(0))+2(2)+2(0)"},
 	{14,"2(2+2(0))+2(2)+2"},
 };
-// ���������x ���ٷ��ض�Ӧ��2���ݴ�
+// 根据输入的x 快速返回对应的2的幂次
 int Gaowei(int x)
 {
 	if (x >= 16384) return 14;
@@ -52,7 +52,7 @@ int Gaowei(int x)
 	else if (x >= 4) return 2;
 	else if (x >= 2) return 1;
 }
-// ��������x ���ٷ��������ַ���
+// 输入整数x 快速返回求解的字符串
 string Convert(int x)
 {
 	string a;

@@ -26,11 +26,11 @@
 //void QuickSortList(ListNode* head, int end, ListNode* prehead)
 //{
 //	if (!head || end < 1) return;
-//	int base = head->val; //»ù×¼Öµ
-//	ListNode* LeftIndex = prehead; //×óÑÓÕ¹»ù×¼Öµ
-//	ListNode* RightIndex = head;//ÓÒÑÓÕ¹»ù×¼Öµ
+//	int base = head->val; //åŸºå‡†å€¼
+//	ListNode* LeftIndex = prehead; //å·¦å»¶å±•åŸºå‡†å€¼
+//	ListNode* RightIndex = head;//å³å»¶å±•åŸºå‡†å€¼
 //	ListNode* ListIte = head->next;
-//	ListNode* temp = head; //ÔÝ´æ
+//	ListNode* temp = head; //æš‚å­˜
 //	ListNode* preListIte = head;
 //	int cnt = 0;
 //	int small_base_loc = 0;
@@ -38,7 +38,7 @@
 //	while (cnt < end && ListIte)
 //	{
 //		++cnt;
-//		//×óÑÓÕ¹
+//		//å·¦å»¶å±•
 //		if (ListIte->val < base)
 //		{
 //			preListIte->next = ListIte->next;
@@ -78,7 +78,7 @@
 //}
 //
 //
-////¿ìËÙÅÅÐòµÄÁ´±í°æ±¾  µ«ÊÇÊ±¼ä¸´ÔÓ¶È²»´ï±ê Ö»ÄÜÊ¹ÓÃ¹é²¢ÅÅÐò
+////å¿«é€ŸæŽ’åºçš„é“¾è¡¨ç‰ˆæœ¬  ä½†æ˜¯æ—¶é—´å¤æ‚åº¦ä¸è¾¾æ ‡ åªèƒ½ä½¿ç”¨å½’å¹¶æŽ’åº
 //ListNode* sortList(ListNode* head) {
 //	if (!head || !head->next) return head;
 //	ListNode* Artificialhaed = new ListNode(INT_MIN);

@@ -11,25 +11,25 @@
 using namespace std;
 
 vector<vector<string>> groupAnagrams(vector<string>& strs) {
-	vector<vector<string>> res; //½á¹û±í
+	vector<vector<string>> res; //ç»“æœè¡¨
 	vector<string> tempres;
 	if (strs.empty()) return res;
 	tempres.push_back(strs[0]);
-	res.push_back(tempres); //³õÊ¼»¯Êä³ö½á¹û
+	res.push_back(tempres); //åˆå§‹åŒ–è¾“å‡ºç»“æœ
 	if (strs.size() == 1) return res;
-	vector<map<char, int>> Dic;  //×Öµä±í
+	vector<map<char, int>> Dic;  //å­—å…¸è¡¨
 	map<char, int> Fre;
 	for (char c : strs[0]) ++Fre[c];
 	Dic.push_back(Fre);
 	Fre.clear();
 	tempres.clear();
-	//Á½±í³õÊ¼»¯Íê³É
+	//ä¸¤è¡¨åˆå§‹åŒ–å®Œæˆ
 
 	for (int i = 1; i < strs.size(); i++)
 	{
-		for (char c : strs[i]) ++Fre[c]; //Í³¼Æ×Öµä
+		for (char c : strs[i]) ++Fre[c]; //ç»Ÿè®¡å­—å…¸
 		tempres.push_back(strs[i]);
-		//¼ì²âÄ¿Ç°Í³¼Æ×ÖµäÔÚÒÑÓĞµÄ×ÖµäÖĞÊÇ·ñÓĞÏàÍ¬µÄ£¬ÓĞ£¬Ôò½á¹û¸üĞÂ£¬Ã»ÓĞ½á¹û¸üĞÂÍ¬Ê±×Öµä¸üĞÂ
+		//æ£€æµ‹ç›®å‰ç»Ÿè®¡å­—å…¸åœ¨å·²æœ‰çš„å­—å…¸ä¸­æ˜¯å¦æœ‰ç›¸åŒçš„ï¼Œæœ‰ï¼Œåˆ™ç»“æœæ›´æ–°ï¼Œæ²¡æœ‰ç»“æœæ›´æ–°åŒæ—¶å­—å…¸æ›´æ–°
 		int flag = 0;
 		for (int j = 0; j < Dic.size();j++)
 		{
@@ -42,8 +42,8 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 		}
 		if (flag == 0)
 		{
-			Dic.push_back(Fre); //×Öµä¸üĞÂ		
-			res.push_back(tempres); //½á¹û¸üĞÂĞÂÒ»ĞĞ
+			Dic.push_back(Fre); //å­—å…¸æ›´æ–°		
+			res.push_back(tempres); //ç»“æœæ›´æ–°æ–°ä¸€è¡Œ
 		}
 		tempres.clear();
 		Fre.clear();
@@ -55,7 +55,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 
 int main()
 {
-	vector<vector<string>> res; //½á¹û±í
+	vector<vector<string>> res; //ç»“æœè¡¨
 	vector<string> strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
 	res = groupAnagrams(strs);
 	for (vector<string> m : res)

@@ -1,7 +1,7 @@
-//˼·��
-// ��򵥵İ취ֱ�Ӳ��  
-// �������������һ�µݹ��˼· �������Եݹ�����
-// ����һ��pair   �ֱ�Ϊ�����߳�  ͬʱά����  first һ��Ϊ���� second һ��Ϊ�̱�
+//思路：
+// 最简单的办法直接查表  
+// 但是这里想锻炼一下递归的思路 这道题可以递归的求解
+// 定义一个pair   分别为两个边长  同时维护好  first 一定为长边 second 一定为短边
 
 #include <iostream>
 #include <algorithm>
@@ -26,7 +26,7 @@ PII res = make_pair(1189, 841);
 
 PII PaperSize(int layer)
 {
-    if (layer <= 0) return res; // �ݹ���ֹ
+    if (layer <= 0) return res; // 递归终止
     PII tmp_res = PaperSize(layer - 1);
     tmp_res.first = tmp_res.first / 2;
     tmp_res.second = tmp_res.second;

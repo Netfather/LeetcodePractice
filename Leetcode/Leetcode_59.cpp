@@ -22,7 +22,7 @@ vector<vector<int>> generateMatrix(int n) {
 	{
 		i = k;
 		j = l;
-		//-> сроРкякВ
+		//-> Е▐ЁЕ░▒Ф░°Г╢╒
 		if (i == k && j == l)
 		{
 			while (j < n - l - 1) res[i][j++] = ++index;

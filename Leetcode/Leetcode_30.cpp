@@ -18,14 +18,14 @@ bool checkfirst(char c, vector<string> & words)
 	}
 	return false;
 }
-bool check(string s, vector<string> words, int base)//´«Èëµ±Ç°´ıÅĞ¶¨s£¬µ¥´ÊÁĞ±í£¬Èç¹ûÈ«²¿Æ¥Åä³É¹¦ ·µ»ØwordÖĞÕıÈ·µÄË³Ğò
-//baseÎªµ±Ç°»ùµ×
+bool check(string s, vector<string> words, int base)//ä¼ å…¥å½“å‰å¾…åˆ¤å®šsï¼Œå•è¯åˆ—è¡¨ï¼Œå¦‚æœå…¨éƒ¨åŒ¹é…æˆåŠŸ è¿”å›wordä¸­æ­£ç¡®çš„é¡ºåº
+//baseä¸ºå½“å‰åŸºåº•
 {
 	int temp = base + words.size() * words[0].length();
 	int wordlen = words[0].length();
 	int lenth = s.length();
-	int i = base;  //ÓÃÓÚ×Ö·û´®sÖĞ½øĞĞ±éÀú
-	int j = 0; //ÓÃÓÚwordsÖĞ½øĞĞ±éÀú
+	int i = base;  //ç”¨äºå­—ç¬¦ä¸²sä¸­è¿›è¡Œéå†
+	int j = 0; //ç”¨äºwordsä¸­è¿›è¡Œéå†
 	for (; i < min(temp, lenth);)
 	{
 		for (j = 0; j < words.size(); j++)
@@ -49,8 +49,8 @@ vector<int> findSubstring(string s, vector<string>& words) {
 	if (words.size() == 0) return res;
 
 
-	int wordlength = words[0].length(); //´æ´¢µÄÃ¿¸öµ¥´ÊµÄ³¤¶È¶øÇÒËùÓĞµ¥´Ê³¤¶ÈÒ»ÖÂ
-	if (s.length() < wordlength * words.size()) return res; //Èç¹ûsµÄ³¤¶È±ÈwordsËùÓĞµ¥´Ê×ÜºÍ¼ÓÆğÀ´¶¼Ğ¡ ËµÃ÷²»´æÔÚ½á¹û
+	int wordlength = words[0].length(); //å­˜å‚¨çš„æ¯ä¸ªå•è¯çš„é•¿åº¦è€Œä¸”æ‰€æœ‰å•è¯é•¿åº¦ä¸€è‡´
+	if (s.length() < wordlength * words.size()) return res; //å¦‚æœsçš„é•¿åº¦æ¯”wordsæ‰€æœ‰å•è¯æ€»å’ŒåŠ èµ·æ¥éƒ½å° è¯´æ˜ä¸å­˜åœ¨ç»“æœ
 	else if (s.length() >= wordlength * words.size())
 	{
 		int i = 0;
@@ -69,10 +69,10 @@ vector<int> findSubstring(string s, vector<string>& words) {
 }
 
 
-//Ê¹ÓÃ leftºÍ rightµÄ»¬¶¯´°¿Ú£¬¶ÔÃ¿Ò»´Î´ÎµÄÆµÂÊ½øĞĞÍ³¼Æ£¬Èç¹ûÕâ¸öÍ³¼ÆµÄ´Ê²»´æÔÚÄÇÃ´Ö±½ÓÇå¿ÕÖØĞÂ¿ªÊ¼
-//Èç¹ûÕâ¸öÍ³¼ÆµÄ´Ê¼ÓÉÏÆµÂÊÖ®ºó£¬ ³¬¹ıÁËwordÖĞµÄ±ê×¼ÆµÂÊ£¬ÄÇÃ´½«´°¿ÚµÄ×ó±ß½øĞĞÒÆ¶¯£¬ÖªµÀ´°¿ÚµÄ×ó±ß
-//µ½´ïÂú×ãÒªÇóµÄÆµÂÊÖ®ºó  leftÍ£Ö¹ÒÆ¶¯£¬È»ºóright¼ÌĞøÒÆ¶¯
-//ÔÚÕâ¸öÑ­»·¹ı³ÌÖĞ£¬µ±Ç°½öµ±leftºÍrightÖ®¼äµÄ¾àÀë¸ÕºÃÊÇÁË£¬ÄÇÃ´Ö±½Ópush_backµ½×îºó½á¹ûÖĞ
+//ä½¿ç”¨ leftå’Œ rightçš„æ»‘åŠ¨çª—å£ï¼Œå¯¹æ¯ä¸€æ¬¡æ¬¡çš„é¢‘ç‡è¿›è¡Œç»Ÿè®¡ï¼Œå¦‚æœè¿™ä¸ªç»Ÿè®¡çš„è¯ä¸å­˜åœ¨é‚£ä¹ˆç›´æ¥æ¸…ç©ºé‡æ–°å¼€å§‹
+//å¦‚æœè¿™ä¸ªç»Ÿè®¡çš„è¯åŠ ä¸Šé¢‘ç‡ä¹‹åï¼Œ è¶…è¿‡äº†wordä¸­çš„æ ‡å‡†é¢‘ç‡ï¼Œé‚£ä¹ˆå°†çª—å£çš„å·¦è¾¹è¿›è¡Œç§»åŠ¨ï¼ŒçŸ¥é“çª—å£çš„å·¦è¾¹
+//åˆ°è¾¾æ»¡è¶³è¦æ±‚çš„é¢‘ç‡ä¹‹å  leftåœæ­¢ç§»åŠ¨ï¼Œç„¶årightç»§ç»­ç§»åŠ¨
+//åœ¨è¿™ä¸ªå¾ªç¯è¿‡ç¨‹ä¸­ï¼Œå½“å‰ä»…å½“leftå’Œrightä¹‹é—´çš„è·ç¦»åˆšå¥½æ˜¯äº†ï¼Œé‚£ä¹ˆç›´æ¥push_backåˆ°æœ€åç»“æœä¸­
 vector<int> findSubstring(string s, vector<string>& words) {
 	vector<int> allPos;
 	map<string, int> wordsFreq;

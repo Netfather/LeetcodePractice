@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,7 +18,7 @@
 #include <climits>
 using namespace std;
 
-//�ǳ��ǳ��򵥵�һ���� ���������� Ȼ���ǰ����ȡ �õ���Ӧ�ķ�������
+//非常非常简单的一道题 将数组排序 然后从前往后取 得到对应的分数即可
 const int N = 110;
 int w[N];
 

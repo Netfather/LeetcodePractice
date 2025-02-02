@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,12 +18,12 @@
 #include <climits>
 using namespace std;
 
-// ûʲô̫�õİ취�� ֻ��ʹ�ñ��������� 
-// �����Գ��� ���Ŀ���������� Լ��
-// Ȼ��Ӵ�С��ʼ����   �����ұ����������Լ����Ȼ�󿼲�����Լ�����Ƿ����ܱ�aƽ�� ������
+// 没什么太好的办法， 只能使用暴力搜索。 
+// 先用试除法 求出目标数的所有 约数
+// 然后从大到小开始遍历   基于找遍历这个数的约数，然后考察所有约数中是否有能被a平方 整除的
 
 typedef long long LL;
-// �Գ�����Լ��  �̶�ģ��
+// 试除法求约数  固定模板
 vector<LL> get_divisors(LL n)
 {
     vector<LL> res;
@@ -31,7 +31,7 @@ vector<LL> get_divisors(LL n)
         if (n % i == 0)
         {
             res.push_back(i);
-            if (i != n / i) res.push_back(n / i); // ������������ͬ
+            if (i != n / i) res.push_back(n / i); // 两个数不能相同
         }
     sort(res.begin(), res.end());
     return res;
@@ -48,7 +48,7 @@ int main()
         cin >> n;
         auto res = get_divisors(n);
         bool flag = true;
-        //�Ӵ�С��ʼ����res
+        //从大到小开始遍历res
         for (int i = res.size() - 1; i >= 0; i--)
         {
             auto sub_res = get_divisors(res[i]);
@@ -57,7 +57,7 @@ int main()
             {
                 if (key != 1)
                 {
-                    //����һ�����е�Լ�� �鿴Լ�����Ƿ��� ƽ����Ŀ
+                    //遍历一下所有的约数 查看约数中是否有 平方项目
                     LL tmp = LL(sqrt(key));
                     if (tmp * tmp == key)
                     {
@@ -68,7 +68,7 @@ int main()
             }
             if (flag == true)
             {
-                //˵���ҵ���   һ�� res[i] ��������Լ���в���ƽ����
+                //说明找到了   一个 res[i] 他的所有约数中不含平方项
                 cout << res[i] << endl;
                 break;
             }

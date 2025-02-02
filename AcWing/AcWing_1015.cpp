@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -17,7 +17,7 @@
 #include <cstring>
 #include <climits>
 using namespace std;
-//�����Ǻܻ�����dp���⣬���ǿ��Ժ����Եĵõ����ۣ�����վ�������е�ĳ���㣬������ֵֻ������������ߺ������еĽϴ���Ǹ�
+//此题是很基础的dp问题，我们可以很明显的得到结论，当你站在网格中的某个点，你的最大值只可能来自你左边和上面中的较大的那个
 
 
 int main()
@@ -27,10 +27,10 @@ int main()
 	while (t--)
 	{
 		int r, c;
-		cin >> r >> c; //����������
+		cin >> r >> c; //行数，列数
 		vector<vector<int>> dp(r + 1, vector(c + 1, 0));
-		//dp״̬���� ���ڴ洢���㴦��i��jλ��ʱ���㵱ǰ��ȡ�õ��������
-		//���ڱ߽�����ȫΪ0��������ﲻ��Ҫ���б߽��ʼ��
+		//dp状态数组 用于存储当你处于i，j位置时候，你当前能取得的最大花生数
+		//由于边界条件全为0，因此这里不需要进行边界初始化
 		for (int i = 1; i <= r; i++)
 		{
 			for (int j = 1; j <= c; j++)

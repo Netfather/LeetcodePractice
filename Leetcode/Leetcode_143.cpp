@@ -23,12 +23,12 @@
 //};
 //
 //void reorderList(ListNode* head) {
-//	//Step1:µÃµ½Õâ¸ölistµÄ³¤¶È No,ÓÃÁ½¸ö³¤¶Ì²»Ò»µÄÖ¸ÕëÖ±½ÓµÃµ½
-//	stack<ListNode*> table; //¼ÇÂ¼slow×ß¹ıµÄ½Úµã
+//	//Step1:å¾—åˆ°è¿™ä¸ªlistçš„é•¿åº¦ No,ç”¨ä¸¤ä¸ªé•¿çŸ­ä¸ä¸€çš„æŒ‡é’ˆç›´æ¥å¾—åˆ°
+//	stack<ListNode*> table; //è®°å½•slowèµ°è¿‡çš„èŠ‚ç‚¹
 //	if (!head || !head->next || !head->next->next) return;
 //	ListNode* fast = head->next;
 //	ListNode* slow = head;
-//	int flag = 0; //0ÎªÅ¼Êı 1ÎªÆæÊı
+//	int flag = 0; //0ä¸ºå¶æ•° 1ä¸ºå¥‡æ•°
 //	while (fast && fast->next)
 //	{
 //		if (fast->next->next) fast = fast->next->next;

@@ -20,10 +20,10 @@ ListNode* swapPairs(ListNode* head) {
 	ListNode* start = head;
 	ListNode* temp = head;
 	ListNode* temp_b = new ListNode(0);
-	ListNode* temp_f; //ÔÝ´æ³ýÁËÕâÁ½¸öµÄµÚÈý¸öÔªËØ
+	ListNode* temp_f; //æš‚å­˜é™¤äº†è¿™ä¸¤ä¸ªçš„ç¬¬ä¸‰ä¸ªå…ƒç´ 
 	if (head == NULL) return NULL;
 	if (head->next == NULL) return head;
-	ListNode* headNext = head->next; //ÔÝ´æµÚ¶þ¸öÊý¾Ý
+	ListNode* headNext = head->next; //æš‚å­˜ç¬¬äºŒä¸ªæ•°æ®
 	start = head->next;
 	if (headNext->next == NULL)
 	{

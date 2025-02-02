@@ -12,7 +12,7 @@
 //#include <math.h>
 //using namespace std;
 //
-////Way1: ½á¹ûÕıÈ· µ«ÊÇ×îºóÒ»¸öÊäÈë²âÊÔ³¬Ê±ÁË
+////Way1: ç»“æœæ­£ç¡® ä½†æ˜¯æœ€åä¸€ä¸ªè¾“å…¥æµ‹è¯•è¶…æ—¶äº†
 //int candy(vector<int>& ratings) {
 //	if (ratings.size() == 0) return 0;
 //	if (ratings.size() == 1) return 1;
@@ -21,7 +21,7 @@
 //		if (ratings[0] == ratings[1]) return 2;
 //		return 3;
 //	}
-//	vector<int> res(ratings.size(), 0); //0±íÊ¾¸Ã½á¹ûÎ´¸³Öµ
+//	vector<int> res(ratings.size(), 0); //0è¡¨ç¤ºè¯¥ç»“æœæœªèµ‹å€¼
 //	int sum = 0;
 //	int cnt = 0;
 //	int flag = 0;
@@ -114,7 +114,7 @@
 //		if (ratings[0] == ratings[1]) return 2;
 //		return 3;
 //	}
-//	vector<int> res(ratings.size(), 0); //0±íÊ¾¸Ã½á¹ûÎ´¸³Öµ
+//	vector<int> res(ratings.size(), 0); //0è¡¨ç¤ºè¯¥ç»“æœæœªèµ‹å€¼
 //	res[0] = 1;
 //	for (int i = 1; i < ratings.size(); i++)
 //	{

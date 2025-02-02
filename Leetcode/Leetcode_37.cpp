@@ -11,10 +11,10 @@
 #include <math.h>
 using namespace std;
 
-vector<vector<bool>>row;//row[i][j]±íÊ¾µÚiĞĞÒÑ¾­ÓĞÁËj+1Õâ¸öÊı×Ö
-vector<vector<bool>>col;//col[i][j]±íÊ¾µÚiÁĞÒÑ¾­ÓĞÁËj+1Õâ¸öÊı×Ö
-vector<vector<vector<bool>>>cube;//°Ñ9X9·Ö³É3x3x9¸ö
-//cube[i][j][k]±íÊ¾µÚiĞĞµÚjÁĞµÄ3*3ÒÑ¾­ÓĞÁËj+1Õâ¸öÊı×Ö
+vector<vector<bool>>row;//row[i][j]è¡¨ç¤ºç¬¬iè¡Œå·²ç»æœ‰äº†j+1è¿™ä¸ªæ•°å­—
+vector<vector<bool>>col;//col[i][j]è¡¨ç¤ºç¬¬iåˆ—å·²ç»æœ‰äº†j+1è¿™ä¸ªæ•°å­—
+vector<vector<vector<bool>>>cube;//æŠŠ9X9åˆ†æˆ3x3x9ä¸ª
+//cube[i][j][k]è¡¨ç¤ºç¬¬iè¡Œç¬¬jåˆ—çš„3*3å·²ç»æœ‰äº†j+1è¿™ä¸ªæ•°å­—
 
 bool DFS(int index, int n, vector<vector<char>>& board) {
 	if (n == 0) {
@@ -64,7 +64,7 @@ void solveSudoku(vector<vector<char>>& board) {
 			}
 		}
 	}
-	n = 81 - n;//ĞèÒªÌîĞ´Êı×ÖµÄ¸öÊı
+	n = 81 - n;//éœ€è¦å¡«å†™æ•°å­—çš„ä¸ªæ•°
 	DFS(0, n, board);
 	return;
 }

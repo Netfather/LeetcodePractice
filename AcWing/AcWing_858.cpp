@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,9 +18,9 @@
 #include <climits>
 using namespace std;
 
-//Prim�㷨��ĳЩ�����Ϻ� ���ذ��dij�㷨�Ƿǳ����Ƶ�  ���ǹ���dis ��ά���ĵ���s���岻ͬ
-// ��Prim�㷨��˵  disά�����ǵ�ǰ�㵽����s�е���̾��� �����ǵ���Դ����̾��� ���������Ҳ���� ά���ĵ���s���ַ�Ҳ��һ��
-// �����Ƿ������С���������ж� ��ס��ÿ���Ҿ��뼯����С�ıߵ�ʱ�� ��������ҵ�  ��˵������������ˡ�
+//Prim算法在某些意义上和 朴素版的dij算法是非常相似的  但是关于dis 和维护的点云s含义不同
+// 对Prim算法来说  dis维护的是当前点到点云s中的最短距离 而不是到单源的最短距离 而这个限制也导致 维护的点云s的手法也不一样
+// 关于是否存在最小生成树的判断 记住在每次找距离集合最小的边的时候 如果不能找到  就说明结果有问题了。
 
 const int N = 510;
 int g[N][N];
@@ -39,7 +39,7 @@ bool Prim_MST()
 		int t = -1;
 		for (int j = 1; j <= n; j++)
 			if (!st[j] && (t == -1 || dis[t] > dis[j])) t = j;
-		if (i != 1 && dis[t] == 0x3f3f3f3f) return false; //����Ҳ��������ϲ�������ı��� �Ǿ�˵������������С������
+		if (i != 1 && dis[t] == 0x3f3f3f3f) return false; //如果找不到到集合不是无穷的边了 那就说明不能生成最小生成树
 		if (i != 1) res += dis[t];
 		st[t] = true;
 		for (int j = 1; j <= n; j++)

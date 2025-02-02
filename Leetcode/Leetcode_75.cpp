@@ -8,15 +8,15 @@
 #include <stdlib.h>
 #include <math.h>
 using namespace std;
-//Èç¹û²»ÄÜÊ¹ÓÃ×Ô´øµÄÅÅÐòº¯Êý
-//ÄÇÃ´¾ÍÊ¹ÓÃÈý¸ö²ÎÊý l  m  r
-//Í¨¹ýÎ¬»¤ºÃÕâÈý¸ö²ÎÊýÀ´²»Í£µÄswap¿ÉÒÔ´ïµ½Ò»´Î±éÀúÍê³ÉÅÅÐòµÄÄ¿µÄ¡£
+//å¦‚æžœä¸èƒ½ä½¿ç”¨è‡ªå¸¦çš„æŽ’åºå‡½æ•°
+//é‚£ä¹ˆå°±ä½¿ç”¨ä¸‰ä¸ªå‚æ•° l  m  r
+//é€šè¿‡ç»´æŠ¤å¥½è¿™ä¸‰ä¸ªå‚æ•°æ¥ä¸åœçš„swapå¯ä»¥è¾¾åˆ°ä¸€æ¬¡éåŽ†å®ŒæˆæŽ’åºçš„ç›®çš„ã€‚
 void sortColors(vector<int>& nums) {
 	int l = 0;
 	int m = 0;
 	int r = nums.size() - 1;
 
-	//³õÊ¼»¯²ÎÊý
+	//åˆå§‹åŒ–å‚æ•°
 	for ( m = l; m <= r;m++)
 	{
 		if (nums[m] == 0)

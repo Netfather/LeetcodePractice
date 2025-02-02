@@ -12,7 +12,7 @@
 //#include <math.h>
 //using namespace std;
 //
-////Way1: ³¬Ê±
+////Way1: è¶…æ—¶
 ////bool BackTracking(string s, unordered_set<string> &hashDict)
 ////{
 ////	if (s.length() == 0) return true;

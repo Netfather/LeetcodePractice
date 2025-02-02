@@ -7,7 +7,7 @@
 using namespace std;
 string convert(string s, int numRows) {
 	string result;
-	int length = 0; //sµÄ³¤¶È
+	int length = 0; //sçš„é•¿åº¦
 	int i, j = 0;
 	length = s.length();
 	if (length == 0) return s;
@@ -15,13 +15,13 @@ string convert(string s, int numRows) {
 	else
 	{
 
-		//¶¯Ì¬¶şÎ¬Êı×éÉùÃ÷
+		//åŠ¨æ€äºŒç»´æ•°ç»„å£°æ˜
 		int **p = new int*[numRows];
 		for (int k = 0; k < numRows; k++)
 		{
 			p[k] = new int[length];
 		}
-		//³õÊ¼»¯Îª0
+		//åˆå§‹åŒ–ä¸º0
 		for (i = 0; i < numRows; i++)
 		{
 			for (j = 0; j < length; j++)
@@ -29,40 +29,40 @@ string convert(string s, int numRows) {
 				p[i][j] = 0;
 			}
 		}
-		//Í·²¿³õÊ¼»¯£¬Í·²¿ÊÇÎ¨Ò»µÄ¶îÍâ¡£
+		//å¤´éƒ¨åˆå§‹åŒ–ï¼Œå¤´éƒ¨æ˜¯å”¯ä¸€çš„é¢å¤–ã€‚
 		p[0][0] = int(s.at(0));
 
 		i = 1;
 		j = 0;
-		//ÈçÏÂ½øĞĞsrtingÀàĞÍµÄ·ÖÅä ·ÖÎªÏÂ½µ¹ı³ÌºÍÉÏÉı¹ı³Ì
-		int times = 1; //ÉÏÉıÏÂ½µ´ÎÊı ÎªÆæÊıÊ±£¬±íÊ¾ÏÂ½µ£¬ÎªÅ¼Êı±íÊ¾ÉÏÉı
-		int counts = 1;//Ğ¡¼ÆÊıÆ÷£¬ÓÃÓÚ±êÖ¾ÊÇ·ñÍê³É±¾´ÎÏÂ½µÉÏÉı¹ı³Ì
+		//å¦‚ä¸‹è¿›è¡Œsrtingç±»å‹çš„åˆ†é… åˆ†ä¸ºä¸‹é™è¿‡ç¨‹å’Œä¸Šå‡è¿‡ç¨‹
+		int times = 1; //ä¸Šå‡ä¸‹é™æ¬¡æ•° ä¸ºå¥‡æ•°æ—¶ï¼Œè¡¨ç¤ºä¸‹é™ï¼Œä¸ºå¶æ•°è¡¨ç¤ºä¸Šå‡
+		int counts = 1;//å°è®¡æ•°å™¨ï¼Œç”¨äºæ ‡å¿—æ˜¯å¦å®Œæˆæœ¬æ¬¡ä¸‹é™ä¸Šå‡è¿‡ç¨‹
 		for (string::iterator ita = (s.begin()+1); ita != s.end(); ita++)
 		{
 			if (counts == numRows && times % 2 == 1)
 			{
 				times = times + 1;
-				counts = 1;//ÏÂ½µ´ÎÊı+1 Í¬Ê±counts¹é1
-				i = i - 1;//iĞèÒª¶îÍâÎ¬»¤Ò»´Î
+				counts = 1;//ä¸‹é™æ¬¡æ•°+1 åŒæ—¶countså½’1
+				i = i - 1;//iéœ€è¦é¢å¤–ç»´æŠ¤ä¸€æ¬¡
 			}
 			if (counts == numRows && times % 2 == 0)
 			{
 				times = times + 1;
-				counts = 1;//ÏÂ½µ´ÎÊı+1 Í¬Ê±counts¹é1
-				i = i + 1;//iĞèÒª¶îÍâÎ¬»¤Ò»´Î
+				counts = 1;//ä¸‹é™æ¬¡æ•°+1 åŒæ—¶countså½’1
+				i = i + 1;//iéœ€è¦é¢å¤–ç»´æŠ¤ä¸€æ¬¡
 			}
-			if (times % 2 == 1) //ÏÂ½µ¹ı³Ì
+			if (times % 2 == 1) //ä¸‹é™è¿‡ç¨‹
 			{
-				counts++; //¼ÆÊıÆ÷Î¬»¤
-				p[i][j] = (int)*ita; //¸³ÖµÍê³ÉÒ»´Î
-				i = i + 1;//ÏÂ±íÎ¬»¤
+				counts++; //è®¡æ•°å™¨ç»´æŠ¤
+				p[i][j] = (int)*ita; //èµ‹å€¼å®Œæˆä¸€æ¬¡
+				i = i + 1;//ä¸‹è¡¨ç»´æŠ¤
 				continue;
 			}
-			if (times % 2 == 0) //ÉÏÉı¹ı³Ì
+			if (times % 2 == 0) //ä¸Šå‡è¿‡ç¨‹
 			{
 				j = j + 1;
-				i = i - 1;//ÏÂ±êÎ¬»¤
-				counts++; //¼ÆÊıÆ÷Î¬»¤
+				i = i - 1;//ä¸‹æ ‡ç»´æŠ¤
+				counts++; //è®¡æ•°å™¨ç»´æŠ¤
 				p[i][j] = (int)*ita;
 				continue;
 			}

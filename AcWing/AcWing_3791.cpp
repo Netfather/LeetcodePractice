@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,9 +18,9 @@
 #include <climits>
 using namespace std;
 
-//������  ���߷�֯  ������֯һ�¼��� �ǳ���
-// �鼸��ʵ��  ��֪������Ӧ����ô����
-// ����˼·�� s��λȡ Ȼ��  �Խ����c  ���м������߽��и�ֵ
+//就像是  拆线纺织  重新组织一下即可 非常简单
+// 组几个实例  就知道究竟应该怎么做了
+// 大致思路是 s按位取 然后  对结果的c  从中间往两边进行赋值
 
 
 int main()
@@ -33,10 +33,10 @@ int main()
 	string c = s;
 
 	int k = n / 2;
-	// ���� �� k��ʼ  ÿ�θ������ĵ� ���и�ֵ
+	// 两轮 从 k开始  每次根据中心点 进行赋值
 	if (n % 2)
 	{
-		c[n / 2 + 1] = s[1]; //���ĵ㸳ֵ
+		c[n / 2 + 1] = s[1]; //中心点赋值
 		for (int i = 2; i <= n; i++)
 		{
 			c[k] = s[i];
@@ -47,7 +47,7 @@ int main()
 	}
 	else
 	{
-		//ż�����������ĵ㸳ֵ
+		//偶数不存在中心点赋值
 		for (int i = 1; i <= n; i++)
 		{
 			c[k] = s[i];

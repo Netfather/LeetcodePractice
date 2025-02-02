@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,21 +18,21 @@
 #include <climits>
 using namespace std;
 
-//Ê×ÏÈ±éÀúÒ»±éÊý¾Ý  ÎÒÃÇ¿ÉÒÔÔÚO(n)Ê±¼äÄÚµÃµ½ ´ýÌîÈëµÄÎ»ÖÃ ÒÔ¼° ÐèÒªÌîÈëµÄÊý×Ö  ÒÔ¼°ÌîÈëµÄÈ«ÅÅÁÐ²»ÄÜµÈÓÚµÄÎ»ÖÃ
-// ÄÇÃ´ Õâ¸öÎÊÌâ¾ÍÍË»¯Îª  ¸ø¶¨Á½¸ö Ë³ÐòÅÅÁÐµÄ ÐòÁÐ  a1 a2 a3 ... an  ºÍ b1 b2 b3 .. bn
-// ÇëÎÊÈçºÎ²Ù×÷anÐòÁÐ²ÅÄÜÊ¹µÃ ¶ÔÓÚËùÓÐµÄ 1µ½n   ai²»µÈÓÚ biºã³ÉÁ¢
-// ÓÉÓÚÊý¾Ý±£Ö¤ ÓÐ½â  ÄÇÃ´ÎÒÃÇÖ»ÐèÒª  ±éÀú2µ½nµÄÎ»ÖÃ Ò»µ©¸ÃÎ»ÖÃµÈÓÚ bn ÎÒÃÇ¾Í°Ñ¸ÃÎ»ÖÃºÍÇ°ÃæµÄÊý×ÖswapÒ»ÏÂ 
+//é¦–å…ˆéåŽ†ä¸€éæ•°æ®  æˆ‘ä»¬å¯ä»¥åœ¨O(n)æ—¶é—´å†…å¾—åˆ° å¾…å¡«å…¥çš„ä½ç½® ä»¥åŠ éœ€è¦å¡«å…¥çš„æ•°å­—  ä»¥åŠå¡«å…¥çš„å…¨æŽ’åˆ—ä¸èƒ½ç­‰äºŽçš„ä½ç½®
+// é‚£ä¹ˆ è¿™ä¸ªé—®é¢˜å°±é€€åŒ–ä¸º  ç»™å®šä¸¤ä¸ª é¡ºåºæŽ’åˆ—çš„ åºåˆ—  a1 a2 a3 ... an  å’Œ b1 b2 b3 .. bn
+// è¯·é—®å¦‚ä½•æ“ä½œanåºåˆ—æ‰èƒ½ä½¿å¾— å¯¹äºŽæ‰€æœ‰çš„ 1åˆ°n   aiä¸ç­‰äºŽ biæ’æˆç«‹
+// ç”±äºŽæ•°æ®ä¿è¯ æœ‰è§£  é‚£ä¹ˆæˆ‘ä»¬åªéœ€è¦  éåŽ†2åˆ°nçš„ä½ç½® ä¸€æ—¦è¯¥ä½ç½®ç­‰äºŽ bn æˆ‘ä»¬å°±æŠŠè¯¥ä½ç½®å’Œå‰é¢çš„æ•°å­—swapä¸€ä¸‹ 
 
 
-// ÐÞ¶© ×îºóÎÒÃÇÔÙÀ´´¦ÀíÒ»ÏÂµÚÒ»¸öÎ²°Í Èç¹ûÏàµÈ ÎÒÃÇ¾Í°ÑµÚÒ»¸öÊý×ÖºÍµÚ¶þ¸öÊý×Ö½»»»Ò»ÏÂ 
-// ÓÉÓÚÌâÄ¿ÊÇ±£Ö¤Ò»¶¨ÓÐ½âµÄ Òò´ËÕâÖÖ·½·¨Ò»¶¨¿ÉÒÔÇóµÃ×îÖÕµÄ½á¹û
-//¾ÍÒ»¶¨¿ÉÒÔÔÚO(n)µÄÊ±¼äÄÚµÃ³öÐòÁÐ
+// ä¿®è®¢ æœ€åŽæˆ‘ä»¬å†æ¥å¤„ç†ä¸€ä¸‹ç¬¬ä¸€ä¸ªå°¾å·´ å¦‚æžœç›¸ç­‰ æˆ‘ä»¬å°±æŠŠç¬¬ä¸€ä¸ªæ•°å­—å’Œç¬¬äºŒä¸ªæ•°å­—äº¤æ¢ä¸€ä¸‹ 
+// ç”±äºŽé¢˜ç›®æ˜¯ä¿è¯ä¸€å®šæœ‰è§£çš„ å› æ­¤è¿™ç§æ–¹æ³•ä¸€å®šå¯ä»¥æ±‚å¾—æœ€ç»ˆçš„ç»“æžœ
+//å°±ä¸€å®šå¯ä»¥åœ¨O(n)çš„æ—¶é—´å†…å¾—å‡ºåºåˆ—
 
-vector<int> unequal; //²»ÄÜµÈÓÚÊý×é   Õâ¸öÊý×é°´Ë³Ðò´æ·Å×Å  0Î»ÖÃµÄ  ÏÂ±êË÷Òý
-vector<int> number; // ÌîÈëÊý×ÖÊý×é  Õâ¸öÊý×é´æ·Å×Å ÐèÒªÌîÈëµÄÊý¾Ý
+vector<int> unequal; //ä¸èƒ½ç­‰äºŽæ•°ç»„   è¿™ä¸ªæ•°ç»„æŒ‰é¡ºåºå­˜æ”¾ç€  0ä½ç½®çš„  ä¸‹æ ‡ç´¢å¼•
+vector<int> number; // å¡«å…¥æ•°å­—æ•°ç»„  è¿™ä¸ªæ•°ç»„å­˜æ”¾ç€ éœ€è¦å¡«å…¥çš„æ•°æ®
 const int N = 200010;
-int a[N]; //´æ´¢Ô­Ê¼Êý¾Ý
-bool Table[N]; //ÓÃÓÚ¼ÇÂ¼Êý¾ÝÖÐÄÄÐ©Î´ÌîÐ´
+int a[N]; //å­˜å‚¨åŽŸå§‹æ•°æ®
+bool Table[N]; //ç”¨äºŽè®°å½•æ•°æ®ä¸­å“ªäº›æœªå¡«å†™
 
 
 int main()
@@ -41,7 +41,7 @@ int main()
 	cin >> T;
 	while (T--)
 	{
-		//Çå¿ÕÒ»ÏÂ Table
+		//æ¸…ç©ºä¸€ä¸‹ Table
 		memset(Table, false, sizeof Table);
 
 		int n;
@@ -50,29 +50,29 @@ int main()
 		{
 			cin >> a[i];
 			if (a[i] == 0) unequal.push_back(i);
-			else Table[a[i]] = true; //Èç¹û²»Îª0 ¾Í°ÑÕâ¸öÊýµÄ±êÖ¾Î»ÖÃÎª1
+			else Table[a[i]] = true; //å¦‚æžœä¸ä¸º0 å°±æŠŠè¿™ä¸ªæ•°çš„æ ‡å¿—ä½ç½®ä¸º1
 		}
 		for (int i = 1; i <= n; i++) 
 			if (!Table[i]) number.push_back(i);
-		sort(number.begin(), number.end());  //¸øÐèÒªÌîÈëµÄÊý¾ÝÅÅ¸öÐò
-		// µ½ÕâÒ»²½ unequal´æ·Å×Å bn    numberÖÐ´æ·Å×Å an  Í¬Ê±Á½¸ö¶¼ÊÇÉýÐòÊý×é
-		// ÎÒÃÇÐèÒª²Ù×÷ an Ê¹µÃ¶ÔÓÚËùÓÐµÄ1µ½n  ¶¼ÓÐ an²»µÈÓÚ bnºã³ÉÁ¢
-		// ¸ù¾ÝÉýÐòÊý×éµÄÌØÐÔ ÎÒÃÇ¿ÉÒÔÍ¨¹ý½»»»µÄ·½Ê½ ÔÚO(n)Ê±¼äÄÚÇÉÃîµØ¹¹Ôì³öÂú×ãÌâÒâµÄanÅÅÁÐ
+		sort(number.begin(), number.end());  //ç»™éœ€è¦å¡«å…¥çš„æ•°æ®æŽ’ä¸ªåº
+		// åˆ°è¿™ä¸€æ­¥ unequalå­˜æ”¾ç€ bn    numberä¸­å­˜æ”¾ç€ an  åŒæ—¶ä¸¤ä¸ªéƒ½æ˜¯å‡åºæ•°ç»„
+		// æˆ‘ä»¬éœ€è¦æ“ä½œ an ä½¿å¾—å¯¹äºŽæ‰€æœ‰çš„1åˆ°n  éƒ½æœ‰ anä¸ç­‰äºŽ bnæ’æˆç«‹
+		// æ ¹æ®å‡åºæ•°ç»„çš„ç‰¹æ€§ æˆ‘ä»¬å¯ä»¥é€šè¿‡äº¤æ¢çš„æ–¹å¼ åœ¨O(n)æ—¶é—´å†…å·§å¦™åœ°æž„é€ å‡ºæ»¡è¶³é¢˜æ„çš„anæŽ’åˆ—
 
-		//Èç¹ûÏàµÈ ËµÃ÷ÐèÒª½»»»Î»ÖÃ  
+		//å¦‚æžœç›¸ç­‰ è¯´æ˜Žéœ€è¦äº¤æ¢ä½ç½®  
 		for (int i = 1; i < unequal.size(); i++)
 			if (number[i] == unequal[i]) swap(number[i], number[i - 1]);	
-		//×îºó£¬ Èç¹ûµÚÒ»¸öÊý×ÖÏàÍ¬ Ôò°ÑµÚÒ»¸öÊý×ÖºÍµÚ¶þ¸öÊý×Ö½»»»Ò»ÏÂ ÓÉÓÚ Êý¾Ý±£Ö¤ÁËÒ»¶¨ÓÐ½â Òò´ËÕâÖÖ·½Ê½Ò»¶¨¿ÉÒÔ¹¹Ôì³öÂú×ãÌâÒâµÄÅÅÁÐ
+		//æœ€åŽï¼Œ å¦‚æžœç¬¬ä¸€ä¸ªæ•°å­—ç›¸åŒ åˆ™æŠŠç¬¬ä¸€ä¸ªæ•°å­—å’Œç¬¬äºŒä¸ªæ•°å­—äº¤æ¢ä¸€ä¸‹ ç”±äºŽ æ•°æ®ä¿è¯äº†ä¸€å®šæœ‰è§£ å› æ­¤è¿™ç§æ–¹å¼ä¸€å®šå¯ä»¥æž„é€ å‡ºæ»¡è¶³é¢˜æ„çš„æŽ’åˆ—
 		if (number[0] == unequal[0]) swap(number[0], number[1]);
 
-		//Êä³ö½á¹û
+		//è¾“å‡ºç»“æžœ
 		for (int i = 1, j = 0; i <= n; i++)
 		{
 			if (a[i] != 0) cout << a[i] << " ";
 			else cout << number[j++] << " ";
 		}
 		cout << endl;
-		//Çå¿ÕÊý×é
+		//æ¸…ç©ºæ•°ç»„
 		unequal.clear();
 		number.clear();
 	}

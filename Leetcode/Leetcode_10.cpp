@@ -1,7 +1,7 @@
 
 //s could be empty and contains only lowercase letters a - z.
 //p could be empty and contains only lowercase letters a - z, and characters like.or *.
-//Ê¹ÓÃµİ¹é
+//ä½¿ç”¨é€’å½’
 
 
 #include <iostream>
@@ -12,57 +12,57 @@
 #include <stdlib.h>
 #include <math.h>
 using namespace std;
-/* ÈçÏÂ½á¹ûÊ§°Ü ÊÇÎÒÏëÌ«¸´ÔÓÁË£¬Êµ¼Ê²¢Ã»ÓĞÕâÃ´¸´ÔÓ
-//È«¾Ö±äÁ¿£¬µİ¹é»ù´¡Î»ÖÃ
+/* å¦‚ä¸‹ç»“æœå¤±è´¥ æ˜¯æˆ‘æƒ³å¤ªå¤æ‚äº†ï¼Œå®é™…å¹¶æ²¡æœ‰è¿™ä¹ˆå¤æ‚
+//å…¨å±€å˜é‡ï¼Œé€’å½’åŸºç¡€ä½ç½®
 int Base_i = 0;
 int Base_j = 0;
 
-#define cur_i  Base_i + Trans_i  //sÖĞµİ¹éµÄÎ»ÖÃ
-#define cur_j  Base_j + Trans_j  //pÖĞµİ¹éµÄÎ»ÖÃ
+#define cur_i  Base_i + Trans_i  //sä¸­é€’å½’çš„ä½ç½®
+#define cur_j  Base_j + Trans_j  //pä¸­é€’å½’çš„ä½ç½®
 
-// s,p ÎªÊäÈë£¬ Trans_i, Trans_j Îªµİ¹é´«µİµÄÏà¶ÔÓÚÆğÊ¼Î»ÖÃ£¬ĞèÒªĞ¡ĞÄÎ¬»¤,ÕâÊÇ¸öÏà¶ÔÎ»ÖÃ£¬
-//±íÃ÷ÏÖÔÚ´«µİµ½ÄÄÀïÁË¡£
+// s,p ä¸ºè¾“å…¥ï¼Œ Trans_i, Trans_j ä¸ºé€’å½’ä¼ é€’çš„ç›¸å¯¹äºèµ·å§‹ä½ç½®ï¼Œéœ€è¦å°å¿ƒç»´æŠ¤,è¿™æ˜¯ä¸ªç›¸å¯¹ä½ç½®ï¼Œ
+//è¡¨æ˜ç°åœ¨ä¼ é€’åˆ°å“ªé‡Œäº†ã€‚
 bool match(string s, string p, int Trans_i, int Trans_j)
 {
-	//µİ¹é¾¡Í·//µİ¹é¾¡Í·»¹ĞèÒªÍêÉÆ
+	//é€’å½’å°½å¤´//é€’å½’å°½å¤´è¿˜éœ€è¦å®Œå–„
 	if (cur_j == p.length() - 1 && cur_i == s.length() -1 )
 	{
 		if (s.at(cur_i) == p.at(cur_j) || p.at(cur_j) == 46) return true;
 		else if (s.at(cur_i) != p.at(cur_j)) return false;
 	}
-	if (cur_j == p.length()  ) return false; //ÄÜ½øĞĞµ½ÕâÒ»²½ËµÃ÷µİ¹éÒÑ¾­µ½ÁË¾¡Í·£¬µİ¹é³É¹¦
-	if (cur_i == s.length()  ) return false; //ÕâÁ½¸öÃèÊöµÄÊÇÈç¹û²»¶ÔÆëÇé¿öÏÂ£¬Èç¹û×îºó¶ÔÆëÁË£¬ÄÇÃ´¾ÍÃ»ÓĞÓĞÒâÒåÁË
-	//ÔÚp²»ÊÇÌØÊâÇé¿öÏÂ
+	if (cur_j == p.length()  ) return false; //èƒ½è¿›è¡Œåˆ°è¿™ä¸€æ­¥è¯´æ˜é€’å½’å·²ç»åˆ°äº†å°½å¤´ï¼Œé€’å½’æˆåŠŸ
+	if (cur_i == s.length()  ) return false; //è¿™ä¸¤ä¸ªæè¿°çš„æ˜¯å¦‚æœä¸å¯¹é½æƒ…å†µä¸‹ï¼Œå¦‚æœæœ€åå¯¹é½äº†ï¼Œé‚£ä¹ˆå°±æ²¡æœ‰æœ‰æ„ä¹‰äº†
+	//åœ¨pä¸æ˜¯ç‰¹æ®Šæƒ…å†µä¸‹
 	if (p.at(cur_j) != 42 && p.at(cur_j) != 46)
 	{
-		//ÈçÏÂÇé¿öÎª·ÃÎÊµ½Í·Ê±µÄÇé¿ö
+		//å¦‚ä¸‹æƒ…å†µä¸ºè®¿é—®åˆ°å¤´æ—¶çš„æƒ…å†µ
 		if ( (cur_j == p.length() - 1)) return false;
-		if (s.at(cur_i) != p.at(cur_j) && (cur_j < p.length() - 1 && p.at(cur_j + 1) != 42)) //Èç¹ûÕâÁ½¸öÊıÎŞ·¨ÏàµÈ£¬¶øÇÒpµÄÏÂÒ»¸ö»¹²»ÊÇ*
+		if (s.at(cur_i) != p.at(cur_j) && (cur_j < p.length() - 1 && p.at(cur_j + 1) != 42)) //å¦‚æœè¿™ä¸¤ä¸ªæ•°æ— æ³•ç›¸ç­‰ï¼Œè€Œä¸”pçš„ä¸‹ä¸€ä¸ªè¿˜ä¸æ˜¯*
 		{
 			Trans_i = 0;
-			Trans_j = 0;  //Ïà¶ÔÎ»ÖÃÇåÁã Í¬Ê±·µ»Øfalse
+			Trans_j = 0;  //ç›¸å¯¹ä½ç½®æ¸…é›¶ åŒæ—¶è¿”å›false
 			return false;
 		}
-		else if (s.at(cur_i) == p.at(cur_j) && cur_j < p.length() - 1 && p.at(cur_j + 1) != 42) //Èç¹ûÆ¥ÅäÉÏÁË
+		else if (s.at(cur_i) == p.at(cur_j) && cur_j < p.length() - 1 && p.at(cur_j + 1) != 42) //å¦‚æœåŒ¹é…ä¸Šäº†
 		{
-			if (match(s, p, Trans_i + 1, Trans_j + 1) == true) return true;//¼ÌĞøÆ¥ÅäÏÂÈ¥
+			if (match(s, p, Trans_i + 1, Trans_j + 1) == true) return true;//ç»§ç»­åŒ¹é…ä¸‹å»
 			else return false;
 		}
 		else if (cur_j < p.length() - 1 && p.at(cur_j + 1) == 42)
 		{
-			//Èç¹ûºóÃæÃ»ÓĞÊıÁË£¬ÄÇÃ´Æ¥Åäµ½ÕâÀïÈç¹ûÒ»Ö±ÖØ¸´ ÄÇÃ´ÊÇtrue
+			//å¦‚æœåé¢æ²¡æœ‰æ•°äº†ï¼Œé‚£ä¹ˆåŒ¹é…åˆ°è¿™é‡Œå¦‚æœä¸€ç›´é‡å¤ é‚£ä¹ˆæ˜¯true
 			if (cur_j + 2 == p.length() )
 			{
 				for (int i = cur_i; i < s.length() - cur_i; i++)
 				{
-					if (i == s.length() -1 ) return true; //ÌØÊâÇé¿öÈç¹ûÑ°ÕÒÖØ¸´Öµµ½Î²µÄÇé¿ö Ö±½Ó·µ»Øtrue
+					if (i == s.length() -1 ) return true; //ç‰¹æ®Šæƒ…å†µå¦‚æœå¯»æ‰¾é‡å¤å€¼åˆ°å°¾çš„æƒ…å†µ ç›´æ¥è¿”å›true
 					if (s.at(i) == s.at(i + 1)) continue;
 					else if (s.at(i) != s.at(i + 1)) return false;
 				}
 			}
 			else if (s.at(cur_i) != p.at(cur_j))
 			{
-				if (match(s, p, Trans_i , Trans_j + 2) == true) return true;//¼ÌĞøÆ¥ÅäÏÂÈ¥
+				if (match(s, p, Trans_i , Trans_j + 2) == true) return true;//ç»§ç»­åŒ¹é…ä¸‹å»
 				else return false;
 			}
 			else if (s.at(cur_i) == p.at(cur_j))
@@ -70,7 +70,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 				int up = s.length() - cur_i;
 				for (int i = cur_i; i < up; i++)
 				{
-					if (i == s.length() - 1) return true; //ÌØÊâÇé¿öÈç¹ûÑ°ÕÒÖØ¸´Öµµ½Î²µÄÇé¿ö Ö±½Ó·µ»Øtrue
+					if (i == s.length() - 1) return true; //ç‰¹æ®Šæƒ…å†µå¦‚æœå¯»æ‰¾é‡å¤å€¼åˆ°å°¾çš„æƒ…å†µ ç›´æ¥è¿”å›true
 					if (s.at(i) == s.at(i + 1))
 					{
 						Trans_i = Trans_i + 1;
@@ -78,7 +78,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 					}
 					else if (s.at(i) != s.at(i + 1)) break;
 				}
-				if (match(s, p, Trans_i + 1 , Trans_j + 2) == true) return true;//¼ÌĞøÆ¥ÅäÏÂÈ¥
+				if (match(s, p, Trans_i + 1 , Trans_j + 2) == true) return true;//ç»§ç»­åŒ¹é…ä¸‹å»
 				else return false;
 			}
 		}
@@ -88,7 +88,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 		if ((cur_j == p.length() - 1)) return false;
 		if (cur_j < p.length() - 1 && p.at(cur_j + 1) != 42)
 		{
-			if (match(s, p, Trans_i + 1, Trans_j + 1))	return true;//Ö±½ÓÆ¥ÅäÏÂÈ¥
+			if (match(s, p, Trans_i + 1, Trans_j + 1))	return true;//ç›´æ¥åŒ¹é…ä¸‹å»
 			else return false;
 		}
 		if (cur_j < p.length() - 1 && p.at(cur_j + 1) == 42)
@@ -97,14 +97,14 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 			{
 				for (int i = cur_i; i < s.length() - cur_i; i++)
 				{
-					if (i == s.length() - 1) return true; //ÌØÊâÇé¿öÈç¹ûÑ°ÕÒÖØ¸´Öµµ½Î²µÄÇé¿ö Ö±½Ó·µ»Øtrue
+					if (i == s.length() - 1) return true; //ç‰¹æ®Šæƒ…å†µå¦‚æœå¯»æ‰¾é‡å¤å€¼åˆ°å°¾çš„æƒ…å†µ ç›´æ¥è¿”å›true
 					if (s.at(i) == s.at(i + 1)) continue;
 					else if (s.at(i) != s.at(i + 1)) return false;
 				}
 			}
 			else if (s.at(cur_i) != p.at(cur_j))
 			{
-				if (match(s, p, Trans_i, Trans_j + 2) == true) return true;//¼ÌĞøÆ¥ÅäÏÂÈ¥
+				if (match(s, p, Trans_i, Trans_j + 2) == true) return true;//ç»§ç»­åŒ¹é…ä¸‹å»
 				else return false;
 			}
 			else if (s.at(cur_i) == p.at(cur_j))
@@ -112,7 +112,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 				int up = s.length() - cur_i;
 				for (int i = cur_i; i < up; i++)
 				{
-					if (i == s.length() - 1) return true; //ÌØÊâÇé¿öÈç¹ûÑ°ÕÒÖØ¸´Öµµ½Î²µÄÇé¿ö Ö±½Ó·µ»Øtrue
+					if (i == s.length() - 1) return true; //ç‰¹æ®Šæƒ…å†µå¦‚æœå¯»æ‰¾é‡å¤å€¼åˆ°å°¾çš„æƒ…å†µ ç›´æ¥è¿”å›true
 					if (s.at(i) == s.at(i + 1))
 					{
 						Trans_i = Trans_i + 1;
@@ -120,7 +120,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 					}
 					else if (s.at(i) != s.at(i + 1)) break;
 				}
-				if (match(s, p, Trans_i + 1, Trans_j + 2) == true) return true;//¼ÌĞøÆ¥ÅäÏÂÈ¥
+				if (match(s, p, Trans_i + 1, Trans_j + 2) == true) return true;//ç»§ç»­åŒ¹é…ä¸‹å»
 				else return false;
 			}
 		}
@@ -133,7 +133,7 @@ bool match(string s, string p, int Trans_i, int Trans_j)
 bool isMatch(string s, string p) {
 	int ori_length = s.length();
 	int mat_length = p.length();
-	//ÅÅ³ö¿Õ¼¯
+	//æ’å‡ºç©ºé›†
 	if (ori_length == 0) return true;
 	if (mat_length == 0) return false;
 	if (mat_length == 1)
@@ -141,7 +141,7 @@ bool isMatch(string s, string p) {
 		if (p == s || (p == "." && ori_length == 1)) return true;
 		else return false;
 	}
-	//ÅÅ³öÍòÄÜ¼¯
+	//æ’å‡ºä¸‡èƒ½é›†
 	if (p == ".*") return true;
 	if (p == s) return true;
 	if (s == "a" && p == "ab*") return true;
@@ -150,7 +150,7 @@ bool isMatch(string s, string p) {
 	Base_i = 0;
 	Base_j = 0;
 
-	//ÏÈÊÖÕÒµ½ÊäÈë×Ö·û´®µÄµÚÒ»¸ö±äÁ¿
+	//å…ˆæ‰‹æ‰¾åˆ°è¾“å…¥å­—ç¬¦ä¸²çš„ç¬¬ä¸€ä¸ªå˜é‡
 	if (match(s, p, 0, 0)) return true;
 
 	return false;

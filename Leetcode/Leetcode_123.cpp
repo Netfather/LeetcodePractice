@@ -39,7 +39,7 @@
 //			if (prices[i] <= prices[i - 1] && prices[i] <= prices[i + 1])
 //			{
 //				mintemp = i;
-//				minindex.push_back(mintemp); //½«ËùÓĞµÄ¼«Ğ¡Öµµã¶¼·ÅÈëminindex¡£
+//				minindex.push_back(mintemp); //å°†æ‰€æœ‰çš„æå°å€¼ç‚¹éƒ½æ”¾å…¥minindexã€‚
 //			}
 //			if (prices[i] >= prices[i - 1] && prices[i] >= prices[i + 1])
 //			{
@@ -48,7 +48,7 @@
 //
 //				freshbigger(bigtemp, prices[maxtemp] - prices[mintemp]);
 //				for (auto k : minindex)	freshbigger(bigtemp, prices[maxtemp] - prices[k]);
-//				//minindex.clear(); //Êı×éÇå0
+//				//minindex.clear(); //æ•°ç»„æ¸…0
 //				mintemp = i;
 //			}
 //		}
@@ -66,7 +66,7 @@
 //
 //
 ////int maxProfit1(vector<int>& prices, int &left, int & right,int start,int end) {
-////	//Éè¶¨´°¿Ú£¬×î´óÖµÖ»¿ÉÄÜ³öÏÖÔÚ´°¿ÚÖĞ×î´óÖµ×îĞ¡Öµ¸üĞÂÊ±¡£
+////	//è®¾å®šçª—å£ï¼Œæœ€å¤§å€¼åªå¯èƒ½å‡ºç°åœ¨çª—å£ä¸­æœ€å¤§å€¼æœ€å°å€¼æ›´æ–°æ—¶ã€‚
 ////	int windowmin = prices[0];
 ////	int maxres = 0;
 ////	for (int i = start; i < end; i++)

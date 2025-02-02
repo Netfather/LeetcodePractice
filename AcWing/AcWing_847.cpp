@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -33,7 +33,7 @@ void add(int a, int b)
 
 int bfs()
 {
-	//³õÊ¼»¯     Ò»°ã³õÊ¼»¯¶ÓÁĞ ³õÊ¼»¯¾àÀë 
+	//åˆå§‹åŒ–     ä¸€èˆ¬åˆå§‹åŒ–é˜Ÿåˆ— åˆå§‹åŒ–è·ç¦» 
 	queue<int> q;
 	q.push(1);
 	memset(dis, -1, sizeof dis);
@@ -47,7 +47,7 @@ int bfs()
 		for(int i = h[key] ; i != -1 ;i = ne[i])
 		{
 			int index = e[i];
-			if (dis[index] == -1)   //Âú×ãÌõ¼şµÄÈë¶Ó ²»Âú×ãµÄ¾ÍÖ±½ÓÂÓ¹ı¡£
+			if (dis[index] == -1)   //æ»¡è¶³æ¡ä»¶çš„å…¥é˜Ÿ ä¸æ»¡è¶³çš„å°±ç›´æ¥æ è¿‡ã€‚
 			{
 				dis[index] = dis[key] + 1;
 				q.push(index);

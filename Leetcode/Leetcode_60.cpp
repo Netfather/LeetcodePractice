@@ -9,7 +9,7 @@
 #include <math.h>
 using namespace std;
 
-//n±íÊ¾Êı2µÄ×î´óÖµ£¬ k±íÊ¾µÚk¸ö£¬step±íÊ¾µ±Ç°DFSËùÔÚÊ÷µÄ²ãÊı
+//nè¡¨ç¤ºæ•°2çš„æœ€å¤§å€¼ï¼Œ kè¡¨ç¤ºç¬¬kä¸ªï¼Œstepè¡¨ç¤ºå½“å‰DFSæ‰€åœ¨æ ‘çš„å±‚æ•°
 ///*
 map<int, int> Jiecheng = { { 0, 1 }, { 1, 1 }, { 2, 2 }, { 3, 6 }, { 4, 24 }, { 5, 120 }, { 6, 720 }, { 7, 5040 }, { 8, 40320 }, { 9, 362880 } };
 void DFS(int n, int k, int step, int &cnt, string &s)

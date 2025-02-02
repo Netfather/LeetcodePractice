@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,10 +18,10 @@
 #include <climits>
 using namespace std;
 
-//Ê×ÏÈÃ÷È·  ÆæÊý³ËÆæÊý ±Ø¶¨ÎªÆæÊý   ÆäÓàµÄ±Ø¶¨ÎªÅ¼Êý
-// È»ºó  Å¼Êý+Å¼Êý  ÎªÅ¼Êý   ÆæÊý+ÆæÊýÎªÅ¼Êý  ÆæÊý+Å¼ÊýÎªÆæÊý  ÕâÊÇÒ»¸öÒì»ò²Ù×÷
-// Òò´ËÕâµÀÌâ¾ÍÊÇÔÙ¶ÈÈçakµÄÊ±ºò  ¾ÍÅÐ¶Ï³ö¸ÃÏîÊÇÆæÊý»¹ÊÇÅ¼Êý   È»ºó°Ñ¶ÔÓ¦µÄÊý×Ö×öÒ»¸öÒì»ò
-//Ê±¼ä¸´ÔÓ¶ÈÎª 10µÄ6´Î·½ ¿ÉÒÔ¹ý
+//é¦–å…ˆæ˜Žç¡®  å¥‡æ•°ä¹˜å¥‡æ•° å¿…å®šä¸ºå¥‡æ•°   å…¶ä½™çš„å¿…å®šä¸ºå¶æ•°
+// ç„¶åŽ  å¶æ•°+å¶æ•°  ä¸ºå¶æ•°   å¥‡æ•°+å¥‡æ•°ä¸ºå¶æ•°  å¥‡æ•°+å¶æ•°ä¸ºå¥‡æ•°  è¿™æ˜¯ä¸€ä¸ªå¼‚æˆ–æ“ä½œ
+// å› æ­¤è¿™é“é¢˜å°±æ˜¯å†åº¦å¦‚akçš„æ—¶å€™  å°±åˆ¤æ–­å‡ºè¯¥é¡¹æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°   ç„¶åŽæŠŠå¯¹åº”çš„æ•°å­—åšä¸€ä¸ªå¼‚æˆ–
+//æ—¶é—´å¤æ‚åº¦ä¸º 10çš„6æ¬¡æ–¹ å¯ä»¥è¿‡
 const int N = 100010;
 int a[N];
 
@@ -35,19 +35,19 @@ int main()
 		int b, k;
 		cin >> b >> k;
 		for (int i = 1; i <= k; i++) cin >> a[i];
-		//¸ù¾ÝÆæÅ¼Ïà³ËÐÔÖÊ ÅÐ¶ÏÃ¿Ò»ÏîÊÇÆæÊý»¹ÊÇÅ¼Êý
+		//æ ¹æ®å¥‡å¶ç›¸ä¹˜æ€§è´¨ åˆ¤æ–­æ¯ä¸€é¡¹æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°
 		for (int i = 1; i < k; i++)
 		{
 			if (b % 2 == 1 && a[i] % 2 == 1) a[i] = 0;
 			else a[i] = 1;
 		}
-		//´¦ÀíÒ»ÏÂÎ²°Í
+		//å¤„ç†ä¸€ä¸‹å°¾å·´
 		if (a[k] % 2 == 1) a[k] = 0;
 		else a[k] = 1;
-		// ¸ù¾ÝÍ¬»ò²Ù×÷ ´Ó×óµ½ÓÒÅÐ¶Ï½á¹ûµÄÆæÅ¼ÐÔÖÊ
+		// æ ¹æ®åŒæˆ–æ“ä½œ ä»Žå·¦åˆ°å³åˆ¤æ–­ç»“æžœçš„å¥‡å¶æ€§è´¨
 		int res = a[1];
 		for (int i = 2; i <= k; i++) res = !(res ^ a[i]);
-		// ¸ù¾Ýres µÄ 0 1 Êä³ö½á¹û
+		// æ ¹æ®res çš„ 0 1 è¾“å‡ºç»“æžœ
 		if (res == 0) cout << "odd" << endl;
 		else cout << "even " << endl;
 

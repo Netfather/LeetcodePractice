@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -19,15 +19,15 @@
 using namespace std;
 
 
-// µ«ÊÇÈç¹û±ßÊýºÍµãÊý¶¼ºÜ´óµÄÇé¿öÏÂ  ¾ÍÐèÒªÊ¹ÓÃÓÅÏÈ¶ÓÁÐÀ´½øÐÐ 
-// ÒòÎªÆÓËØdijËã·¨ÖÐ ×îÖÂÃüµÄÎÊÌâ¾ÍÔÚÓÚ£¬ Ã¿´ÎÕÒµ½ ²»ÔÚsÖÐµÄ  ¾àÀë×î½üµÄµã ÏûºÄµÄÊ±¼äÊµÔÚÊÇÌ«³¤ÁË
-// Òò´ËÕâÀï¿¼ÂÇÊ¹ÓÃÓÅÏÈ¶ÓÁÐµÄ·½Ê½£¬ ÎÒÃÇÎ¬»¤ÓÅÏÈ¶ÓÁÐ£¬Ã¿µ±¸üÐÂÁË¾àÀë ÎÒÃÇ¾Í°ÑÄÇ¸ö¶ÔÓ¦µÄµãºÍ¾àÀëÈë¶Ó£¬È»ºó½øÐÐ¼ÆËã
+// ä½†æ˜¯å¦‚æžœè¾¹æ•°å’Œç‚¹æ•°éƒ½å¾ˆå¤§çš„æƒ…å†µä¸‹  å°±éœ€è¦ä½¿ç”¨ä¼˜å…ˆé˜Ÿåˆ—æ¥è¿›è¡Œ 
+// å› ä¸ºæœ´ç´ dijç®—æ³•ä¸­ æœ€è‡´å‘½çš„é—®é¢˜å°±åœ¨äºŽï¼Œ æ¯æ¬¡æ‰¾åˆ° ä¸åœ¨sä¸­çš„  è·ç¦»æœ€è¿‘çš„ç‚¹ æ¶ˆè€—çš„æ—¶é—´å®žåœ¨æ˜¯å¤ªé•¿äº†
+// å› æ­¤è¿™é‡Œè€ƒè™‘ä½¿ç”¨ä¼˜å…ˆé˜Ÿåˆ—çš„æ–¹å¼ï¼Œ æˆ‘ä»¬ç»´æŠ¤ä¼˜å…ˆé˜Ÿåˆ—ï¼Œæ¯å½“æ›´æ–°äº†è·ç¦» æˆ‘ä»¬å°±æŠŠé‚£ä¸ªå¯¹åº”çš„ç‚¹å’Œè·ç¦»å…¥é˜Ÿï¼Œç„¶åŽè¿›è¡Œè®¡ç®—
 
-//ÓÉÓÚÊÇÏ¡ÊèÍ¼ ÕâÀïÊ¹ÓÃÁÚ½Ó±í´æ´¢
+//ç”±äºŽæ˜¯ç¨€ç–å›¾ è¿™é‡Œä½¿ç”¨é‚»æŽ¥è¡¨å­˜å‚¨
 const int N = 1000010;
 int e[N], h[N], w[N], ne[N], idx;
 int d[N];
-bool st[N]; //ÓÃÓÚ±íÊ¾Õâ¸öµãÊÇ·ñÒÑ¾­ÔÚµãÔÆsÖÐÁË
+bool st[N]; //ç”¨äºŽè¡¨ç¤ºè¿™ä¸ªç‚¹æ˜¯å¦å·²ç»åœ¨ç‚¹äº‘sä¸­äº†
 typedef pair<int, int> PII;
 int n, m;
 
@@ -42,33 +42,33 @@ void add(int a, int b, int c)
 
 int heap_dijstra()
 {
-	//Ê×ÏÈÐÞÕý¾àÀë
+	//é¦–å…ˆä¿®æ­£è·ç¦»
 	memset(d, 0x3f, sizeof d);
-	d[1] = 0; // 1ºÅ¶¥µãµÄ¾àÀëÎª0
+	d[1] = 0; // 1å·é¡¶ç‚¹çš„è·ç¦»ä¸º0
 
-	//¶¨ÒåÐ¡¸ù¶Ñ
+	//å®šä¹‰å°æ ¹å †
 	priority_queue<PII, vector<PII>, greater<PII>> heap;
-	heap.push({ 0,1 }); //ÓÉÓÚ±ØÐëÒªÈÃ¾àÀëÔÚÇ° ²Å¿ÉÒÔ¸ù¾Ý¾àÀëÀ´ÅÐ¶¨  ÒòÎªÐ¡¸ù¶ÑÄ¬ÈÏÊÇÒÔ Ê×ÔªËØ×÷ÎªÅÅÐò¶ÔÏóµÄ
+	heap.push({ 0,1 }); //ç”±äºŽå¿…é¡»è¦è®©è·ç¦»åœ¨å‰ æ‰å¯ä»¥æ ¹æ®è·ç¦»æ¥åˆ¤å®š  å› ä¸ºå°æ ¹å †é»˜è®¤æ˜¯ä»¥ é¦–å…ƒç´ ä½œä¸ºæŽ’åºå¯¹è±¡çš„
 
 	while (heap.size())
 	{
 		auto k = heap.top();
 		heap.pop();
-		int ver = k.second;  // ÕâÀïÖ»ÐèÒªÄÃ³ö¶¥µã¾Í¿ÉÒÔÁË   dis ÒÑ¾­¿ÉÒÔ¸ù¾Ý d[ver] ½øÐÐË÷ÒýÁË
-		// 	ÕâÀïÒª¶àÒ»²½£¬ÓÉÓÚÐ¡¸ù¶Ñ»á´æÔÚÈßÓà±¸·Ý£¬Òò´ËÈç¹ûµ¯³öµÄÔªËØÒÑ¾­ÔÚsÖÐÁË ÎÒÃÇ¾ÍÖ±½ÓÌø¹ý
+		int ver = k.second;  // è¿™é‡Œåªéœ€è¦æ‹¿å‡ºé¡¶ç‚¹å°±å¯ä»¥äº†   dis å·²ç»å¯ä»¥æ ¹æ® d[ver] è¿›è¡Œç´¢å¼•äº†
+		// 	è¿™é‡Œè¦å¤šä¸€æ­¥ï¼Œç”±äºŽå°æ ¹å †ä¼šå­˜åœ¨å†—ä½™å¤‡ä»½ï¼Œå› æ­¤å¦‚æžœå¼¹å‡ºçš„å…ƒç´ å·²ç»åœ¨sä¸­äº† æˆ‘ä»¬å°±ç›´æŽ¥è·³è¿‡
 		if (st[ver]) continue;
 		st[ver] = true;
 
-		//ÄÃÕâ¸öµã¸üÐÂÒ»ÏÂËûÁªÍ¨µÄËùÓÐµã
+		//æ‹¿è¿™ä¸ªç‚¹æ›´æ–°ä¸€ä¸‹ä»–è”é€šçš„æ‰€æœ‰ç‚¹
 		for (int i = h[ver]; i != -1; i = ne[i])
 		{
 			int index = e[i];
 			int weight = w[i];
-			//ÕâÁ½¸ö·Ö±ð±íÊ¾ Õâ¸överËùÁ¬½ÓµÄ  ±ßÈ¨ºÍ¶ÔÓ¦µÄ¶¥µã±àºÅ
-			//È»ºó³¢ÊÔ¸üÐÂ
+			//è¿™ä¸¤ä¸ªåˆ†åˆ«è¡¨ç¤º è¿™ä¸ªveræ‰€è¿žæŽ¥çš„  è¾¹æƒå’Œå¯¹åº”çš„é¡¶ç‚¹ç¼–å·
+			//ç„¶åŽå°è¯•æ›´æ–°
 			if (d[index] > d[ver] + weight)
 			{
-				//ËµÃ÷¿ÉÒÔ¸üÐÂ
+				//è¯´æ˜Žå¯ä»¥æ›´æ–°
 				d[index] = d[ver] + weight;
 				heap.push({ d[index],index });
 			}

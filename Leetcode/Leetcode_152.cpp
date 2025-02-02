@@ -14,7 +14,7 @@
 //#include <math.h>
 //using namespace std;
 //
-////×Ô¶¥ÏòÏÂ·¨
+////è‡ªé¡¶å‘ä¸‹æ³•
 ////int memo_DP(vector<int>& nums, vector<int>& DP, int step)
 ////{
 ////	if (step < 0) return INT_MIN;
@@ -45,7 +45,7 @@
 ////}
 //
 //
-////×Ôµ×ÏòÉÏ  ½á¹ûÍ¨¹ı¡£
+////è‡ªåº•å‘ä¸Š  ç»“æœé€šè¿‡ã€‚
 ////int maxProduct(vector<int>& nums) {
 ////	if (nums.empty()) return 0;
 ////	if (nums.size() == 1) return nums[0];

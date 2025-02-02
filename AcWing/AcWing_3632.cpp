@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,7 +18,7 @@
 #include <climits>
 using namespace std;
 
-const double PI = 3.1415926535897932; // ¶¨ÒåÔ²ÖÜÂÊ
+const double PI = 3.1415926535897932; // å®šä¹‰åœ†å‘¨ç‡
 const int N = 110;
 int w[N];
 
@@ -29,10 +29,10 @@ int main()
 	for (int i = 0; i < n; i++) cin >> w[i];
 	sort(w, w + n);
 	double res = 0;
-	//ÅĞ¶ÏÆæÊı
+	//åˆ¤æ–­å¥‡æ•°
 	int i = 0;
 	if (n % 2) res = w[0] * w[0], i = 1;
-	//±éÀúËùÓĞ±ß³¤
+	//éå†æ‰€æœ‰è¾¹é•¿
 	for (; i < n - 1;)
 	{
 		res += w[i + 1] * w[i + 1] - w[i] * w[i];

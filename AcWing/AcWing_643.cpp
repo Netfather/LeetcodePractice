@@ -1,4 +1,4 @@
-//Ë¼Â·£º ±ê×¼µÄflood fillËã·¨£¬Ê¹ÓÃdfsÀ´½øĞĞµİ¹é¼ÆËãÁ¬Í¨ÇøÓòµÄ¸öÊı
+//æ€è·¯ï¼š æ ‡å‡†çš„flood fillç®—æ³•ï¼Œä½¿ç”¨dfsæ¥è¿›è¡Œé€’å½’è®¡ç®—è¿é€šåŒºåŸŸçš„ä¸ªæ•°
 //#include <iostream>
 //#include <algorithm>
 //#include <set>
@@ -16,7 +16,7 @@
 //#include <climits>
 //using namespace std;
 //
-//int dx[] = { -1,0,1,0 }, dy[] = { 0,1,0,-1 };  //¶¨ÒåÁªÍ¨ÇøÓò·½Ïò
+//int dx[] = { -1,0,1,0 }, dy[] = { 0,1,0,-1 };  //å®šä¹‰è”é€šåŒºåŸŸæ–¹å‘
 //const int N = 110;
 //bool visited[N][N];
 

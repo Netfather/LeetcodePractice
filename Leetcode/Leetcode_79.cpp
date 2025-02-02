@@ -10,11 +10,11 @@
 #include <math.h>
 using namespace std;
 
-// Way1 : Ê±¼äºÍ¿Õ¼ä¸´ÔÓ¶È¶¼ÌØ±ğ¸ß£¬Ó¦¸Ã¿ÉÒÔ¿¼ÂÇDP£¬¶ø²»ÊÇ±©Á¦ËÑË÷+¼õÖ¦
-//DP²»ĞĞ  ÕâÊÇÎ¨Ò»µÄ°ì·¨£¬ÎÒÊ¹ÓÃ·½·¨µÄÎÊÌâÔÚÓÚ¡£¼ì²âÂ·¾¶ÖØ¸´¹ı³ÌµÄ¸´ÔÓ¶È¹ı¸ß£¬Ó¦¸Ã
-//¸ÄÎªÕâÒ»²½ÓĞÖØ¸´µÄ¸ÄÎª* ÔÚÕâ´Î¼ì²âÍê³ÉÖ®ºó£¬ÔÙ¸Ä»ØÀ´¡£
+// Way1 : æ—¶é—´å’Œç©ºé—´å¤æ‚åº¦éƒ½ç‰¹åˆ«é«˜ï¼Œåº”è¯¥å¯ä»¥è€ƒè™‘DPï¼Œè€Œä¸æ˜¯æš´åŠ›æœç´¢+å‡æ
+//DPä¸è¡Œ  è¿™æ˜¯å”¯ä¸€çš„åŠæ³•ï¼Œæˆ‘ä½¿ç”¨æ–¹æ³•çš„é—®é¢˜åœ¨äºã€‚æ£€æµ‹è·¯å¾„é‡å¤è¿‡ç¨‹çš„å¤æ‚åº¦è¿‡é«˜ï¼Œåº”è¯¥
+//æ”¹ä¸ºè¿™ä¸€æ­¥æœ‰é‡å¤çš„æ”¹ä¸º* åœ¨è¿™æ¬¡æ£€æµ‹å®Œæˆä¹‹åï¼Œå†æ”¹å›æ¥ã€‚
 int flag = 0;
-//ÈçÏÂº¯ÊıÓÃÓÚ¼ì²âÂ·¾¶ÊÇ·ñÓĞÖØ¸´
+//å¦‚ä¸‹å‡½æ•°ç”¨äºæ£€æµ‹è·¯å¾„æ˜¯å¦æœ‰é‡å¤
 bool Judge(vector<vector<int>>& step)
 {
 	int flag_judge = 0;
@@ -33,8 +33,8 @@ bool Judge(vector<vector<int>>& step)
 	else return true;
 }
 
-//stepÓÃÓÚ¼ÇÂ¼Ä¿Ç°×ßµÄÂ·¾¶£¬ÓÃÓÚÅÅ³ıÖØ¸´µÄ¸ñ×Ó¡£ iÓÃÓÚ¼ÇÂ¼Ä¿Ç°ÔÚword×Ö·û´®ÖĞ¼ì²âµ½Ê²Ã´Î»ÖÃÁË
-// m ´ú±íĞĞ n´ú±íÁĞ
+//stepç”¨äºè®°å½•ç›®å‰èµ°çš„è·¯å¾„ï¼Œç”¨äºæ’é™¤é‡å¤çš„æ ¼å­ã€‚ iç”¨äºè®°å½•ç›®å‰åœ¨wordå­—ç¬¦ä¸²ä¸­æ£€æµ‹åˆ°ä»€ä¹ˆä½ç½®äº†
+// m ä»£è¡¨è¡Œ nä»£è¡¨åˆ—
 void Search(vector<vector<char>>& board, string word, vector<vector<int>>& step, int i, int m, int n)
 {
 	if (i == word.size())
@@ -45,28 +45,28 @@ void Search(vector<vector<char>>& board, string word, vector<vector<int>>& step,
 
 	if (Judge(step) && word[i] == board[step[i][0]][step[i][1]] && flag == 0)
 	{
-		//ÏÂ¼ì²â
+		//ä¸‹æ£€æµ‹
 		if (step[i][0] <m - 1 && flag == 0)
 		{
 			step.push_back({ step[i][0] + 1, step[i][1] });
 			Search(board, word, step, i + 1, m, n);
 			step.pop_back();
 		}
-		//ÉÏ¼ì²â
+		//ä¸Šæ£€æµ‹
 		if (step[i][0] > 0 && flag == 0)
 		{
 			step.push_back({ step[i][0] - 1, step[i][1] });
 			Search(board, word, step, i + 1, m, n);
 			step.pop_back();
 		}
-		//×ó¼ì²â
+		//å·¦æ£€æµ‹
 		if (step[i][1] > 0 && flag == 0)
 		{
 			step.push_back({ step[i][0], step[i][1] - 1 });
 			Search(board, word, step, i + 1, m, n);
 			step.pop_back();
 		}
-		//ÓÒ¼ì²â
+		//å³æ£€æµ‹
 		if (step[i][1] < n - 1 && flag == 0)
 		{
 			step.push_back({ step[i][0], step[i][1] + 1 });

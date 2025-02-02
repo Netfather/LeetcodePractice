@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,7 +18,7 @@
 #include <climits>
 using namespace std;
 
-// ¾­µäbfs·½·¨ÕÒÃÔ¹¬×î¶ÌÂ·¾¶ÎÊÌâ ËùÓĞµÄbfs·½·¨ »ù±¾¶¼ĞèÒª¸ödisÊı×éÀ´·´Ó¦´ÓÆğµã×ßµ½µ±Ç°µãÊ¹ÓÃÁË¶àÉÙ²½
+// ç»å…¸bfsæ–¹æ³•æ‰¾è¿·å®«æœ€çŸ­è·¯å¾„é—®é¢˜ æ‰€æœ‰çš„bfsæ–¹æ³• åŸºæœ¬éƒ½éœ€è¦ä¸ªdisæ•°ç»„æ¥ååº”ä»èµ·ç‚¹èµ°åˆ°å½“å‰ç‚¹ä½¿ç”¨äº†å¤šå°‘æ­¥
 typedef pair<int, int> PII;
 const int N = 110;
 int n;
@@ -32,7 +32,7 @@ int dy[4] = { 1,0,-1,0 };
 int bfs(int start_x, int start_y)
 {
 	queue<PII> q;
-	//¶ÓÁĞ³õÊ¼»¯
+	//é˜Ÿåˆ—åˆå§‹åŒ–
 	q.push({ start_x,start_y });
 	dis[start_x][start_y] = 1;
 
@@ -45,10 +45,10 @@ int bfs(int start_x, int start_y)
 
 		for (int i = 0; i < 4; i++)
 		{
-			//µÃµ½×¼±¸×ßµÄÏÂÒ»¸öµãµÄ×ø±ê
+			//å¾—åˆ°å‡†å¤‡èµ°çš„ä¸‹ä¸€ä¸ªç‚¹çš„åæ ‡
 			int new_x = x + dx[i];
 			int new_y = y + dy[i];
-			//µ«ÊÇÕâ¸ö×ø±ê±ØĞëÂú×ãÌõ¼ş
+			//ä½†æ˜¯è¿™ä¸ªåæ ‡å¿…é¡»æ»¡è¶³æ¡ä»¶
 			if (new_x < n && new_x >= 0 && new_y >= 0 && new_y < m && !dis[new_x][new_y] && g[new_x][new_y] == 0)
 			{
 				q.push({ new_x,new_y });

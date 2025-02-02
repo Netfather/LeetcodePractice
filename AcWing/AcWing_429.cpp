@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -37,7 +37,7 @@ public:
 		sum = 0;
 	}
 };
-// campareº¯Êı Èç¹ûa ±ÈbÅÅÃû¸ßÔò·µ»Øtrue ·ñÔò·µ»Øfalse
+// campareå‡½æ•° å¦‚æœa æ¯”bæ’åé«˜åˆ™è¿”å›true å¦åˆ™è¿”å›false
 bool campare(Student* a, Student* b)
 {
 	if (a->sum > b->sum) return true;

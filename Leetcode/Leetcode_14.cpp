@@ -1,5 +1,5 @@
 
-//1. µÚÒ»²½£¬°´ÕÕ×Ö·û´®µÄ³¤¶ÈË³Ğò£¬´ÓĞ¡µ½´óÅÅĞò
+//1. ç¬¬ä¸€æ­¥ï¼ŒæŒ‰ç…§å­—ç¬¦ä¸²çš„é•¿åº¦é¡ºåºï¼Œä»å°åˆ°å¤§æ’åº
 
 /*
 
@@ -15,10 +15,10 @@ using namespace std;
 void swap(vector<string> &strs)
 {
 	string temp;
-	int len_ele = 0; //ÓÃÓÚ±£´æÃ¿Ò»¸öÔªËØ³¤¶È
-	int len_ele_temp = strs[0].length(); //ÓÃÓÚ±£´æÃ¿Ò»¸öÔªËØµÄÉÏÒ»¸ö³¤¶È
-	int pos_ele = 0; //ÓÃÓÚ±£´æµ±Ç°ÏÂ±ê
-	int pos_ele_temp = 0; //ÓÃÓÚ±£´æÇ°Ò»¸öÔªËØµÄÏÂ±ê
+	int len_ele = 0; //ç”¨äºä¿å­˜æ¯ä¸€ä¸ªå…ƒç´ é•¿åº¦
+	int len_ele_temp = strs[0].length(); //ç”¨äºä¿å­˜æ¯ä¸€ä¸ªå…ƒç´ çš„ä¸Šä¸€ä¸ªé•¿åº¦
+	int pos_ele = 0; //ç”¨äºä¿å­˜å½“å‰ä¸‹æ ‡
+	int pos_ele_temp = 0; //ç”¨äºä¿å­˜å‰ä¸€ä¸ªå…ƒç´ çš„ä¸‹æ ‡
 	for (int i = 0; i < strs.size(); i++)
 	{
 		len_ele = strs[i].length();
@@ -28,7 +28,7 @@ void swap(vector<string> &strs)
 			len_ele_temp = len_ele;
 			pos_ele_temp = pos_ele;
 		}
-	}//Íê³ÉÖ®ºó×îĞ¡ÖµµÄÏÂ±ê¾Í±£´æÔÚpos_ele_tempÖĞ
+	}//å®Œæˆä¹‹åæœ€å°å€¼çš„ä¸‹æ ‡å°±ä¿å­˜åœ¨pos_ele_tempä¸­
 	temp = strs[0];
 	strs[0] = strs[pos_ele_temp];
 	strs[pos_ele_temp] = temp;
@@ -38,11 +38,11 @@ string longestCommonPrefix(vector<string>& strs) {
 	string s;
 	if (strs.size() == 0) return s; 
 	if (strs.size() == 1) return strs[0];
-	string temp_s; //±£´æÉÏÒ»¸ö½á¹û ÓÃÓÚ±È½ÏÊÇ·ñ×î´óÖµ
+	string temp_s; //ä¿å­˜ä¸Šä¸€ä¸ªç»“æœ ç”¨äºæ¯”è¾ƒæ˜¯å¦æœ€å¤§å€¼
 	swap(strs);
-	//Switch½»»»Ê×ÔªËØºÍ×îĞ¡³¤¶ÈµÄÔªËØ
+	//Switchäº¤æ¢é¦–å…ƒç´ å’Œæœ€å°é•¿åº¦çš„å…ƒç´ 
 	int length = strs[0].length();
-	int i=0,j=0,len = 0; //·Ö±ğ´ú±íÑ­»·µÄ²ÎÊı
+	int i=0,j=0,len = 0; //åˆ†åˆ«ä»£è¡¨å¾ªç¯çš„å‚æ•°
 	for (i = 0; i < 1; i++)
 	{
 		for (j = i ; j < length; j++)

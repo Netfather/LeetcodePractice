@@ -51,7 +51,7 @@
 ////	return -1;
 ////}
 //
-////Way2 �������һ�������Ľ����������Ψһ�ԣ���ô������һ���� ��ֵ���վ����һ��վ��,��Ϊ����������վ�㣬��ô��һ����û�н����
+////Way2 如果存在一个这样的结果，由于其唯一性，那么这个结果一定在 差值最大站的下一个站点,因为如果不在这个站点，那么就一定是没有结果的
 //int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
 //	int totalsum = INT_MAX;
 //	int tempsum = 0;

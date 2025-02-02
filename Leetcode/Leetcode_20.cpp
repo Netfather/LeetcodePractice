@@ -12,7 +12,7 @@
 using namespace std;
 map<char, char> cc = { { '(', ')' }, { '[', ']' }, { '{', '}' } };
 
-//Way1 : µÝ¹é
+//Way1 : é€’å½’
 bool isValid(string s) {
 	int  lenth = s.length();
 	int flag = 1;

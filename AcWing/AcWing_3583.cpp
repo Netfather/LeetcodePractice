@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -19,9 +19,9 @@
 using namespace std;
 
 
-//Ê×ÏÈÍ¨¹ý·´Ö¤·¨ÎÒÃÇ¿ÉÒÔÖ¤Ã÷  ×îÖÕµÄµÄ½â ±Ø¶¨ÊÇ»®·ÖÁËk¸ö×é³öÀ´µÄ
-// È»ºóÎÒÃÇÏÈ°ÑÊý×éÅÅÐò   È»ºó°´ÕÕ¾ø¶ÔÖµ²»³¬¹ý5µÄÏÞÖÆ ´ÓÎ²µ½Í· »®·Ö³öÈô¸É¸ö×é ÊýÁ¿¼ÇÎªS
-// ×îºó´ÓSÖÐÈ¡³ö Ç°k¸ö  ÈÝÁ¿µÄ×é¼´Îª½â
+//é¦–å…ˆé€šè¿‡åè¯æ³•æˆ‘ä»¬å¯ä»¥è¯æ˜Ž  æœ€ç»ˆçš„çš„è§£ å¿…å®šæ˜¯åˆ’åˆ†äº†kä¸ªç»„å‡ºæ¥çš„
+// ç„¶åŽæˆ‘ä»¬å…ˆæŠŠæ•°ç»„æŽ’åº   ç„¶åŽæŒ‰ç…§ç»å¯¹å€¼ä¸è¶…è¿‡5çš„é™åˆ¶ ä»Žå°¾åˆ°å¤´ åˆ’åˆ†å‡ºè‹¥å¹²ä¸ªç»„ æ•°é‡è®°ä¸ºS
+// æœ€åŽä»ŽSä¸­å–å‡º å‰kä¸ª  å®¹é‡çš„ç»„å³ä¸ºè§£
 const int N = 5010;
 int w[N];
 int s[N];
@@ -33,17 +33,17 @@ int main()
 	cin >> n >> k;
 	for (int i = 1; i <= n; i++) cin >> w[i];
 	sort(w+1, w + n+1);
-	//Ë«Ö¸ÕëÔ¤´¦ÀíÒ»ÏÂ Çó³ö×î¶àÑÓÉêµ½ÄÄÀï
+	//åŒæŒ‡é’ˆé¢„å¤„ç†ä¸€ä¸‹ æ±‚å‡ºæœ€å¤šå»¶ç”³åˆ°å“ªé‡Œ
 	int i= 1, j = 1;
 	for (; j <= n; j++)
 	{
 		while ( i <= n && w[j] - w[i] > 5) i++;
 		s[j] = i;
 	}
-	//Ê¹ÓÃdpÇó½â
-	for (int i = 1; i <= n; i++) //´Ó1µ½i¸öÔªËØÖÐÑ¡
+	//ä½¿ç”¨dpæ±‚è§£
+	for (int i = 1; i <= n; i++) //ä»Ž1åˆ°iä¸ªå…ƒç´ ä¸­é€‰
 	{
-		for (int j = 1; j <= k; j++) //Ñ¡j×éµÄËùÓÐ·½°¸
+		for (int j = 1; j <= k; j++) //é€‰jç»„çš„æ‰€æœ‰æ–¹æ¡ˆ
 		{
 			f[i][j] = max(f[i - 1][j], f[s[i] - 1][j - 1] + i - s[i] + 1);
 		}

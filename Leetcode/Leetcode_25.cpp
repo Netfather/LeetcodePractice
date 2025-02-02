@@ -21,39 +21,39 @@ ListNode* reverseKGroup(ListNode* head, int k) {
 	else if (k == 0 || k == 1) return head;
 	else if (k > 1)
 	{
-		ListNode* ire = head->next;  //Ö¸Ïòµ±Ç°µü´úÎ»ÖÃ
-		ListNode* temp = head; //Ôİ´æ
-		ListNode* i = head; //Ôİ´æ ×ÔÔöµü´úÆ÷ ÓÃÓÚ·ÅÔÚKÑ­»·ÍâÎ§½øĞĞÌáÇ°µ²°å²Ù×÷
+		ListNode* ire = head->next;  //æŒ‡å‘å½“å‰è¿­ä»£ä½ç½®
+		ListNode* temp = head; //æš‚å­˜
+		ListNode* i = head; //æš‚å­˜ è‡ªå¢è¿­ä»£å™¨ ç”¨äºæ”¾åœ¨Kå¾ªç¯å¤–å›´è¿›è¡Œæå‰æŒ¡æ¿æ“ä½œ
 		ListNode* tempNext;
 		int count = 1; //
-		ListNode* ArtificialHead = new ListNode(0); //ÈËÔì±íÍ·
-		//½«ÈËÔì±íÍ·Á¬½Óµ½headÉÏ
+		ListNode* ArtificialHead = new ListNode(0); //äººé€ è¡¨å¤´
+		//å°†äººé€ è¡¨å¤´è¿æ¥åˆ°headä¸Š
 		ArtificialHead->next = head;
-		ListNode* ArtificialTail = new ListNode(0); //ÈËÔì±íÎ²
-		ListNode* l = ArtificialHead; //ÏÂµ²°å Î¬»¤ºÃ
-		ListNode* r = ArtificialHead; //ÉÏµ²°å Î¬»¤ºÃ
-		ListNode* cur_l = ArtificialHead; //µ±Ç°KÑ­»·ÀïµÄÏÂµ²°å Î¬»¤ºÃ
-		ListNode* cur_r = ArtificialHead; //µ±Ç°KÑ­»·ÀïµÄÉÏµ²°å Î¬»¤ºÃ
-		//ÎóÇø ÓÉÓÚÔÚkÖ®ºóÒª±£ÁôÎ»ÖÃ£¬Òò´ËÓ¦µ±ÏÈÈ¡µÃÉÏÏÂµ²°åºÍKÑ­»·ÀïµÄÉÏÏÂµ²°åÔÚ½øĞĞÑ­»·²Ù×÷
+		ListNode* ArtificialTail = new ListNode(0); //äººé€ è¡¨å°¾
+		ListNode* l = ArtificialHead; //ä¸‹æŒ¡æ¿ ç»´æŠ¤å¥½
+		ListNode* r = ArtificialHead; //ä¸ŠæŒ¡æ¿ ç»´æŠ¤å¥½
+		ListNode* cur_l = ArtificialHead; //å½“å‰Kå¾ªç¯é‡Œçš„ä¸‹æŒ¡æ¿ ç»´æŠ¤å¥½
+		ListNode* cur_r = ArtificialHead; //å½“å‰Kå¾ªç¯é‡Œçš„ä¸ŠæŒ¡æ¿ ç»´æŠ¤å¥½
+		//è¯¯åŒº ç”±äºåœ¨kä¹‹åè¦ä¿ç•™ä½ç½®ï¼Œå› æ­¤åº”å½“å…ˆå–å¾—ä¸Šä¸‹æŒ¡æ¿å’ŒKå¾ªç¯é‡Œçš„ä¸Šä¸‹æŒ¡æ¿åœ¨è¿›è¡Œå¾ªç¯æ“ä½œ
 		while (i != NULL && count <= k)
 		{
 			if (count == 1)
 			{
 				l = cur_l;
 				cur_l = i;
-				temp = i; //µ¥´ÎÄÚÑ­»·µÄÆğÊ¼µã
+				temp = i; //å•æ¬¡å†…å¾ªç¯çš„èµ·å§‹ç‚¹
 				//save up boundries
 			}
-			if (count == 2) ire = i; //µ¥´ÎÄÚÑ­»·µÄµÚ¶ş¸öÆğÊ¼µã
+			if (count == 2) ire = i; //å•æ¬¡å†…å¾ªç¯çš„ç¬¬äºŒä¸ªèµ·å§‹ç‚¹
 			if (count == k)
 			{
 				cur_r = i;
 				r = i->next;
-				i = cur_l;//¼°Ê±Î¬»¤ÍâÎ§´óµİ¹éµÄÆğÊ¼µã
+				i = cur_l;//åŠæ—¶ç»´æŠ¤å¤–å›´å¤§é€’å½’çš„èµ·å§‹ç‚¹
 				count = 1;
 				while (count < k)
 				{
-					tempNext = ire->next; //´æ´¢ÏÂÒ»¸öµØÖ·
+					tempNext = ire->next; //å­˜å‚¨ä¸‹ä¸€ä¸ªåœ°å€
 					ire->next = temp;
 					temp = ire;
 					ire = tempNext;

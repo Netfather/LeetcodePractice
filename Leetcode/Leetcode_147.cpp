@@ -27,9 +27,9 @@
 //	if (!head) return head;
 //	ListNode* Artificialhaed = new ListNode(INT_MIN);
 //	Artificialhaed->next = head;
-//	ListNode* InsertEnd = Artificialhaed; //²åÈëÑ­»·Í£Ö¹Î»
+//	ListNode* InsertEnd = Artificialhaed; //æ’å…¥å¾ªçŽ¯åœæ­¢ä½
 //	if (!head->next) return head;
-//	ListNode* temp = Artificialhaed->next; //µü´úÆ÷
+//	ListNode* temp = Artificialhaed->next; //è¿­ä»£å™¨
 //	ListNode* InsertIre = Artificialhaed;
 //	int flag = 0;
 //	while (temp)

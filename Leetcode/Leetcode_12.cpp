@@ -1,5 +1,5 @@
 /*
-//�ݹ�ļ�Ӧ��
+//递归的简单应用
 
 #include <iostream>
 #include <algorithm>

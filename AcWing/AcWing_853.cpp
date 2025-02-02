@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,16 +18,16 @@
 #include <climits>
 using namespace std;
 
-// bellman-ford�㷨   �ǳ���
-//for n��
-//for ���б� a, b, w(�ɳڲ���)
+// bellman-ford算法   非常简单
+//for n次
+//for 所有边 a, b, w(松弛操作)
 //dist[b] = min(dist[b], back[a] + w)
-//ʹ��back�ĸ���ԭ������� �㲻������θ��¹��ľ��� ����������� ��ص��µ����֮��ĸ��²�ͬ��
-//ע�⣺back[] ��������һ�ε����� dist[] ����ı��ݣ�������ÿ����ͬʱ���������
-//�����Ҫ�� dist[] ������б��ݣ��������б��ݻ���˷�������ЧӦ��Ӱ�쵽��һ����
+//使用back的根本原因就在于 你不能用这次更新过的距离 再来更新这次 这回导致点与点之间的更新不同步
+//注意：back[] 数组是上一次迭代后 dist[] 数组的备份，由于是每个点同时向外出发，
+//因此需要对 dist[] 数组进行备份，若不进行备份会因此发生串联效应，影响到下一个点
 
-// �μ� ���ǵ�Դ���·�� Ȼ����ڸ�Ȩ��  Ȼ���ǳ���ͼ��ʱ��  �Ϳ���ʹ��bellman-ford�㷨
-// ����bellman-ford�㷨��ʱ�临�Ӷȷǳ���� �����㷨 ֻ����������ͼ�Ĺ�ģ�ǳ�С�����
+// 牢记 当是单源最短路径 然后存在负权边  然后是稠密图的时候  就可以使用bellman-ford算法
+// 由于bellman-ford算法的时间复杂度非常糟糕 这种算法 只能用来处理图的规模非常小的情况
 int n, m, k;
 const int N = 10010;
 int dis[N];
@@ -42,26 +42,26 @@ struct Edges
 
 void bellfold()
 {
-	//��ʼ������
+	//初始化距离
 	memset(dis, 0x3f, sizeof dis);
 	dis[1] = 0;
-	int back[N]; //�趨��������
+	int back[N]; //设定备份数组
 
 	for (int i = 0; i < k; i++)
 	{
-		//���ݱ���
+		//备份本次
 		memcpy(back, dis, sizeof dis);
 		for (auto key : edges)
 		{
-			//�������еı� 
+			//遍历所有的边 
 			if (dis[key.b] > back[key.a] + key.w)
 			{
-				//���³ɹ�  ע�� ���µ�λ�� �ڱ��ε�dis ����a��λ�� ֻ��ʹ����һ�ε���ֵ�Ա�֤ͬ��
+				//更新成功  注意 更新的位置 在本次的dis 但是a的位置 只能使用上一次的数值以保证同步
 				dis[key.b] = back[key.a] + key.w;
 			}
 		}
 	}
-	//���ڸ�Ȩ�ߵ����� �����޷��ﵽ�ĵ� Ҳ����С��0x3f3f3f3 ��������ṩһ������ֵ
+	//由于负权边的问题 导致无法达到的点 也可能小于0x3f3f3f3 因此这里提供一个经验值
 	if (dis[n] >= 0x3f3f3f3f / 2) cout << "impossible" << endl;
 	else cout << dis[n] << endl;
 }

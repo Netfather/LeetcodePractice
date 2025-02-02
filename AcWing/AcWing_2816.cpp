@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,8 +18,8 @@
 #include <climits>
 using namespace std;
 
-// ˼·�� ���������������ף������������� �������������У���˶���a�е����֣�ֱ�Ӱ�˳���ҵ���һ����b����֮ƥ��ĵ�Ϳ��ԣ���Ϊ��������ƥ��ɹ���
-//����ĵ�Ҳ��ƥ��ɹ��������ڴ�λ�����  ���Թؼ���������
+// 思路： 这道题很容易想明白，由于是子序列 不是连续子序列，因此对于a中的数字，直接按顺序找到第一个在b中与之匹配的点就可以，因为如果这个点匹配成功了
+//后面的点也会匹配成功，不存在错位的情况  所以关键是子序列
 
 const int N = 100010;
 int a[N];
@@ -37,13 +37,13 @@ int main()
 	for (; j < m; j++)
 	{
 		if (b[j] == a[i]) i++;
-		// ���ƥ���� �ͽ�i�ƶ�λ�� 
+		// 如果匹配上 就将i移动位置 
 		if (i == n)
 		{
 			cout << "Yes" << endl;
 			return 0;
 		}
-		//ƥ�䲻�� ��һֱ�ƶ�j
+		//匹配不上 就一直移动j
 	}
 	cout << "No" << endl;
 

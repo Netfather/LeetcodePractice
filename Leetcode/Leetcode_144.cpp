@@ -23,7 +23,7 @@
 //
 //};
 //
-////Way1: ÏÈĞò±éÀúµÄµü´ú×ö·¨
+////Way1: å…ˆåºéå†çš„è¿­ä»£åšæ³•
 ////void Rec(TreeNode* root, vector<int> &res)
 ////{
 ////	if (!root) return;

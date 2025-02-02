@@ -15,7 +15,7 @@
 //using namespace std;
 //
 //
-////Way1: Ê¹ÓÃsortÅÅĞòºÜÖ±°×µÄ»ñµÃ½á¹û
+////Way1: ä½¿ç”¨sortæ’åºå¾ˆç›´ç™½çš„è·å¾—ç»“æœ
 //int maximumGap(vector<int>& nums) {
 //	if (nums.empty()) return 0;
 //	sort(nums.begin(), nums.end());
@@ -24,7 +24,7 @@
 //	return res;
 //}
 //
-////Way2£º DP+ list À´×ö
+////Way2ï¼š DP+ list æ¥åš
 //
 //
 //int maximumGap(vector<int>& nums) {

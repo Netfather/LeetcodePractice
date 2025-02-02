@@ -9,7 +9,7 @@
 #include <math.h>
 using namespace std;
 
-//TÖĞ¿ÉÄÜ´æÔÚÖØ¸´ÔªËØ
+//Tä¸­å¯èƒ½å­˜åœ¨é‡å¤å…ƒç´ 
 string minWindow(string s, string t) {
 	int m = s.length();
 	int n = t.length();
@@ -23,7 +23,7 @@ string minWindow(string s, string t) {
 	string res = s;
 	vector<int> Standard(128,0);
 
-	//³õÊ¼»¯±ê×¼±í
+	//åˆå§‹åŒ–æ ‡å‡†è¡¨
 	for (auto k : t) ++Standard[k];
 	int start = 0;
 	int end = 0;
@@ -43,7 +43,7 @@ string minWindow(string s, string t) {
 		if (flag == 0)	continue;
 		else if (flag == 1) break;
 	}
-	//³õÊ¼»¯s±í
+	//åˆå§‹åŒ–sè¡¨
 	while (end < m)
 	{
 		if (--Standard[s[end++]] >= 0) n--;

@@ -26,7 +26,7 @@ int out(string s, int flag)
 {
 	int count = 0;
 	int length = s.length();
-	//Ê×ÏÈÅĞ¶ÏÇ°ÃæÓĞÃ»ÓĞ0,ÓĞ0¾ÍÉ¾³ı
+	//é¦–å…ˆåˆ¤æ–­å‰é¢æœ‰æ²¡æœ‰0,æœ‰0å°±åˆ é™¤
 	if (s == "0") return 0;
 	if (s.at(0) == '0')
 	{
@@ -41,8 +41,8 @@ int out(string s, int flag)
 			s = s.erase(0, count);
 
 	}
-	//ÅĞ¶ÏÊä³öÊÇ·ñoverflow
-	length = s.length(); //¸üĞÂlength
+	//åˆ¤æ–­è¾“å‡ºæ˜¯å¦overflow
+	length = s.length(); //æ›´æ–°length
 	if (length < 10 && flag == 0) return stoi(s);
 	else if (length < 10 && flag == 1) return (0 - stoi(s));
 	else if (length > 10) return 0;
@@ -71,7 +71,7 @@ int reverse(int x) {
 	string s;
 	string res;
 	stringstream sstr;
-	int flag = 0; // 0 ±íÊ¾ÊäÈëÎªÕıÊı 1 ±íÊ¾ÊäÈëÎª¸ºÊı
+	int flag = 0; // 0 è¡¨ç¤ºè¾“å…¥ä¸ºæ­£æ•° 1 è¡¨ç¤ºè¾“å…¥ä¸ºè´Ÿæ•°
 	if (x >= 0) flag = 0;
 	else
 	{

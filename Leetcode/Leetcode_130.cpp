@@ -31,14 +31,14 @@
 //	int m = board[0].size();
 //	int n = board.size();
 //	if (m <= 2 || n <= 2) return;
-//	vector<vector<bool>> res(n,vector<bool>(m,false));   //½á¹û¾ØÕó£¬×îºóÍê³Éºó¸ù¾İ½á¹û¾ØÕó£¬·²ÊÇtrueµÄÈ«²¿¸Ä³ÉX¼´¿É
-//	//³õÊ¼»¯res
+//	vector<vector<bool>> res(n,vector<bool>(m,false));   //ç»“æœçŸ©é˜µï¼Œæœ€åå®Œæˆåæ ¹æ®ç»“æœçŸ©é˜µï¼Œå‡¡æ˜¯trueçš„å…¨éƒ¨æ”¹æˆXå³å¯
+//	//åˆå§‹åŒ–res
 //	for (int i = 0; i < n; i++) 
 //		for (int j = 0; j < m; j++) if (board[i][j] == 'O') res[i][j] = true;
-//	//±éÀúµü´úres
+//	//éå†è¿­ä»£res
 //	for (int i = 0; i < n;i++)
 //		for (int j = 0; j < m; j++) if (i == 0 || i == n - 1 || j == 0 || j == m - 1) if (board[i][j] == 'O' && res[i][j] == true) CurFind(board, res, i, j, m, n);
-//	//¸³Öµ½á¹û
+//	//èµ‹å€¼ç»“æœ
 //	for (int i = 0; i < n; i++)
 //		for (int j = 0; j < m; j++)	if (res[i][j] == true) board[i][j] = 'X';
 //	return;

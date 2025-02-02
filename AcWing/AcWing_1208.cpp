@@ -1,4 +1,4 @@
-////Ë¼Â·£º ÆÓËØµÄdp·¨
+////æ€è·¯ï¼š æœ´ç´ çš„dpæ³•
 //
 //#include <iostream>
 //#include <algorithm>
@@ -51,7 +51,7 @@
 //	if (len == 0) return 0;
 //
 //	vector<int> memo(len, INT_MIN);
-//	//±ß½çÌõ¼ş
+//	//è¾¹ç•Œæ¡ä»¶
 //	if (a[0] == b[0]) memo[0] = 0;
 //	if (a[0] != b[0]) memo[0] = 1;
 //	int res = Solution(a, b, memo);

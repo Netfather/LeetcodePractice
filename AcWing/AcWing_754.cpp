@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -27,7 +27,7 @@ int main()
 
 		for (int i = 1; i <= n; i++)
 		{
-			if (i == 1) //Ö»´òÓ¡ÕıÖĞ¼äÒ»ĞĞµÄ
+			if (i == 1) //åªæ‰“å°æ­£ä¸­é—´ä¸€è¡Œçš„
 			{
 				int x = 0, y = 0;
 				Table[x][y] = i;

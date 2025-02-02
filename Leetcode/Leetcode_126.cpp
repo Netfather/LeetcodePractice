@@ -12,15 +12,15 @@
 //using namespace std;
 //
 //
-////¹¹½¨´ÊÊ÷½á¹¹
+////æ„å»ºè¯æ ‘ç»“æ„
 //struct WordTree
 //{
 //	string content;
 //	vector<WordTree*> index;
 //	WordTree(string input) :content(input),index() {}
 //};
-////ÅĞ¶ÏÁ½¸ö×Ö·û´®µÄÏà¶Ô¾àÀëÊÇ·ñÎª1
-////Îª1Ôò·µ»Øture ·ñÔò·µ»Øfalse
+////åˆ¤æ–­ä¸¤ä¸ªå­—ç¬¦ä¸²çš„ç›¸å¯¹è·ç¦»æ˜¯å¦ä¸º1
+////ä¸º1åˆ™è¿”å›ture å¦åˆ™è¿”å›false
 //bool check(string a, string b)
 //{
 //	int cnt = 0;
@@ -29,32 +29,32 @@
 //	return false;
 //}
 //
-////¹¹½¨Ê÷½á¹¹·½±ã²éÕÒ
-////ÊäÈë£º ¿ªÊ¼´Ê£¬×Öµä±í£¬ÖÕ½á´ÊÔÚ×ÖµäÖĞµÄÏÂ±ê
-////·µ»Ø£º Ê÷½á¹¹¸ù½ÚµãÖ¸ÕëºÍÊ÷µÄ¸ß¶È
+////æ„å»ºæ ‘ç»“æ„æ–¹ä¾¿æŸ¥æ‰¾
+////è¾“å…¥ï¼š å¼€å§‹è¯ï¼Œå­—å…¸è¡¨ï¼Œç»ˆç»“è¯åœ¨å­—å…¸ä¸­çš„ä¸‹æ ‡
+////è¿”å›ï¼š æ ‘ç»“æ„æ ¹èŠ‚ç‚¹æŒ‡é’ˆå’Œæ ‘çš„é«˜åº¦
 //WordTree* Construct(string beginWord, vector<string>& wordList, string endWord)
 //{
 //	WordTree* root = new WordTree(beginWord);
-//	unordered_set<string> words(wordList.begin(), wordList.end()); //½«Ô­Êı¾İ×ªÒÆµ½wordsµÄÊı×éÖĞ£¬¸ÃÊı×é¿ÉÒÔÖ±½ÓÍ¨¹ıÏÂ±êË÷Òı
-//	unordered_map<string, int> dicindex; //×Öµä²éÕÒ string ¶ÔÓ¦±»Ê¹ÓÃÁË¶àÉÙ´Î
+//	unordered_set<string> words(wordList.begin(), wordList.end()); //å°†åŸæ•°æ®è½¬ç§»åˆ°wordsçš„æ•°ç»„ä¸­ï¼Œè¯¥æ•°ç»„å¯ä»¥ç›´æ¥é€šè¿‡ä¸‹æ ‡ç´¢å¼•
+//	unordered_map<string, int> dicindex; //å­—å…¸æŸ¥æ‰¾ string å¯¹åº”è¢«ä½¿ç”¨äº†å¤šå°‘æ¬¡
 //	//vector<int> eraseListIndex;
 //	queue<WordTree*> Que;
 //	int flag = 0;
 //	int cnt = 0;
 //	int upbound = 1;
 //	Que.push(root);
-//	WordTree* temp; //¹¹½¨±éÀúÖ¸Õë
+//	WordTree* temp; //æ„å»ºéå†æŒ‡é’ˆ
 //	while (!Que.empty())
 //	{
 //		++cnt;
 //		auto temp = Que.front();
-//		//¼¼ÇÉµã£¬Ê¹ÓÃµ¥´Ê±éÀú¶ø²»Ê¹ÓÃwordList±éÀúÀ´½ÚÊ¡¿Õ¼ä
+//		//æŠ€å·§ç‚¹ï¼Œä½¿ç”¨å•è¯éå†è€Œä¸ä½¿ç”¨wordListéå†æ¥èŠ‚çœç©ºé—´
 //		for (int l = 0; l < temp->content.size(); l++)
 //		{
 //			for (char c = 'a'; c <= 'z'; c++)
 //			{
 //				if (temp->content.at(l) == c) continue;
-//				char old = temp->content.at(l); //Ôİ´æ
+//				char old = temp->content.at(l); //æš‚å­˜
 //				temp->content.at(l) = c;
 //				if (words.count(temp->content))
 //				{
@@ -74,7 +74,7 @@
 //			{
 //				if (dicindex[*test] > 0)
 //				{
-//					test = words.erase(test); //Èç¹ûÕâ¸ö×Ö·û²»ÊÇÖÕÖ¹×Ö·û£¬ÄÇÃ´¾ÍÉ¾³ı
+//					test = words.erase(test); //å¦‚æœè¿™ä¸ªå­—ç¬¦ä¸æ˜¯ç»ˆæ­¢å­—ç¬¦ï¼Œé‚£ä¹ˆå°±åˆ é™¤
 //				}
 //				else test++;
 //			}
@@ -87,9 +87,9 @@
 //	return root;
 //}
 //
-////´ÓÊ÷½á¹¹ÖĞ²éÕÒÄ¿±êendWord£¬
-////ÊäÈë ¸ù½Úµã£¬endWord£¬µ±Ç°²½³¤i
-////·µ»Ø¶şÎ¬Êı×é res
+////ä»æ ‘ç»“æ„ä¸­æŸ¥æ‰¾ç›®æ ‡endWordï¼Œ
+////è¾“å…¥ æ ¹èŠ‚ç‚¹ï¼ŒendWordï¼Œå½“å‰æ­¥é•¿i
+////è¿”å›äºŒç»´æ•°ç»„ res
 //void helper(WordTree *root, int step, string endWord, vector<vector<string>> &res,vector<string> &tempres)
 //{
 //	tempres.push_back(root->content);

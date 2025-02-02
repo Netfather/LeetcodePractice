@@ -61,8 +61,8 @@ int longestValidParentheses(string s) {
 	int cnt_l = 0;
 	int cnt_r = 0;
 	int length = s.length();
-	int num_l = 0; //ÓÃÓÚÍ³¼Æ ÓÒÀ¨ºÅÓ¦¸ÃÒÆ¶¯¼¸¸ö
-	int begin_cnt_l = 0;//ÓÃÓÚÄÚ²ã¼ÆÊı
+	int num_l = 0; //ç”¨äºç»Ÿè®¡ å³æ‹¬å·åº”è¯¥ç§»åŠ¨å‡ ä¸ª
+	int begin_cnt_l = 0;//ç”¨äºå†…å±‚è®¡æ•°
 	int begin_cnt_r = 0;
 	int max_res = 0;
 	vector<int> res;
@@ -83,7 +83,7 @@ int longestValidParentheses(string s) {
 			while (l < r && s.at(r) == '(') --r;
 		}
 		if (l >= r) return 0;
-		//´ËÊ± lºÍ r ÊÇÕâ¸ö×Ö·û´®ÖĞµÚÒ»¸ö³öÏÖ( ºÍ ×îºóÒ»´Î³öÏÖ£©µÄÎ»ÖÃ
+		//æ­¤æ—¶ lå’Œ r æ˜¯è¿™ä¸ªå­—ç¬¦ä¸²ä¸­ç¬¬ä¸€ä¸ªå‡ºç°( å’Œ æœ€åä¸€æ¬¡å‡ºç°ï¼‰çš„ä½ç½®
 		for (i = l; i <= r; i++)
 		{
 			if (s.at(i) == '(') cnt_l++;
@@ -112,7 +112,7 @@ int longestValidParentheses(string s) {
 		}
 
 
-		//´ËÊ±lºÍrÊÇÇøÓòÀï×î°üº¬µÄ×î³¤µÈ³¤¶ÈÅä×¼ ÆğÊ¼Î»ÖÃ
+		//æ­¤æ—¶lå’Œræ˜¯åŒºåŸŸé‡Œæœ€åŒ…å«çš„æœ€é•¿ç­‰é•¿åº¦é…å‡† èµ·å§‹ä½ç½®
 		return max_res;
 	}
 }

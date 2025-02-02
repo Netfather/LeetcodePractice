@@ -21,14 +21,14 @@
 //};
 //
 //
-////Way1: 使用dfs
+////Way1: 浣跨敤dfs
 //void dfs(TreeNode* root, string &processtring, int &totalsum)
 //{
 //	processtring = processtring + char(root->val + 48);
 //	if (!root->left && !root->right)
 //	{
 //		totalsum += stoi(processtring);
-//		return;   //终止条件
+//		return;   //缁堟鏉′欢
 //	}
 //	if (root->left)
 //	{

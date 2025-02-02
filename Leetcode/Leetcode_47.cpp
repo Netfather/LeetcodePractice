@@ -26,7 +26,7 @@ void Permute(vector<int> &nums, vector<bool> &test_last ,vector<int> &tempres, v
 		for (int k : index)		if (k == i) flag = 1;
 		if (flag == 1) continue;
 
-		if (i>0 && test_last[i-1] == false && nums[i] == nums[i - 1]) continue; //É¾³ıÏàÍ¬µÄ¸ù×ÓÊ÷
+		if (i>0 && test_last[i-1] == false && nums[i] == nums[i - 1]) continue; //åˆ é™¤ç›¸åŒçš„æ ¹å­æ ‘
 
 		index.push_back(i);
 		tempres.push_back(nums[i]);
@@ -44,8 +44,8 @@ vector<vector<int>> permuteUnique(vector<int>& nums) {
 	vector<vector<int>> res;
 	if (nums.empty()) return res;
 	vector<int> tempres;
-	vector<int> index; //ÓÃÓÚ´æ´¢ÒÑ¾­×ß¹ıÂ·¾¶µÄÏÂ±ê
-	vector<bool> test_last(nums.size());//ÓÃÓÚ¼ÇÂ¼ÔªËØÊÇ·ñÎªÉÏÒ»²ã
+	vector<int> index; //ç”¨äºå­˜å‚¨å·²ç»èµ°è¿‡è·¯å¾„çš„ä¸‹æ ‡
+	vector<bool> test_last(nums.size());//ç”¨äºè®°å½•å…ƒç´ æ˜¯å¦ä¸ºä¸Šä¸€å±‚
 	sort(nums.begin(), nums.end());
 	Permute(nums,test_last,tempres, res, 0,index);
 	return res;

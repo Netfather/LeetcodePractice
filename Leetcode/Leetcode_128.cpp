@@ -12,7 +12,7 @@
 //using namespace std;
 //
 //
-////Way1: ÓÃsortÈ¡ÇÉ
+////Way1: ç”¨sortå–å·§
 ////int longestConsecutive(vector<int>& nums) {
 ////	sort(nums.begin(), nums.end());
 ////	int tempres = 1;
@@ -32,12 +32,12 @@
 ////	return max(res, tempres);
 ////}
 //
-////Way2: Ê¹ÓÃ¹şÏ£±í
+////Way2: ä½¿ç”¨å“ˆå¸Œè¡¨
 //int longestConsecutive(vector<int>& nums)
 //{
 //	if (nums.empty()) return 0;
 //	if (nums.size() == 1) return 1;
-//	unordered_set<int> num(nums.begin(), nums.end()); //×ªµ½hashmapÖĞ
+//	unordered_set<int> num(nums.begin(), nums.end()); //è½¬åˆ°hashmapä¸­
 //	int res = 0;
 //	int tempres = 1;
 //	while (!num.empty())

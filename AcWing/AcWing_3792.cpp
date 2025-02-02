@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,21 +18,21 @@
 #include <climits>
 using namespace std;
 
-// ¿ìËÙÇó³ö 2µ½1000·¶Î§ÄÚµÄËùÓĞÖÊÊı  È»ºó ±éÀúÕâĞ©ÖÊÊı ¼´¿É
+// å¿«é€Ÿæ±‚å‡º 2åˆ°1000èŒƒå›´å†…çš„æ‰€æœ‰è´¨æ•°  ç„¶å éå†è¿™äº›è´¨æ•° å³å¯
 const int N = 1010;
-vector<int> ZhiShu; //¼ÇÂ¼ÖÊÊı
-int Table[N]; //¼ÇÂ¼Ä³¸öÊı×ÖÊÇ·ñÎªÖÊÊı
+vector<int> ZhiShu; //è®°å½•è´¨æ•°
+int Table[N]; //è®°å½•æŸä¸ªæ•°å­—æ˜¯å¦ä¸ºè´¨æ•°
 
 
 int main()
 {
-	//ÔÚ½øÈë²âÊÔÖ®Ç° ÏÈÔ¤´¦ÀíÒ»ÏÂ  ´Ó2µ½1000µÄËùÓĞÖÊÊı
+	//åœ¨è¿›å…¥æµ‹è¯•ä¹‹å‰ å…ˆé¢„å¤„ç†ä¸€ä¸‹  ä»2åˆ°1000çš„æ‰€æœ‰è´¨æ•°
 	for(int i = 2; i <= 1000; i++)
 	{
 		bool is_ZhiShu = true;
-		for (int j = 2; j <= int(sqrt(i)); j++) //ÊÔ³ı·¨
+		for (int j = 2; j <= int(sqrt(i)); j++) //è¯•é™¤æ³•
 		{
-			if (i % j == 0)  //Èç¹ûÕû³ıÁË ËµÃ÷i²»ÊÇÖÊÊı
+			if (i % j == 0)  //å¦‚æœæ•´é™¤äº† è¯´æ˜iä¸æ˜¯è´¨æ•°
 			{
 				is_ZhiShu = false;
 				break;
@@ -41,7 +41,7 @@ int main()
 		if (is_ZhiShu)
 		{
 			ZhiShu.push_back(i);
-			Table[i] = 1; //¼ÓÈëÖÊÊıÊı×Ö Í¬Ê±Table¼ÇÂ¼
+			Table[i] = 1; //åŠ å…¥è´¨æ•°æ•°å­— åŒæ—¶Tableè®°å½•
 		}
 	}
 
@@ -52,11 +52,11 @@ int main()
 		int cnt = 0;
 		int n, k;
 		cin >> n >> k;
-		//±éÀúËùÓĞµÄ¿ÉÄÜ
+		//éå†æ‰€æœ‰çš„å¯èƒ½
 		for (int i = 0; i < ZhiShu.size() - 1; i++)
 		{
-			if (ZhiShu[i] > n) break; //µ± ¶ÁÈëµÄÖÊÊı±ÈÏŞÖÆ´óÊ± Ö±½Óbreak
-			if (ZhiShu[i] + ZhiShu[i + 1] + 1 <= n && Table[ZhiShu[i] + ZhiShu[i + 1] + 1] == 1  ) cnt++; //¸ù¾İÌâÒâĞ´¶¨Ìõ¼ş
+			if (ZhiShu[i] > n) break; //å½“ è¯»å…¥çš„è´¨æ•°æ¯”é™åˆ¶å¤§æ—¶ ç›´æ¥break
+			if (ZhiShu[i] + ZhiShu[i + 1] + 1 <= n && Table[ZhiShu[i] + ZhiShu[i + 1] + 1] == 1  ) cnt++; //æ ¹æ®é¢˜æ„å†™å®šæ¡ä»¶
 		}
 		if (cnt >= k) cout << "YES" << endl;
 		else cout << "NO" << endl;

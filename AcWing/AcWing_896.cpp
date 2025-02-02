@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,12 +18,12 @@
 #include <climits>
 using namespace std;
 
-//�µ�����������еķ����Ͳ���dp������ ����ά��һ��ջ
-//���ջ�洢�������µĸ�ʽ  �������� ����������еĳ���   ��Ӧ��ֵ Ϊ ��ǰ�������������е����һ��Ԫ�ء�
-// ���ִ洢��ʽ�����������ڶ���һ���µ�����֮��������ֱȵ�ǰջ��Ԫ�ش� ˵�����������еĳ��ȿ��Լ�1
-// ����ȵ�ǰջ��Ԫ��С  ���Ǿ��ҵ��������滻����Ԫ�ص��½磬Ȼ���滻���ɡ�
+//新的最长上升子序列的方法就不是dp问题了 而是维护一个栈
+//这个栈存储的是如下的格式  索引代表 最长上升子序列的长度   对应的值 为 当前长度上升子序列的最后一个元素。
+// 这种存储格式可以让我们在读入一个新的数字之后，如果数字比当前栈顶元素大 说明上升子序列的长度可以加1
+// 如果比当前栈顶元素小  我们就找到他可以替换掉的元素的下界，然后替换即可。
 
-//Ϊ�˿��ټ����½�  ����ʹ�ö��� ����ֱ��ʹ��vector�����洢
+//为了快速计算下界  避免使用二分 这里直接使用vector容器存储
 int main()
 {
 	int n;
@@ -31,17 +31,17 @@ int main()
 	vector<int> w(n, 0);
 	for (int i = 0; i < n; i++) cin >> w[i];
 
-	//ά��һ����ջ
+	//维护一个堆栈
 	vector<int> stk;
-	// ����ÿ��Ԫ��
-	stk.push_back(w[0]); //ѹ�����ʼ��״̬ ���㴦��
+	// 遍历每个元素
+	stk.push_back(w[0]); //压入最初始的状态 方便处理
 	for (int i = 1; i < n; i++)
 	{
-		//�����ǰ���ֱ�ĩβ���ִ� �Ǻܺ�ϲ+1
+		//如果当前数字比末尾数字大 那很好喜+1
 		if (w[i] > stk.back())
 			stk.push_back(w[i]);
 		else
-			*lower_bound(stk.begin(), stk.end(), w[i]) = w[i]; //�����ĩβ����С����� ���Ǿ��Ҵ�ǰά����ջ��ӦԪ�ص���ȷλ�� ���޸�ֵ��
+			*lower_bound(stk.begin(), stk.end(), w[i]) = w[i]; //如果比末尾数字小或等于 我们就找打当前维护堆栈对应元素的正确位置 并修改值。
 	}
 	cout << stk.size() << endl;
 	return 0;

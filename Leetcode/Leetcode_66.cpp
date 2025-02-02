@@ -15,7 +15,7 @@ vector<int> plusOne(vector<int>& digits) {
 
 	int temp = 0;
 
-	int flag_int = 0; //进位标志
+	int flag_int = 0; //杩涗綅鏍囧織
 	int i = 0;
 	for (i = digits.size() - 1; i >= 0; i--)
 	{

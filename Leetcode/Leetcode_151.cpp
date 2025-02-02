@@ -15,7 +15,7 @@
 //using namespace std;
 
 
-//Way1 使用stack直接弹出
+//Way1 浣跨敤stack鐩存帴寮瑰嚭
 //string reverseWords(string s) {
 //	if (s.empty()) return s;
 //	stack<string> tempres;

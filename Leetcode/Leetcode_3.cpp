@@ -8,7 +8,7 @@
 #include <list>
 using namespace std;
 
-//ÅĞ¶ÏArrayÊı×éÖĞÊÇ·ñ´æÔÚºÍÄ¿±êÊıÒ»ÑùµÄ¶«Î÷£¬Èç¹ûÓĞÒ»ÑùµÄ·µ»ØÕâ¸öÊı×ÖÔÚÊı×éÖĞµÄÖ¸Òı Èç¹ûÈ«¶¼²»Ò»Ñù·µ»Ø0
+//åˆ¤æ–­Arrayæ•°ç»„ä¸­æ˜¯å¦å­˜åœ¨å’Œç›®æ ‡æ•°ä¸€æ ·çš„ä¸œè¥¿ï¼Œå¦‚æœæœ‰ä¸€æ ·çš„è¿”å›è¿™ä¸ªæ•°å­—åœ¨æ•°ç»„ä¸­çš„æŒ‡å¼• å¦‚æœå…¨éƒ½ä¸ä¸€æ ·è¿”å›0
 int CheckRepeat(int *Array, int length, int target)
 {
 	int j = 0;
@@ -30,27 +30,27 @@ int lengthOfLongestSubstring(string s) {
 	int result = 0;
 	int lenbup1 = 1;
 	int lenbup2 = 0;
-	int flag = 0; //±êÖ¾Î»£¬¼«ÆäÖØÒª£¬Ã¿´ÎÑ­»·±ØĞëÒª½øĞĞÎ¬»¤£¬0±íÊ¾Ä¿Ç°ÕıÔÚ¶Ôbup1¸³Öµ£¬1±íÊ¾ÕıÔÚ¶Ôbup2¸³Öµ
-	string::const_iterator it = s.begin();  //±ØĞëÒªÈÏÕæÎ¬»¤
+	int flag = 0; //æ ‡å¿—ä½ï¼Œæå…¶é‡è¦ï¼Œæ¯æ¬¡å¾ªç¯å¿…é¡»è¦è¿›è¡Œç»´æŠ¤ï¼Œ0è¡¨ç¤ºç›®å‰æ­£åœ¨å¯¹bup1èµ‹å€¼ï¼Œ1è¡¨ç¤ºæ­£åœ¨å¯¹bup2èµ‹å€¼
+	string::const_iterator it = s.begin();  //å¿…é¡»è¦è®¤çœŸç»´æŠ¤
 	int length = s.length();
 	int *bup1 = new int[length];
 	int *bup2 = new int[length];
-	//³õÊ¼»¯²¢Î¬»¤bup1
+	//åˆå§‹åŒ–å¹¶ç»´æŠ¤bup1
 	bup1[0] = *it;
-	//³õÊ¼»¯Íê³ÉºóitµİÔö1
-	if (it == s.end()) return 1; //¿¼ÂÇÖ»ÓĞÒ»¸öÊı×ÖµÄÊı×éÇé¿ö
+	//åˆå§‹åŒ–å®Œæˆåité€’å¢1
+	if (it == s.end()) return 1; //è€ƒè™‘åªæœ‰ä¸€ä¸ªæ•°å­—çš„æ•°ç»„æƒ…å†µ
 	for (int i = 0; i < length-1; i++)
 	{
 		it++;
 		int Index1 = CheckRepeat(bup1, lenbup1, *it);
 		int Index2 = CheckRepeat(bup2, lenbup2, *it);
-		//Ê×ÏÈÎ¬»¤bup1Êı×é
-		//Ò»¶¨Òª»ØËİÑ°ÕÒ
+		//é¦–å…ˆç»´æŠ¤bup1æ•°ç»„
+		//ä¸€å®šè¦å›æº¯å¯»æ‰¾
 		if ( Index1 == -1 && (flag == 0))
 		{
-			flag = 0; //flag Î¬»¤ Î¬³Ö¶ÔÏÖÔÚÊı×éµÄ¸³Öµ
-			bup1[lenbup1] = *it; //¸³Öµ
-			lenbup1++; //³¤¶ÈÎ¬»¤
+			flag = 0; //flag ç»´æŠ¤ ç»´æŒå¯¹ç°åœ¨æ•°ç»„çš„èµ‹å€¼
+			bup1[lenbup1] = *it; //èµ‹å€¼
+			lenbup1++; //é•¿åº¦ç»´æŠ¤
 		}
 	    else if (Index1 != -1 && (flag == 0))
 		{
@@ -58,8 +58,8 @@ int lengthOfLongestSubstring(string s) {
 			if (lenbup1 < lenbup2)
 			{
 				for (int i = 0; i < lenbup1; i++) bup1[i] = 0;
-				lenbup1 = 1; //³¤¶ÈÎ¬»¤  
-				flag = 0; //flagÎ¬»¤
+				lenbup1 = 1; //é•¿åº¦ç»´æŠ¤  
+				flag = 0; //flagç»´æŠ¤
 				for (int i = 0; i < Index1; i++)
 				{
 					it--;
@@ -70,8 +70,8 @@ int lengthOfLongestSubstring(string s) {
 			else if (lenbup1 >= lenbup2)
 			{
 				for (int i = 0; i < lenbup2; i++) bup2[i] = 0;
-				lenbup2 = 1; //³¤¶ÈÎ¬»¤
-				flag = 1; //flagÎ¬»¤
+				lenbup2 = 1; //é•¿åº¦ç»´æŠ¤
+				flag = 1; //flagç»´æŠ¤
 				for (int i = 0; i < Index1; i++)
 				{
 					it--;
@@ -82,19 +82,19 @@ int lengthOfLongestSubstring(string s) {
 		}
 		else if ((Index2 == -1) && (flag == 1))
 		{
-			flag = 1; //flag Î¬»¤ Î¬³Ö¶ÔÏÖÔÚÊı×éµÄ¸³Öµ
-			bup2[lenbup2] = *it; //¸³Öµ
-			lenbup2++; //³¤¶ÈÎ¬»¤
+			flag = 1; //flag ç»´æŠ¤ ç»´æŒå¯¹ç°åœ¨æ•°ç»„çš„èµ‹å€¼
+			bup2[lenbup2] = *it; //èµ‹å€¼
+			lenbup2++; //é•¿åº¦ç»´æŠ¤
 		}
-		//Ò»µ©½øÈëÕâÖÖÇé¿ö ĞèÒª×ª»»
+		//ä¸€æ—¦è¿›å…¥è¿™ç§æƒ…å†µ éœ€è¦è½¬æ¢
 		else if ((Index2 != -1) && (flag == 1))
 		{
-			//°Ñbup1Êı×éÉ¾³ıÖØĞÂ¹¹Ôì
+			//æŠŠbup1æ•°ç»„åˆ é™¤é‡æ–°æ„é€ 
 			if (lenbup1 < lenbup2)
 			{
 				for (int i = 0; i < lenbup1; i++) bup1[i] = 0;
-				lenbup1 = 1; //³¤¶ÈÎ¬»¤  
-				flag = 0; //flagÎ¬»¤
+				lenbup1 = 1; //é•¿åº¦ç»´æŠ¤  
+				flag = 0; //flagç»´æŠ¤
 				for (int i = 0; i < Index2; i++)
 				{
 					it--;
@@ -105,8 +105,8 @@ int lengthOfLongestSubstring(string s) {
 			else if (lenbup1 >= lenbup2)
 			{
 				for (int i = 0; i < lenbup2; i++) bup2[i] = 0;
-				lenbup2 = 1; //³¤¶ÈÎ¬»¤
-				flag = 1; //flagÎ¬»¤
+				lenbup2 = 1; //é•¿åº¦ç»´æŠ¤
+				flag = 1; //flagç»´æŠ¤
 				for (int i = 0; i < Index2; i++)
 				{
 					it--;

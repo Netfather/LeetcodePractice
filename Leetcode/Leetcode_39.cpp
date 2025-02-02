@@ -10,7 +10,7 @@
 #include <math.h>
 using namespace std;
 
-// ºòÑ¡ÕßÁĞ±í£¬Ä¿±ê£¬ºò²¹index, µ±Ç°½â
+// å€™é€‰è€…åˆ—è¡¨ï¼Œç›®æ ‡ï¼Œå€™è¡¥index, å½“å‰è§£
 void rec(vector<int>& candidates, int target, int index_can, vector<int>& sol_pre, vector<vector<int>> &res)
 {
 	if (target == 0)

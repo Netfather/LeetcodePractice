@@ -19,8 +19,8 @@ struct ListNode {
 ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
 {
 ListNode* start;
-ListNode* temp; //ÓÃÓÚ´æ´¢µ±Ç°´ýÁ¬½ÓÎ»ÖÃ
-ListNode* follow; //ÓÃÓÚ¸úËæÒÑ¾­¹¹½¨Íê³ÉµÄ²¿·Ö
+ListNode* temp; //ç”¨äºŽå­˜å‚¨å½“å‰å¾…è¿žæŽ¥ä½ç½®
+ListNode* follow; //ç”¨äºŽè·Ÿéšå·²ç»æž„å»ºå®Œæˆçš„éƒ¨åˆ†
 if (l1 == NULL) return l2;
 else if (l2 == NULL) return l1;
 else if (l1->next == NULL && l2->next == NULL)

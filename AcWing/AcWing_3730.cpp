@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,24 +18,24 @@
 #include <climits>
 using namespace std;
 
-//ÌâÒâµÄÒâË¼¼ò»¯ÒÔÏÂ¾ÍÊÇ pµÄÃ¿Ò»¸öÔªËØ´ÓÍ¬Î»ÖÃµÄ abcÖÐÑ¡£¬ÇÒ
-//±£Ö¤×îºóµÄ Âú×ã p1 != p2, p2 != p3, p3 != p4  Ò»Ö±µ½ pn!= p1
-// ¹Û²ìÕâ¸öÎÒÃÇ¿ÉÒÔ·¢ÏÖ ÆðÊ¼ p1= p3 = p5 ÊÇÃ»ÓÐ¹ØÏµµÄ ²¢²»Ó°Ïì×îÖÕµÄ½á¹û
+//é¢˜æ„çš„æ„æ€ç®€åŒ–ä»¥ä¸‹å°±æ˜¯ pçš„æ¯ä¸€ä¸ªå…ƒç´ ä»ŽåŒä½ç½®çš„ abcä¸­é€‰ï¼Œä¸”
+//ä¿è¯æœ€åŽçš„ æ»¡è¶³ p1 != p2, p2 != p3, p3 != p4  ä¸€ç›´åˆ° pn!= p1
+// è§‚å¯Ÿè¿™ä¸ªæˆ‘ä»¬å¯ä»¥å‘çŽ° èµ·å§‹ p1= p3 = p5 æ˜¯æ²¡æœ‰å…³ç³»çš„ å¹¶ä¸å½±å“æœ€ç»ˆçš„ç»“æžœ
 
-// ÒòÎªÎÒÃÇ¿ÉÒÔ·¢ÏÖ  Ã¿¸ôÒ»¸öÊý  ¶þÕß¾ÍÃ»ÓÐÈÎºÎÏÞÖÆÁË
-// Òò´ËÎÒÃÇÖ»ÐèÒª°Ñ ¸ô¿ªµÄÊý×ÖÖ±½Ó¸³Öµ a b c ÖÐµÄÈÎÒâÒ»¸ö È»ºóÔÙÍùÖÐ¼äÑ¡ÔñÒ»¸ö ²»µÈÓÚÇ°ºóµÄÒ»¸öÊý×Ö¼´¿É
-// Íê³ÉÕâ²½Ö®ºó ¶ÔÅ¼Êý¸ö  ¾ÍÊ£ÏÂ×îºóÒ»¸öÊý×ÖÃ»ÌîÐ´ ¶ÔÆæÊý¸ö ¾ÍÊ£ÏÂ×îºóÁ½¸öÊý×ÖÃ»ÌîÐ´
-// ×îºó±©Á¦Ã¶¾ÙÒÔÏÂ  ¾Í¿ÉÒÔÍê³É
+// å› ä¸ºæˆ‘ä»¬å¯ä»¥å‘çŽ°  æ¯éš”ä¸€ä¸ªæ•°  äºŒè€…å°±æ²¡æœ‰ä»»ä½•é™åˆ¶äº†
+// å› æ­¤æˆ‘ä»¬åªéœ€è¦æŠŠ éš”å¼€çš„æ•°å­—ç›´æŽ¥èµ‹å€¼ a b c ä¸­çš„ä»»æ„ä¸€ä¸ª ç„¶åŽå†å¾€ä¸­é—´é€‰æ‹©ä¸€ä¸ª ä¸ç­‰äºŽå‰åŽçš„ä¸€ä¸ªæ•°å­—å³å¯
+// å®Œæˆè¿™æ­¥ä¹‹åŽ å¯¹å¶æ•°ä¸ª  å°±å‰©ä¸‹æœ€åŽä¸€ä¸ªæ•°å­—æ²¡å¡«å†™ å¯¹å¥‡æ•°ä¸ª å°±å‰©ä¸‹æœ€åŽä¸¤ä¸ªæ•°å­—æ²¡å¡«å†™
+// æœ€åŽæš´åŠ›æžšä¸¾ä»¥ä¸‹  å°±å¯ä»¥å®Œæˆ
 
 
-// Òò´Ë¿¼ÂÇÕâÑù¹¹Ôì ·ÖÆæÅ¼
-// ÈôÎªÅ¼Êý Ôò  p1 = a1  p3 = a3  pn-1 = an-1
-// È»ºó¶ÔÓÚÖÐ¼äµÄ p2 p4 µÈ  Èç¹ûa1 != a2 ÇÒ a2 != a3 ¾ÍÌîa2
+// å› æ­¤è€ƒè™‘è¿™æ ·æž„é€  åˆ†å¥‡å¶
+// è‹¥ä¸ºå¶æ•° åˆ™  p1 = a1  p3 = a3  pn-1 = an-1
+// ç„¶åŽå¯¹äºŽä¸­é—´çš„ p2 p4 ç­‰  å¦‚æžœa1 != a2 ä¸” a2 != a3 å°±å¡«a2
 //
 
 const int N = 110;
 int a[N], b[N], c[N],p[N];
-int tmp1[4], tmp2[4]; //ÓÃÓÚ´æ·Å×îºóÎ²°ÍµÄ±©Á¦Ã¶¾Ù
+int tmp1[4], tmp2[4]; //ç”¨äºŽå­˜æ”¾æœ€åŽå°¾å·´çš„æš´åŠ›æžšä¸¾
 
 int main()
 {
@@ -50,7 +50,7 @@ int main()
 		for (int i = 1; i <= n; i++) cin >> a[i];
 		for (int i = 1; i <= n; i++) cin >> b[i];
 		for (int i = 1; i <= n; i++) cin >> c[i];
-		//ÏÈ°Ñ Ç°n¸öÅ¼Êý²¿·ÖÌîÐ´ºÃ ÀýÈç ¶Ôn=5 ¾ÍÏÈ°Ñ n= 4µÄËùÓÐÌîÐ´ºÃ
+		//å…ˆæŠŠ å‰nä¸ªå¶æ•°éƒ¨åˆ†å¡«å†™å¥½ ä¾‹å¦‚ å¯¹n=5 å°±å…ˆæŠŠ n= 4çš„æ‰€æœ‰å¡«å†™å¥½
 		if (n % 2 == 1)  up_bound--;
 		for (int i = 1; i <= up_bound; i =i + 2) p[i] = a[i];
 		for (int i = 2; i < up_bound ; i = i + 2)
@@ -60,18 +60,18 @@ int main()
 			else if (c[i] != p[i - 1] && c[i] != p[i + 1]) p[i] = c[i];
 		}
 
-		// µ½ÕâÀï ¾ÍÊ£ÏÂ nÎªÅ¼Êý ¾ÍÊ£×îºóÒ»¸öÊý×ÖÃ»ÌîÐ´   nÎªÆæÊý ¾ÍÊ£ÏÂ×îºóÁ½¸öÊý×ÖÃ»ÌîÐ´
-		if (up_bound != n) //ËµÃ÷»¹ÓÐ×îºóÁ½¸öÊý×ÖÒªÌî
+		// åˆ°è¿™é‡Œ å°±å‰©ä¸‹ nä¸ºå¶æ•° å°±å‰©æœ€åŽä¸€ä¸ªæ•°å­—æ²¡å¡«å†™   nä¸ºå¥‡æ•° å°±å‰©ä¸‹æœ€åŽä¸¤ä¸ªæ•°å­—æ²¡å¡«å†™
+		if (up_bound != n) //è¯´æ˜Žè¿˜æœ‰æœ€åŽä¸¤ä¸ªæ•°å­—è¦å¡«
 		{
 			tmp1[1] = a[up_bound], tmp1[2] = b[up_bound], tmp1[3] = c[up_bound];
 			tmp2[1] = a[n], tmp2[2] = b[n], tmp2[3] = c[n];
-			//±©Á¦Ã¶¾ÙÒÔÏÂËùÓÐ¿ÉÄÜ
+			//æš´åŠ›æžšä¸¾ä»¥ä¸‹æ‰€æœ‰å¯èƒ½
 			bool sucess = false;
 			for (int i = 1; i <= 3; i++)
 			{
 				for (int j = 1; j <= 3; j++)
 				{
-					// ÔÚÕâÀï  µ¹ÊýµÚ¶þ¸öÊý×ÖÌîµÄÊÇ tmp1[i] µ¹ÊýµÚÒ»¸öÊý×ÖÌîÐ´µÄÊÇtmp2[j]
+					// åœ¨è¿™é‡Œ  å€’æ•°ç¬¬äºŒä¸ªæ•°å­—å¡«çš„æ˜¯ tmp1[i] å€’æ•°ç¬¬ä¸€ä¸ªæ•°å­—å¡«å†™çš„æ˜¯tmp2[j]
 					if (tmp1[i] != p[up_bound - 1] && tmp1[i] != tmp2[j] && tmp2[j] != p[1])
 					{
 						p[up_bound] = tmp1[i];
@@ -83,12 +83,12 @@ int main()
 				if (sucess) break;
 			}
 		}
-		else //·ñÔò ÎÒÃÇÖ»ÐèÒªÌîÐ´×îºóÒ»¸öÊý
+		else //å¦åˆ™ æˆ‘ä»¬åªéœ€è¦å¡«å†™æœ€åŽä¸€ä¸ªæ•°
 		{
 			tmp1[1] = a[n], tmp1[2] = b[n], tmp1[3] = c[n];
 			for (int i = 1; i <= 3; i++)
 			{
-				//ÔÚÕâÀï ×îºóÒ»¸öÊý×ÖÌîÐ´µÄÊÇ tmp1[i]
+				//åœ¨è¿™é‡Œ æœ€åŽä¸€ä¸ªæ•°å­—å¡«å†™çš„æ˜¯ tmp1[i]
 				if (tmp1[i] != p[up_bound - 1] && tmp1[i] != p[1])
 				{
 					p[n] = tmp1[i];
@@ -96,7 +96,7 @@ int main()
 				}
 			}
 		}
-		//Êä³ö½á¹û
+		//è¾“å‡ºç»“æžœ
 		for (int i = 1; i <= n; i++) cout << p[i] << " ";
 		cout << endl;
 	}

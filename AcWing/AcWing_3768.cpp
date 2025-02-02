@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -27,18 +27,18 @@ int main()
 	string a;
 	cin >> a;
 
-	int cnt_x = 0;// ¼ÇÂ¼ÓĞ¶àÉÙ¸öÁ¬ĞøµÄx
+	int cnt_x = 0;// è®°å½•æœ‰å¤šå°‘ä¸ªè¿ç»­çš„x
 	int res = 0;
 	for (int i = 0; i < n; i++)
 	{
 		if (a[i] != 'x')
 		{
 			if (cnt_x >= 3) res += cnt_x - 2;
-			cnt_x = 0; //´¦ÀíÍê³É  ¼ÇÂ¼Çå¿Õ
+			cnt_x = 0; //å¤„ç†å®Œæˆ  è®°å½•æ¸…ç©º
 		}
 		else cnt_x++;
 	}
-	//´¦ÀíÒ»ÏÂÎ²°Í
+	//å¤„ç†ä¸€ä¸‹å°¾å·´
 	if (cnt_x >= 3) res += cnt_x - 2;
 	cout << res << endl;
 	return 0;

@@ -10,13 +10,13 @@
 #include <math.h>
 using namespace std;
 
-//Ê×ÏÈ¶¨Î»¿ÉÒÔĞîË®µÄÇø¼ä
+//é¦–å…ˆå®šä½å¯ä»¥è“„æ°´çš„åŒºé—´
 int trap(vector<int>& height) {
 	if (height.size() <= 2) return 0;
 	vector<int>::iterator ite = height.begin();
-	height.insert(ite, 0); //Ê×ÔªËØ²åÈë0
+	height.insert(ite, 0); //é¦–å…ƒç´ æ’å…¥0
 	ite = height.end();
-	height.insert(ite, 0); //Î²ÔªËØ²åÈë0
+	height.insert(ite, 0); //å°¾å…ƒç´ æ’å…¥0
 
 	int res = 0;
 	int i = 1;

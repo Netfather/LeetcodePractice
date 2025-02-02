@@ -10,7 +10,7 @@
 #include <math.h>
 using namespace std;
 
-bool check(vector<string> &tempres,int k,int step, int n) //k±íÊ¾µ±Ç°ĞĞ·ÅÈë»ÊºóµÄÊÇkÁĞ
+bool check(vector<string> &tempres,int k,int step, int n) //kè¡¨ç¤ºå½“å‰è¡Œæ”¾å…¥çš‡åçš„æ˜¯kåˆ—
 {
 	int i = step;
 	int j = k;
@@ -34,7 +34,7 @@ void DFS(vector<vector<string>> &res, vector<string> &tempres, int step, int n)
 
 	for (int i = 0; i < n; i++)
 	{
-		//¹¹Ôìtempres
+		//æ„é€ tempres
 		string tmp(n,'.');
 		tmp.at(i) = 'Q';
 		tempres.push_back(tmp);

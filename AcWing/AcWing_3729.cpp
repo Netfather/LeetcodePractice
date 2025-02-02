@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -19,8 +19,8 @@
 using namespace std;
 
 
-// ����������ϲ� ����ά��һ������ l r ��������ʾ��ǰ  ��l��r��Ԫ�ض���Ҫ��Ϊ1
-// ʲôʱ����Ҫ�����л����� �����µ������޷�����������νӵ�ʱ��  ����Ҫ����Ϊ�µ����� ���Ѷ�Ӧ���丳ֵΪ1
+// 类似于区间合并 我们维护一个区间 l r 这个区间表示当前  从l到r的元素都需要置为1
+// 什么时候需要区间切换？》 就是新的区间无法和这个区间衔接的时候  就需要更新为新的区间 并把对应区间赋值为1
 
 
 const int N = 200010;
@@ -38,7 +38,7 @@ int main()
 		memset(res, 0, sizeof res);
 		for (int i = 1; i <= n; i++) cin >> w[i];
 
-		int l = 0, r = 0; //ά������
+		int l = 0, r = 0; //维护区间
 		for (int i = 1; i <= n; i++)
 		{
 			int tmp_l = 0, tmp_r = 0;
@@ -47,7 +47,7 @@ int main()
 				if (w[i] >= i) tmp_l = 1, tmp_r = i;
 				else tmp_l = i - w[i] + 1, tmp_r = i;
 
-				//��鱾�������Ƿ���ϴ������н���
+				//检查本次区间是否和上次区间有交集
 				if (tmp_l <= r) l = min(l, tmp_l), r = max(l, tmp_r);
 				else
 				{

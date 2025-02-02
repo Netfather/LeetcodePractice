@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,18 +18,18 @@
 #include <climits>
 using namespace std;
 
-//��Ȼ���ɵľ���c ���� ����ȫ�� ����a�е����־����ģ� ���a����һ������Ϊ0����ô��ӳ����Ӧ���� �ض�ȫ��0
-// ͬ�� ����ȫ�� ����b�е����־��������b����һ������Ϊ0����ô��ӳ����Ӧ���� �ض�ȫ��0
-// ����Ŀ��Ҫ�����ҵ����Ϊk ��ֻ����1���Ӿ��� 
-// ���������������ǿ��Ժܿ��жϳ���Щ�����ж���һ��k,дһ����������������߳��������������ĸ���
-// Ԥ����һ��k �õ�k�ĸ�����ʽ����һ��������,Ȼ���������Ĵ�С����������ö�Ӧ�ĸ���
+//显然生成的矩形c 的行 是完全由 数组a中的数字决定的， 如果a中有一个数字为0，那么反映到对应的行 必定全是0
+// 同理 列完全由 数组b中的数字决定，如果b中有一个数字为0，那么反映到对应的列 必定全是0
+// 而题目需要我们找到面积为k 且只包含1的子矩形 
+// 根据两个数组我们可以很快判断出哪些区域有多大的一个k,写一个函数，输入区域边长，返回这个区域的个数
+// 预处理一下k 得到k的各个因式放于一个数组中,然后根据区域的大小和因数来求得对应的个数
 
-// ˼·��ȷ �ɹ�AC
+// 思路正确 成功AC
 
 typedef unsigned long long ULL;
 const int N = 40010;
-vector<int> A;  //��¼a�г��ֵ�����1�ĸ��������߳��洢a��
-vector<int> B;  // ��¼b�г��ֵ�����1�ĸ���������ɴ洢b��
+vector<int> A;  //记录a中出现的连续1的个数，将边长存储a中
+vector<int> B;  // 记录b中出现的连续1的个数，将变成存储b中
 vector<int> inshu;
 
 int main()
@@ -64,35 +64,35 @@ int main()
 		}
 	}
 	if (tmp) B.push_back(tmp);
-	//����ȥ�� ���ǿ���sortһ��
+	//不能去重 但是可以sort一下
 	sort(A.begin(), A.end());
 	sort(B.begin(), B.end());
 
-	//Ԥ����k ȡ����������
+	//预处理k 取出各个因数
 
 	for (int i = 1; i < sqrt(k); i++)
 	{
 		if (k % i == 0) inshu.push_back(i);
 	}
-	//����A,B�����еĿ��� ��ʱ�����ݱ�Ϊ  ��A[i] �� B[j] ��ɵ������ڣ����Ի��ֳ����ٸ�k��С���Ӿ���
-	// Step1�� ��������kС ��ôֱ��continue
-	// Step2�� �������ǡ�õ���k ��ôres+=1
-	// Step3�� ��������k����ô����k�������ֽ�������ȷ���߳�������������ǰ����  ����ɵľ������ = �߳� - ���� + 1
-	// �������һ�£���Ϊ������Ա������ţ���ô��ɵ�k��һ�����δ�С���Ͳ���Ҫ2���ж���
+	//遍历A,B中所有的可能 这时问题演变为  由A[i] 和 B[j] 组成的区域内，可以划分出多少个k大小的子矩阵
+	// Step1： 如果区域比k小 那么直接continue
+	// Step2： 如果区域恰好等于k 那么res+=1
+	// Step3： 如果区域比k大，那么根据k的因数分解结果，在确保边长不超过长宽的前提下  能组成的矩阵个数 = 边长 - 因数 + 1
+	// 最后特判一下，因为如果可以被开根号，那么组成的k是一个矩形大小，就不需要2倍判定了
 	ULL res = 0;
 	ULL res_tmp = 0;
-	// �ݴ�i j��ǰһ��Ԫ�� ���п��ټ���
+	// 暂存i j的前一个元素 进行快速计算
 	for (int i = 1; i < A.size(); i ++)
 	{
 		for (int j = 1; j < B.size(); j++)
 		{
-			//�ж�һ�� ��ǰ�����ܷ�װ��k����
+			//判断一下 当前区域能否装下k的数
 			if (A[i] * B[j] < k) continue;
 			else if (A[i] * B[j] == k) res += 1;
 			else
 			{
-				// ��� ��εľ��κ��ϴεľ���ǡ����ͬ�����Ǿ�ֱ�ӽ����κ��ϴεĽ����¼��һ��
-				// ��Ȼ����ط��ǿ����Ż��ģ�����ά��һ�����񣬱���keyΪ�����߳���valueΪ ���������ܳ��k��С�Ӿ���ĸ���
+				// 如果 这次的矩形和上次的矩形恰好相同，我们就直接将矩形和上次的结果记录在一起
+				// 当然这个地方是可以优化的，额外维护一个表格，表格key为两个边长，value为 该区域所能抽出k大小子矩阵的个数
 				if (A[i] == A[i - 1] && B[j] == B[j - 1])
 				{
 					res += res_tmp;
@@ -111,7 +111,7 @@ int main()
 						res_tmp += (A[i] - k / u + 1) * (B[j] - u + 1);
 					}
 				}
-				//����һ�� ����
+				//处理一下 根号
 				int x = int(sqrt(k));
 				if (x * x == k)
 				{

@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -23,17 +23,17 @@ int w[N], tmp[N];
 
 void MergeSort(int start, int end)
 {
-	//ÖÕÖ¹Ìõ¼þÅÐ¶Ï
+	//ç»ˆæ­¢æ¡ä»¶åˆ¤æ–­
 	if (start >= end) return;
-	// »®·ÖÁ½¸ö×ÓÎÊÌâ
+	// åˆ’åˆ†ä¸¤ä¸ªå­é—®é¢˜
 	int m = start + end >> 1;
-	// ·Ö±ð½øÐÐ¹é²¢
+	// åˆ†åˆ«è¿›è¡Œå½’å¹¶
 	MergeSort(start, m);
 	MergeSort(m + 1, end);
-	//Íê³É¹é²¢ºó½øÐÐÅÅÐò
+	//å®Œæˆå½’å¹¶åŽè¿›è¡ŒæŽ’åº
 	int l_1 = start, l_2 = m + 1;
 	int cur = 0;
-	// ÏÈÓÃË«Ö¸Õë£¬½«Á½¸öÊý×é½øÐÐÊ×ÔªËØ±È½Ï£¬½«±È½Ï½á¹û´æÈëtmpÖÐ
+	// å…ˆç”¨åŒæŒ‡é’ˆï¼Œå°†ä¸¤ä¸ªæ•°ç»„è¿›è¡Œé¦–å…ƒç´ æ¯”è¾ƒï¼Œå°†æ¯”è¾ƒç»“æžœå­˜å…¥tmpä¸­
 	while (l_2 <= end && l_1 <= m)
 	{
 		if (w[l_1] >= w[l_2])
@@ -45,14 +45,14 @@ void MergeSort(int start, int end)
 			tmp[cur++] = w[l_1++];
 		}
 	}
-	// ÔÙ²éÈ±²¹Â©£¬½«Á½¸ö·Ö¿ªµÄ×éÖÐ£¬ÆäÖÐÃ»ÓÐÅÜÍêµÄÊý×é½Óµ½tmpºóÃæ
+	// å†æŸ¥ç¼ºè¡¥æ¼ï¼Œå°†ä¸¤ä¸ªåˆ†å¼€çš„ç»„ä¸­ï¼Œå…¶ä¸­æ²¡æœ‰è·‘å®Œçš„æ•°ç»„æŽ¥åˆ°tmpåŽé¢
 	while (l_1<= m) tmp[cur++] = w[l_1++];
 
 
 	while (l_2 <= end) tmp[cur++] = w[l_2++];
 
 
-	//½«ÅÅÐòºÃµÄÊý×éÅÅµ½ºóÃæ
+	//å°†æŽ’åºå¥½çš„æ•°ç»„æŽ’åˆ°åŽé¢
 	for (int i = start, k = 0;i <= end; i++,k++)
 	{
 		w[i] = tmp[k];

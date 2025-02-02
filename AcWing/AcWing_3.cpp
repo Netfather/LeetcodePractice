@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -32,14 +32,14 @@ int main()
 		cin >> vi[i] >> wi[i];
 	}
 
-	// ����ѡ�κ���Ʒ��ʱ��  ��Ӧ���ܻ���Ϊ0 ��˲���Ҫ��ʼ��
+	// 当不选任何物品的时候  对应的总机制为0 因此不需要初始化
 	for (int i = 1; i <= n; i++)
 	{
 		for (int j = 0; j <= v; j++)
 		{
-			// �ȿ��� ��ѡ��i�������
+			// 先考虑 不选第i个的情况
 			f[i][j] = max(f[i - 1][j], f[i][j]);
-			// �ٿ��� ����ѡ��i��  1�ε����
+			// 再考虑 至少选第i给  1次的情况
 			if (j >= vi[i])
 			{
 				f[i][j] = max(f[i][j - vi[i]] + wi[i], f[i][j]);

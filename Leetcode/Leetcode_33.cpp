@@ -10,7 +10,7 @@
 #include <math.h>
 using namespace std;
 
-//Ê¹ÓÃfindº¯Êı¿ÉÖ±½ÓµÃ½â£¬Èç¹û²»ÓÃ 
+//ä½¿ç”¨findå‡½æ•°å¯ç›´æ¥å¾—è§£ï¼Œå¦‚æœä¸ç”¨ 
 int search(vector<int>& nums, int target) {
 	if (nums.size() == 0) return  -1;
 	if (nums.size() == 1)
@@ -18,7 +18,7 @@ int search(vector<int>& nums, int target) {
 		if (nums[0] == target) return 0;
 		else return -1;
 	}
-	//Ñ°ÕÒbreakingpoint Ò»±ßÅĞ¶Ï
+	//å¯»æ‰¾breakingpoint ä¸€è¾¹åˆ¤æ–­
 	int length = nums.size();
 	int i = 0;
 	int breakpoint = 0;

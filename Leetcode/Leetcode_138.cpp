@@ -25,7 +25,7 @@
 //	}
 //};
 //
-////Way1: µÝ¹é
+////Way1: é€’å½’
 ////unordered_map<Node*, Node*> memo;
 ////
 ////Node* copyRandomList(Node* head) {
@@ -39,7 +39,7 @@
 ////	return temp;
 ////}
 //
-////Way2: ±éÀúËÑË÷
+////Way2: éåŽ†æœç´¢
 //Node* copyRandomList(Node* head) {
 //	if (head == NULL) return NULL;
 //	Node* copyHead = new Node(head->val);

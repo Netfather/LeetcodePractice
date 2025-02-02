@@ -1,4 +1,4 @@
-// »ù´¡µÄÊä³ö¸ñÊ½¿ØÖÆÎÊÌâ£¬Ê¹ÓÃµİ¹éÍ¬Ê±¿ØÖÆºÃ µİ¹é´«µİµÄ²ÎÊı¾Í¿ÉÒÔ£¬ÕâÀïÎ¬»¤ºÃ5¸öµİ¹éµÄ²ÎÊı ¾ÍÃ»ÎÊÌâ
+// åŸºç¡€çš„è¾“å‡ºæ ¼å¼æ§åˆ¶é—®é¢˜ï¼Œä½¿ç”¨é€’å½’åŒæ—¶æ§åˆ¶å¥½ é€’å½’ä¼ é€’çš„å‚æ•°å°±å¯ä»¥ï¼Œè¿™é‡Œç»´æŠ¤å¥½5ä¸ªé€’å½’çš„å‚æ•° å°±æ²¡é—®é¢˜
 #include <iostream>
 #include <algorithm>
 #include <set>
@@ -17,10 +17,10 @@
 using namespace std;
 
 
-//µİ¹éº¯Êı Ò»¹²ÒªÎ¬»¤5¸ö±äÁ¿ start_i,start_j´ú±í±¾´ÎÍâÈ¦Ìî³äµÄÆğÊ¼×ø±ê£¬cnt±íÊ¾ÆğÊ¼Öµ£¬width,height±íÊ¾ÍâÈ¦µÄ¿í¸ß
+//é€’å½’å‡½æ•° ä¸€å…±è¦ç»´æŠ¤5ä¸ªå˜é‡ start_i,start_jä»£è¡¨æœ¬æ¬¡å¤–åœˆå¡«å……çš„èµ·å§‹åæ ‡ï¼Œcntè¡¨ç¤ºèµ·å§‹å€¼ï¼Œwidth,heightè¡¨ç¤ºå¤–åœˆçš„å®½é«˜
 //void Solution(vector<vector<int>> &res, int start_i, int start_j, int cnt, int width, int height)
 //{
-//	// µİ¹éÖÕÖ¹Ìõ¼ş
+//	// é€’å½’ç»ˆæ­¢æ¡ä»¶
 //	int i_iter = start_i;
 //	int j_iter = start_j;
 //
@@ -46,7 +46,7 @@ using namespace std;
 //		return;
 //	}
 //
-//	//±¾Ìåº¯Êı Ìî³äÍâÈ¦
+//	//æœ¬ä½“å‡½æ•° å¡«å……å¤–åœˆ
 //	while (j_iter < start_j + width)
 //	{
 //		res[i_iter][j_iter] = cnt;
@@ -84,7 +84,7 @@ using namespace std;
 
 //void Solution(vector<vector<int>> &res, int start_i, int start_j, int cnt, int width, int height)
 //{
-//	// µİ¹éÖÕÖ¹Ìõ¼ş
+//	// é€’å½’ç»ˆæ­¢æ¡ä»¶
 //	int i_iter = start_i;
 //	int j_iter = start_j;
 //
@@ -100,7 +100,7 @@ using namespace std;
 //		return;
 //	}
 //
-//	//±¾Ìåº¯Êı Ìî³äÍâÈ¦
+//	//æœ¬ä½“å‡½æ•° å¡«å……å¤–åœˆ
 //	while ((j_iter < start_j + width) && (res[i_iter][j_iter++] = cnt++)){}
 //	j_iter--;
 //	i_iter++;
@@ -120,7 +120,7 @@ using namespace std;
 //	int M = 0;
 //	int N = 0;
 //	cin >> M >> N;
-//	//MĞĞ NÁĞµÄ¾ØÕó
+//	//Mè¡Œ Nåˆ—çš„çŸ©é˜µ
 //	vector<vector<int>> Matrix(M, vector<int>(N, 0));
 //	Solution(Matrix, 0, 0, 1, N, M);
 //	for (auto i : Matrix)
@@ -136,16 +136,16 @@ using namespace std;
 //}
 
 
-//Ê¹ÓÃ·½Ïò¿ØÖÆÏòÁ¿dx dyÀ´½âÌâ
+//ä½¿ç”¨æ–¹å‘æ§åˆ¶å‘é‡dx dyæ¥è§£é¢˜
 //int main()
 //{
 //	int M, N = -1;
 //	cin >> M >> N;
 //
 //	vector<vector<int>> Matrix(M, vector<int>(N, INT_MIN));
-//	¶¨ÒåÆ«ÒÆÏòÁ¿
+//	å®šä¹‰åç§»å‘é‡
 //	int dy[] = { 0,1,0,-1 }, dx[] = {-1,0,1,0};
-//	int d = 1; //³õÊ¼·½ÏòÎª1  
+//	int d = 1; //åˆå§‹æ–¹å‘ä¸º1  
 //	int x = 0, y = 0;
 //
 //	for (int cnt = 1; cnt <= M * N; cnt++)
@@ -154,9 +154,9 @@ using namespace std;
 //		int a = x + dx[d], b = y + dy[d];
 //		if (a < 0 || a > M - 1 || b < 0 || b > N - 1 || Matrix[a][b] != INT_MIN)
 //		{
-//			d = (d + 1) % 4; //Èç¹ûÂú×ã×²Ç½Ìõ¼ş£¬ÄÇÃ´µ÷ÕûdµÄ·½Ïò
+//			d = (d + 1) % 4; //å¦‚æœæ»¡è¶³æ’å¢™æ¡ä»¶ï¼Œé‚£ä¹ˆè°ƒæ•´dçš„æ–¹å‘
 //			a = x + dx[d];
-//			b = y + dy[d]; //ĞŞÕıÏÂÒ»´ÎµÄ×ø±ê
+//			b = y + dy[d]; //ä¿®æ­£ä¸‹ä¸€æ¬¡çš„åæ ‡
 //		}
 //		x = a;
 //		y = b;

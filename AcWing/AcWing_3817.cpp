@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,13 +18,13 @@
 #include <climits>
 using namespace std;
 
-// ·Ç³£·Ç³£¼òµ¥µÄÒ»µÀÌâ
-// ´ÓAÖÐÌô k¸ö  ´ÓBÖÐÌôÑ¡m¸ö  Ê¹µÃ AÖÐµ÷³öµÄÈÎÒâ Ò»¶¨Ð¡ÓÚ BÖÐµ÷³öµÄÈÎÒâ
-// ÓÉÓÚÊý×éÌìÈ»·Ç½µÐò  Òò´Ë ÕâÒ²¾ÍÒâÎ¶×Å  ÎÒÃÇ¼Ç´ÓAÖÐÌø³öµÄÎª Sa  ÔÚBÖÐµ÷³öµÄÎª Sb
+// éžå¸¸éžå¸¸ç®€å•çš„ä¸€é“é¢˜
+// ä»ŽAä¸­æŒ‘ kä¸ª  ä»ŽBä¸­æŒ‘é€‰mä¸ª  ä½¿å¾— Aä¸­è°ƒå‡ºçš„ä»»æ„ ä¸€å®šå°äºŽ Bä¸­è°ƒå‡ºçš„ä»»æ„
+// ç”±äºŽæ•°ç»„å¤©ç„¶éžé™åº  å› æ­¤ è¿™ä¹Ÿå°±æ„å‘³ç€  æˆ‘ä»¬è®°ä»ŽAä¸­è·³å‡ºçš„ä¸º Sa  åœ¨Bä¸­è°ƒå‡ºçš„ä¸º Sb
 // max Sa  <   min Sb
-// ¶ømaxSa  ×î²î×î²î  Ò²±ØÈ»ÊÇ AÖÐµÄµÚk¸öÊý
-// min Sb ×î²î×î²î Ò²±ØÈ»ÊÇ BÖÐ´ÓºóÍùÇ°µÚ m¸öÊý×Ö
-// Òò´ËÕâµÀÌâµÃ½â
+// è€ŒmaxSa  æœ€å·®æœ€å·®  ä¹Ÿå¿…ç„¶æ˜¯ Aä¸­çš„ç¬¬kä¸ªæ•°
+// min Sb æœ€å·®æœ€å·® ä¹Ÿå¿…ç„¶æ˜¯ Bä¸­ä»ŽåŽå¾€å‰ç¬¬ mä¸ªæ•°å­—
+// å› æ­¤è¿™é“é¢˜å¾—è§£
 
 
 

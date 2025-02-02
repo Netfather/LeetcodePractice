@@ -14,7 +14,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
 	if (matrix[0].empty()) return false;
 	if (target < matrix[0][0]) return false;
 	if (target > matrix[matrix.size() - 1][matrix[0].size() - 1]) return false;
-	//Step1: 锁定行数
+	//Step1: 閿佸畾琛屾暟
 	int start = 0;
 	int end = matrix.size() - 1 ;
 	
@@ -25,7 +25,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
 		else if (matrix[middle][0] > target) end = middle - 1;
 		else start = middle + 1;
 	}
-	int col = 0; //锁定行数
+	int col = 0; //閿佸畾琛屾暟
 	
 	if ( matrix[end][0] > target) col = end - 1;
 	else if (matrix[end][matrix[0].size() - 1] < target) col = end + 1;

@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -21,9 +21,9 @@ using namespace std;
 //
 //2. 
 //3.
-//4. ע�⵽ һ�����ڲ��������� �ͻ�����ֹͣ����  ���Ǵ����ģ����� �ض��ᳬʱ
-//5. ע�⵽  ��չ������ x�� w/x Ҳ����ֻҪ����չ �Ǳض�����չw[i]�Ĵ�С
-// ��˿������¹��� ��wά��ÿ�γ���x֮����̣���org_wά���ʼ����Ľ����ÿ�δ�ͷ��ʼ����������w�����������w �͸���w Ȼ��������org_w����
+//4. 注意到 一旦存在不能整除的 就会马上停止遍历  但是纯粹的模拟过程 必定会超时
+//5. 注意到  延展的数是 x个 w/x 也就是只要能延展 那必定是延展w[i]的大小
+// 因此考虑如下过程 用w维护每次除以x之后的商，用org_w维护最开始输入的结果，每次从头开始遍历，迭代w，如果能整除w 就更新w 然后结果加上org_w即可
 typedef unsigned long long ULL;
 const int N = 100010;
 int w[N];

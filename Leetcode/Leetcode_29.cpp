@@ -19,7 +19,7 @@ int divide(int dividend, int divisor) {
 		if (divisor == 1)
 			return -2147483648;
 	}
-	int flag = 0; //0±íÊ¾½á¹ûÎªÕýÊý 1±íÊ¾½á¹ûÎª¸ºÊý
+	int flag = 0; //0è¡¨ç¤ºç»“æžœä¸ºæ­£æ•° 1è¡¨ç¤ºç»“æžœä¸ºè´Ÿæ•°
 	if ((dividend > 0 && divisor>0) || (dividend<0 && divisor<0)) flag = 0;
 	else flag = 1;
 	dividend = labs(dividend);

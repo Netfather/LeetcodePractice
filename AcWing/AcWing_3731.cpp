@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,10 +18,10 @@
 #include <climits>
 using namespace std;
 
-//�ǳ��򵥵�һ���� ����n�ض�Ϊż�� ����Ѿ��Ƿǳ����Ե���ʾ��
-// ˵���������һ�ֶԳƵĹ���
-// ������� a1 a2 a3 a4  ����b�Ĺ���Ϊ -a4 -a3 a2 a1 ���ֹ�����Ȼ = 0 �����
-// �Ľ�
+//非常简单的一道题 由于n必定为偶数 这就已经是非常明显的提示了
+// 说明这道题是一种对称的构造
+// 例如对于 a1 a2 a3 a4  考虑b的构造为 -a4 -a3 a2 a1 这种构造显然 = 0 恒成立
+// 的解
 const int N = 110;
 int a[N];
 

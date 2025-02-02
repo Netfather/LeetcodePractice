@@ -1,5 +1,5 @@
-//˼·��
-// �򵥵�ССģ�� �׸���
+//思路：
+// 简单的小小模拟 白给题
 
 #include <iostream>
 #include <algorithm>

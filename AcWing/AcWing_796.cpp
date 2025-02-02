@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -20,13 +20,13 @@ using namespace std;
 
 const int N = 1010;
 int w[N][N];
-int s[N][N]; //��άǰ׺�����飬��ʾ���Ǵ������Ͻǵĵ㿪ʼ�� һֱ���������λ�õļӺ�  �����Լ�
+int s[N][N]; //二维前缀和数组，表示的是从最左上角的点开始算 一直到自身这个位置的加和  包括自己
 
 int main()
 {
 	int n, m, q;
 	cin >> n >> m >> q;
-	//�������� ͬʱԤ����ǰ׺��
+	//读入数据 同时预处理前缀和
 	for (int i = 1; i <= n; i++)
 	{
 		for (int j = 1; j <= m; j++)
@@ -35,7 +35,7 @@ int main()
 			s[i][j] = w[i][j] + s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1];
 		}
 	}
-	//����ѯ��
+	//处理询问
 	while (q--)
 	{
 		int x1, y1, x2, y2;

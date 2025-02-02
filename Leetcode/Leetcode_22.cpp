@@ -9,8 +9,8 @@
 #include <stdlib.h>
 #include <math.h>
 using namespace std;
-//n±íÊ¾¶àÉÙ´Î£¬index±íÊ¾µİ¹éµ½¶àÉÙ²ã,resÎª´æ´¢µÄÊı×é,temp±íÊ¾µ±Ç°´æ´¢µ½µÄÎ»ÖÃ£¬ÔÚindexÎªnÊ±ºò½«temp´æÈë
-//stratÎªµ±Ç°ÆğÊ¼Î»ÖÃ
+//nè¡¨ç¤ºå¤šå°‘æ¬¡ï¼Œindexè¡¨ç¤ºé€’å½’åˆ°å¤šå°‘å±‚,resä¸ºå­˜å‚¨çš„æ•°ç»„,tempè¡¨ç¤ºå½“å‰å­˜å‚¨åˆ°çš„ä½ç½®ï¼Œåœ¨indexä¸ºnæ—¶å€™å°†tempå­˜å…¥
+//stratä¸ºå½“å‰èµ·å§‹ä½ç½®
 void backtrack(vector<string> &ans, string cur, int open, int close, int max){
 	if (cur.length() == max * 2) {
 		ans.push_back(cur);

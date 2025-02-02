@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -18,8 +18,8 @@
 #include <climits>
 using namespace std;
 
-// ���ȶ�������һ�����֣����������Ķ�����λ�� ֻ��Ҫ������������ƾͿ�����
-// Ȼ���ж���һλ��ĩβ�Ƿ���1 ֻ��Ҫ������ ��1 ��һ��ȡ�Ϳ�����
+// 首先对于任意一个数字，挨个求他的二进制位数 只需要把这个数字右移就可以了
+// 然后判断这一位的末尾是否是1 只需要把数字 和1 做一个取就可以了
 const int N = 100010;
 int w[N];
 
@@ -32,7 +32,7 @@ int main()
 	for (int i = 0; i < n; i++) cin >> w[i];
 	for (int i = 0; i < n; i++)
 	{
-		// ����һ ���ʹ�ʽλ num  >> k  & 1
+		// 方法一 本质公式位 num  >> k  & 1
 		//int res = 0;
 		//int num = w[i];
 		//while (num)
@@ -41,8 +41,8 @@ int main()
 		//	num = num >> 1;
 		//}
 		//cout << res << " ";
-		// ������  ʹ��lowbit��ʽ��x&(-x)�����ʽ�᷵��x ÿ��lowbit������ȡһ���������һ��1���������λ��
-		//ÿ�μ�ȥlowbit�õ������֣�ֱ�����ּ���0���͵õ�������1�ĸ�����
+		// 方法二  使用lowbit公式，x&(-x)这个公式会返回x 每次lowbit操作截取一个数字最后一个1后面的所有位，
+		//每次减去lowbit得到的数字，直到数字减到0，就得到了最终1的个数，
 		int res = 0;
 		int num = w[i];
 		int tmp = num;

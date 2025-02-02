@@ -19,7 +19,7 @@ struct ListNode {
 
 ListNode* rotateRight(ListNode* head, int k) {
 
-	//Step 1: ±éÀúÒ»±éÕÒµ½ListµÄ³¤¶ÈºÍ×îºóÁ½¸öÔªËØµÄÆğÊ¼Î»ÖÃ
+	//Step 1: éå†ä¸€éæ‰¾åˆ°Listçš„é•¿åº¦å’Œæœ€åä¸¤ä¸ªå…ƒç´ çš„èµ·å§‹ä½ç½®
 	ListNode *temp = head;
 	ListNode *last = head;
 	ListNode *prelast = head;
@@ -33,22 +33,22 @@ ListNode* rotateRight(ListNode* head, int k) {
 	}
 	if (length == 1) return head;
 	
-	ListNode *prehead = new ListNode(0); //ÈËÔì±íÍ·
-	prehead->next = head; //Á¬½ÓÈËÔì±íÍ·
+	ListNode *prehead = new ListNode(0); //äººé€ è¡¨å¤´
+	prehead->next = head; //è¿æ¥äººé€ è¡¨å¤´
 
-	//Step 2: ¸ù¾İkÀ´ÅĞ¶ÏĞèÒª½øĞĞ¶àÉÙ´Î±ä»¯
+	//Step 2: æ ¹æ®kæ¥åˆ¤æ–­éœ€è¦è¿›è¡Œå¤šå°‘æ¬¡å˜åŒ–
 	k = k % length;
 	if (k == 0) return head;
 	for (int i = 0; i < k; i++)
 	{
-		//Step 1: ĞŞ¸ÄÎ»ÖÃ
+		//Step 1: ä¿®æ”¹ä½ç½®
 		prehead->next = last;
 		last->next = head;
 		prelast->next = NULL;
-		//Step 2: »¹Ô­Î»ÖÃ
+		//Step 2: è¿˜åŸä½ç½®
 		head = last;
 		last = prelast;
-		//Step 3: Ã­¶¤prelastÎ»ÖÃ
+		//Step 3: é“†é’‰prelastä½ç½®
 		temp = head;
 		int cnt = 1;
 		while (temp != NULL)

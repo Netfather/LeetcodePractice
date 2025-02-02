@@ -11,7 +11,7 @@
 using namespace std;
 
 
-Way 1: Ê¹ÓÃeraseº¯Êı µ«ÊÇËÙ¶ÈºÜÂı ×î¼òµ¥µÄ·½·¨ÊÇ
+Way 1: ä½¿ç”¨eraseå‡½æ•° ä½†æ˜¯é€Ÿåº¦å¾ˆæ…¢ æœ€ç®€å•çš„æ–¹æ³•æ˜¯
 int removeDuplicates(vector<int>& nums) {
 	vector<int>::iterator ite;
 	if (nums.size() == 0)return 0;

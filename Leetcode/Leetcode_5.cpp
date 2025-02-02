@@ -1,4 +1,4 @@
-//Ñ°ÕÒ»ØÎÄstringÊı
+//å¯»æ‰¾å›æ–‡stringæ•°
 
 /*
 #include <iostream>
@@ -7,7 +7,7 @@
 #include <vector>
 #include <list>
 using namespace std;
-//·´Ïò·½·¨»¹ĞèÒªÕÒÁ½¸öÊı×éÖ®¼äµÄ×î´ó¹«¹²²¿·Ö£¬Ïàµ±Âé·³£¬Òò´Ë»¹ÊÇÖ±½ÓĞ´
+//åå‘æ–¹æ³•è¿˜éœ€è¦æ‰¾ä¸¤ä¸ªæ•°ç»„ä¹‹é—´çš„æœ€å¤§å…¬å…±éƒ¨åˆ†ï¼Œç›¸å½“éº»çƒ¦ï¼Œå› æ­¤è¿˜æ˜¯ç›´æ¥å†™
 void findPalindromeOdd(string s, int m,int *b){
 	b[0] = m;
 	b[1] = m + 2;
@@ -43,8 +43,8 @@ void findPalindromeEven(string s, int m,int *a){
 
 string longestPalindrome(string s) {
 	int length = s.length();
-	int a[2] = {0}; //evenÖĞ´æ´¢
-	int b[2] = {0}; //oddÖĞ´æ´¢
+	int a[2] = {0}; //evenä¸­å­˜å‚¨
+	int b[2] = {0}; //oddä¸­å­˜å‚¨
 	int c[2] = {0};
 	string::iterator first = s.begin();
 	if (length == 1) return s;
@@ -58,7 +58,7 @@ string longestPalindrome(string s) {
 		for (string::iterator ita = s.begin(); ita != s.end(); ita++)
 		{
 			if (ita+1  == s.end()) break;
-			if (*ita == *(ita + 1)) //ËµÃ÷ÊÇÅ¼ÊıÀàĞÍµÄ»ØÎÄ£¬Ê¹ÓÃevenº¯Êı
+			if (*ita == *(ita + 1)) //è¯´æ˜æ˜¯å¶æ•°ç±»å‹çš„å›æ–‡ï¼Œä½¿ç”¨evenå‡½æ•°
 			{
 				findPalindromeEven(s, distance(first, ita), a);
 			}

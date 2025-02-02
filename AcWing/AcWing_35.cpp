@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -25,7 +25,7 @@ struct ListNode {
  };
  
 
-//µü´ú·¨
+//è¿­ä»£æ³•
 
     ListNode* reverseList(ListNode* head) {
         if (!head) return head;
@@ -43,15 +43,15 @@ struct ListNode {
         return pre;
     }
 
-// µİ¹é·¨
-    // µİ¹é×îÖØÒªµÄ¾ÍÊÇÒªÏëÃ÷°×µİ¹é¾¿¾¹·µ»ØÊ²Ã´ µİ¹éÖĞÒª×öÊ²Ã´
-    // ÕâµÀÌâ µİ¹é¾ÍÈÃËû·µ»ØÒ»¸öÍêÕûµÄ·´×ªÁĞ±íÒò´Ë
+// é€’å½’æ³•
+    // é€’å½’æœ€é‡è¦çš„å°±æ˜¯è¦æƒ³æ˜ç™½é€’å½’ç©¶ç«Ÿè¿”å›ä»€ä¹ˆ é€’å½’ä¸­è¦åšä»€ä¹ˆ
+    // è¿™é“é¢˜ é€’å½’å°±è®©ä»–è¿”å›ä¸€ä¸ªå®Œæ•´çš„åè½¬åˆ—è¡¨å› æ­¤
     ListNode* reverseList(ListNode* head) {
-        if (!head) return head;  //ÖÕÖ¹Ìõ¼ş Èç¹ûÎª¿Õ ÄÇÃ´¾Í·µ»Ø¿Õ
-        if (!head->next) return head; // Èç¹ûÖ»ÓĞÒ»¸öÁË ÄÇÃ´¾ÍÖ±½Ó·µ»ØÕâÒ»¸ö
+        if (!head) return head;  //ç»ˆæ­¢æ¡ä»¶ å¦‚æœä¸ºç©º é‚£ä¹ˆå°±è¿”å›ç©º
+        if (!head->next) return head; // å¦‚æœåªæœ‰ä¸€ä¸ªäº† é‚£ä¹ˆå°±ç›´æ¥è¿”å›è¿™ä¸€ä¸ª
 
         ListNode* tail = reverseList(head->next);
-        head->next->next = head;   // ½«ÊäÈë½ÚµãµÄÏÂÒ»¸öÖ¸Ïò×Ô¼º È»ºó×Ô¼ºÖ¸ÏòNULL
+        head->next->next = head;   // å°†è¾“å…¥èŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªæŒ‡å‘è‡ªå·± ç„¶åè‡ªå·±æŒ‡å‘NULL
         head->next = NULL;
         return tail;
     }

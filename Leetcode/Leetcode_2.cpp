@@ -1,4 +1,4 @@
-//Ëã·¨±Ê¼Ç£¬ÕâµÀÌâÖ÷Òª¿¼²ìÁ´±íµÄ¹¹½¨ºÍµ÷ÓÃ£¬¸³Öµ£¬ÖØĞÂ¹¹½¨
+//ç®—æ³•ç¬”è®°ï¼Œè¿™é“é¢˜ä¸»è¦è€ƒå¯Ÿé“¾è¡¨çš„æ„å»ºå’Œè°ƒç”¨ï¼Œèµ‹å€¼ï¼Œé‡æ–°æ„å»º
 
 /*
 #include <iostream>
@@ -57,9 +57,9 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 	//add
 	int switchint = 0;
 	int c[101];
-	c[0] = 10; //Îª±ÜÃâÒç³ö
-	int flag = 0; //½øÎ»Êı¾İ£¬ÓÖÑ­»·Î¬»¤ ¼«ÆäÖØÒª
-	if (length1 <= length2)  //½»»»Êı¾İ ±ØĞëÒª¶ÔÎ»
+	c[0] = 10; //ä¸ºé¿å…æº¢å‡º
+	int flag = 0; //è¿›ä½æ•°æ®ï¼Œåˆå¾ªç¯ç»´æŠ¤ æå…¶é‡è¦
+	if (length1 <= length2)  //äº¤æ¢æ•°æ® å¿…é¡»è¦å¯¹ä½
 	{
 		switchint = length1;
 		length1 = length2;
@@ -74,37 +74,37 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 	for (int i = 0; i < length2; i++)
 	{
 		c[i] = (a[i] + b[i] + flag) % 10;
-		//½øÎ»Î¬»¤ ¼«ÆäÖØÒª
+		//è¿›ä½ç»´æŠ¤ æå…¶é‡è¦
 		if ((a[i] + b[i] + flag) > 9) flag = 1;
 		if ((a[i] + b[i] + flag) < 10) flag = 0;
 	}
 	for (int i = length2; i < length1; i++)
 	{
 		c[i] = (a[i] + flag) % 10;
-		//½øÎ»Î¬»¤ ¼«ÆäÖØÒª
+		//è¿›ä½ç»´æŠ¤ æå…¶é‡è¦
 		if ((a[i] + flag) > 9) flag = 1;
 		if ((a[i] + flag) < 10) flag = 0;
 	}
-	//¾­¹ıÉÏÃæµÄÁ½¸öÑ­»·Ö®ºó£¬Èç¹ûÑ­»·Î»²»Îª0ÔòĞèÒª¶îÍâ½øÎ»
+	//ç»è¿‡ä¸Šé¢çš„ä¸¤ä¸ªå¾ªç¯ä¹‹åï¼Œå¦‚æœå¾ªç¯ä½ä¸ä¸º0åˆ™éœ€è¦é¢å¤–è¿›ä½
 	if (flag == 1)
 	{
 		c[length1] = 1;
-		c[length1 + 1] = 10; //10±íÊ¾µ½Í·ÁË
+		c[length1 + 1] = 10; //10è¡¨ç¤ºåˆ°å¤´äº†
 	}
 	else
 	{
-		c[length1] = 10; //10±íÊ¾µ½Í·ÁË
+		c[length1] = 10; //10è¡¨ç¤ºåˆ°å¤´äº†
 	}
-	flag = 0; //½øÎ»Î¬»¤
-	int flagres = 0; //Í³¼Æ½á¹ûµÄÎ»Êı
+	flag = 0; //è¿›ä½ç»´æŠ¤
+	int flagres = 0; //ç»Ÿè®¡ç»“æœçš„ä½æ•°
 	for (int i = 0;; i++)
 	{
 		if (c[i] != 10) flagres++;
 		if (c[i] == 10) break;
 	}
-	//´ËÊ±ËùÓĞĞèÒªµÄ½á¹û¶¼ÒÑ¾­ÔÚÊı×écÖĞ£¬±êÖ¾Î»Îª10£¬Óöµ½10Ö±½ÓNULL¾Í¿ÉÒÔ
+	//æ­¤æ—¶æ‰€æœ‰éœ€è¦çš„ç»“æœéƒ½å·²ç»åœ¨æ•°ç»„cä¸­ï¼Œæ ‡å¿—ä½ä¸º10ï¼Œé‡åˆ°10ç›´æ¥NULLå°±å¯ä»¥
 	ListNode *result = new ListNode(c[0]);
-	ListNode *restemp = new ListNode(0);  //Î¬»¤Ä¿Ç°Á´±í¹¹½¨µ½ÄÄÀïÁË£¬¼«ÆäÖØÒª£¬ÔÚÑ­»·ÖĞÎ¬»¤
+	ListNode *restemp = new ListNode(0);  //ç»´æŠ¤ç›®å‰é“¾è¡¨æ„å»ºåˆ°å“ªé‡Œäº†ï¼Œæå…¶é‡è¦ï¼Œåœ¨å¾ªç¯ä¸­ç»´æŠ¤
 	restemp = result;
 	for (int i = 1; i < flagres; i++)
 	{
@@ -117,7 +117,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 
 int main()
 {
-	//Ê¾·¶ÈçºÎ½«Êı¾İ¼ÓÈëNodeµÄºóÃæ
+	//ç¤ºèŒƒå¦‚ä½•å°†æ•°æ®åŠ å…¥Nodeçš„åé¢
 	ListNode l1add1(9), l1add2(9);
 	ListNode l2add1(9), l2add2(9);
 	ListNode l1(9);
@@ -131,7 +131,7 @@ int main()
 	l2.next = &l2add1;
 //	lres.next = &add;
 //	add.next = &add2;
-	//Ê¾·¶ÈçºÎ¶Á³öÍêÕûÒ»ÌõÊı¾İÁ´±í
+	//ç¤ºèŒƒå¦‚ä½•è¯»å‡ºå®Œæ•´ä¸€æ¡æ•°æ®é“¾è¡¨
 	addTwoNumbers(&l1, &l2);
 	system("Pause");
 	return 0;

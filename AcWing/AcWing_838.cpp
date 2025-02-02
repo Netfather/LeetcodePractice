@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,17 +18,17 @@
 #include <climits>
 using namespace std;
 
-//¶ÑÊÇÒ»ÖÖÍêÃÀµÄÍêÈ«¶þ²æÊ÷£¬È»ºóÕâÖÖ¶þ²æÊ÷ÊÇ°´ÕÕÁÐ±íµÄÐÎÊ½´æ´¢µÄ 
-// ÕâÖÖÓÉÁÐ±í´æ´¢µÄÍêÃÀ¶þ²æÊ÷ÓµÓÐÒ»¸ö·Ç³£ºÃµÄÐÔÖÊ ÒÑÖªÄ³¸ö¸ù½ÚµãµÄÏÂ±êÎªu ÄÇÃ´ËûµÄ×ó½Úµã±Ø¶¨ÊÇ2u ÓÒ½ÚµãË÷Òý±Ø¶¨ÊÇ2u+1
-// ¹¹ÔìÕâÖÖÊ÷±ØÐëÂú×ã ÈÎÒâÒ»¸ö¸ù½Úµã ËüµÄÖµ Ò»¶¨±È×óÓÒÁ½¸ö½Úµã¶¼ÒªÐ¡  Õë¶ÔÕâ¸öµÝ¹éÌõ¼þ  Íê³Édown upÁ½¸ö²Ù×÷ ¾Í¿ÉÒÔÊµÏÖ¼¸ºõËùÓÐµÄ¶Ñ²Ù×÷
+//å †æ˜¯ä¸€ç§å®Œç¾Žçš„å®Œå…¨äºŒå‰æ ‘ï¼Œç„¶åŽè¿™ç§äºŒå‰æ ‘æ˜¯æŒ‰ç…§åˆ—è¡¨çš„å½¢å¼å­˜å‚¨çš„ 
+// è¿™ç§ç”±åˆ—è¡¨å­˜å‚¨çš„å®Œç¾ŽäºŒå‰æ ‘æ‹¥æœ‰ä¸€ä¸ªéžå¸¸å¥½çš„æ€§è´¨ å·²çŸ¥æŸä¸ªæ ¹èŠ‚ç‚¹çš„ä¸‹æ ‡ä¸ºu é‚£ä¹ˆä»–çš„å·¦èŠ‚ç‚¹å¿…å®šæ˜¯2u å³èŠ‚ç‚¹ç´¢å¼•å¿…å®šæ˜¯2u+1
+// æž„é€ è¿™ç§æ ‘å¿…é¡»æ»¡è¶³ ä»»æ„ä¸€ä¸ªæ ¹èŠ‚ç‚¹ å®ƒçš„å€¼ ä¸€å®šæ¯”å·¦å³ä¸¤ä¸ªèŠ‚ç‚¹éƒ½è¦å°  é’ˆå¯¹è¿™ä¸ªé€’å½’æ¡ä»¶  å®Œæˆdown upä¸¤ä¸ªæ“ä½œ å°±å¯ä»¥å®žçŽ°å‡ ä¹Žæ‰€æœ‰çš„å †æ“ä½œ
 const int N = 100010;
 int w[N];
 int mysize = 0;
 
-// Ö÷ÒªÊµÏÖ Á½¸öµÝ¹é²Ù×÷ down ºÍ up
+// ä¸»è¦å®žçŽ° ä¸¤ä¸ªé€’å½’æ“ä½œ down å’Œ up
 void down(int u)
 {
-	int t = u; //¼Ù¶¨ÊäÈëµÄµØÖ·¾ÍÊÇ×îÐ¡Öµ  ×îÐ¡Öµ´æÔÚuÖÐ
+	int t = u; //å‡å®šè¾“å…¥çš„åœ°å€å°±æ˜¯æœ€å°å€¼  æœ€å°å€¼å­˜åœ¨uä¸­
 	if (2 * u <= mysize && w[2 * u] < w[t]) t = 2 * u;
 	if (2 * u + 1 <= mysize && w[2 * u + 1] < w[t]) t = 2 * u + 1;
 
@@ -64,7 +64,7 @@ int main()
 	for (int i = 1; i <= n; i++) cin >> w[i];
 	mysize = n;
 
-	//³õÊ¼»¯Õû¸ö¶Ñ
+	//åˆå§‹åŒ–æ•´ä¸ªå †
 	for (int i = n / 2; i > 0; i--) down(i);
 
 	while (m--)

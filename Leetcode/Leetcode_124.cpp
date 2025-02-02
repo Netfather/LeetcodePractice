@@ -19,12 +19,12 @@
 //
 //
 //
-// //µ¥Ô´×î³¤Â·¾¶ºÍº¯Êı£¬º¯Êı·µ»Ø´Óµ±Ç°Ô´µã¿ªÊ¼£¬×î³¤µÄÂ·¾¶ºÍ
-// //ÊäÈëÎªÔ´µãÏÂ±ê£¬keyÖµ¾ØÕó£¬Ä¿Ç°ÒÑ¾­¼ÆËãµÃµ½µÄÂ·¾¶ºÍ¾ØÕó
-// //²âÊÔÍê³É Êä³ö³É¹¦£¡ µ«ÊÇÊ±¼ä¸´ÔÓ¶ÈÎŞ·¨´ï±ê¿¼ÂÇÊ¹ÓÃ floydËã·¨
+// //å•æºæœ€é•¿è·¯å¾„å’Œå‡½æ•°ï¼Œå‡½æ•°è¿”å›ä»å½“å‰æºç‚¹å¼€å§‹ï¼Œæœ€é•¿çš„è·¯å¾„å’Œ
+// //è¾“å…¥ä¸ºæºç‚¹ä¸‹æ ‡ï¼Œkeyå€¼çŸ©é˜µï¼Œç›®å‰å·²ç»è®¡ç®—å¾—åˆ°çš„è·¯å¾„å’ŒçŸ©é˜µ
+// //æµ‹è¯•å®Œæˆ è¾“å‡ºæˆåŠŸï¼ ä½†æ˜¯æ—¶é—´å¤æ‚åº¦æ— æ³•è¾¾æ ‡è€ƒè™‘ä½¿ç”¨ floydç®—æ³•
 // //void maxsumfuncfloyd(vector<vector<int>> &summax, vector<int> &key, vector<vector<int>> &path)
 // //{
-//	// //step1 ³õÊ¼»¯sunmax¾ØÕó
+//	// //step1 åˆå§‹åŒ–sunmaxçŸ©é˜µ
 //	// for (int i = 0; i < key.size(); i++)
 //	// {
 //	//	 for (int j = 0; j < key.size(); j++)
@@ -33,7 +33,7 @@
 //	//		 else summax[i][j] = -10000;
 //	//	 }
 //	// }
-//	// //step2 ´ÓÁÚ½Ó¾ØÕó¸³Öµ±ØÒªÊı¾İ
+//	// //step2 ä»é‚»æ¥çŸ©é˜µèµ‹å€¼å¿…è¦æ•°æ®
 //	// for (int i = 0; i < key.size(); i++)
 //	// {
 //	//	 for (auto j : path[i])
@@ -41,7 +41,7 @@
 //	//		 summax[i][j] = key[i] + key[j];
 //	//	 }
 //	// }
-//	// //floydËã·¨
+//	// //floydç®—æ³•
 //	// for (int k = 0; k < key.size(); k++)
 //	// {
 //	//	 for (int i = 0; i < key.size(); i++)
@@ -62,15 +62,15 @@
 //	// vector<bool> collected(key.size(), false);
 //	// dis[index] = key[index];
 //	// int maxtemp = int_min;
-//	// //±éÀúÃ¿Ò»¸öÓëindexÓĞ¹ØµÄ½Úµã£¬Èç¹û´æÔÚÒ»¸öÒÑ¾­¹éÄÉºÃµÄÖµ£¬¾ÍÖ±½Ó¸³Öµ£¬Í¬Ê±½«ÄÇ¸ö½Úµã¹éÄÉÎªÒÑÊÕÂ¼
+//	// //éå†æ¯ä¸€ä¸ªä¸indexæœ‰å…³çš„èŠ‚ç‚¹ï¼Œå¦‚æœå­˜åœ¨ä¸€ä¸ªå·²ç»å½’çº³å¥½çš„å€¼ï¼Œå°±ç›´æ¥èµ‹å€¼ï¼ŒåŒæ—¶å°†é‚£ä¸ªèŠ‚ç‚¹å½’çº³ä¸ºå·²æ”¶å½•
 //
 //	// while (1)
 //	// {
-//	//	 //Ñ°ÕÒÎ´±»ÊÕÂ¼µ½sÖĞµÄ¾àÀë×î´óÖµµÄÄÇ¸ö¶¥µã
+//	//	 //å¯»æ‰¾æœªè¢«æ”¶å½•åˆ°sä¸­çš„è·ç¦»æœ€å¤§å€¼çš„é‚£ä¸ªé¡¶ç‚¹
 //	//	 int flag = 0;
 //	//	 for (int i = 0; i < key.size(); i++)
 //	//	 {
-//	//		 if (flag == 1 && collected[i] == false && dis[i] > maxtemp) //Èç¹ûÕâ¸ödis±Èmaxtemp»¹Òª´ó ¶øÇÒÎ´±»ÊÕÂ¼
+//	//		 if (flag == 1 && collected[i] == false && dis[i] > maxtemp) //å¦‚æœè¿™ä¸ªdisæ¯”maxtempè¿˜è¦å¤§ è€Œä¸”æœªè¢«æ”¶å½•
 //	//		 {
 //	//			 index = i;
 //	//			 maxtemp = dis[i];
@@ -82,14 +82,14 @@
 //	//			 flag = 1;
 //	//		 }
 //	//	 }
-//	//	 if (flag == 0) break; //Èç¹û±êÖ¾Î»Ò»Ö±ÊÇ0 ËµÃ÷ÕÒ²»µ½Ã»ÓĞ±»ÊÕÂ¼µÄµãÁË£¬Ìø³öÑ­»·
+//	//	 if (flag == 0) break; //å¦‚æœæ ‡å¿—ä½ä¸€ç›´æ˜¯0 è¯´æ˜æ‰¾ä¸åˆ°æ²¡æœ‰è¢«æ”¶å½•çš„ç‚¹äº†ï¼Œè·³å‡ºå¾ªç¯
 //	//	 collected[index] = true;
 //	//	 for (auto i : path[index])
 //	//	 {
 //	//		 if (collected[i] != true && dis[i] < key[i] + dis[index]) dis[i] = key[i] + dis[index];
 //	//	 }
 //	// }
-//	// //Ìø³öÑ­»·ºó ·µ»ØdisÊı×éÖĞµÄ×î´óÖµ£¬¸ÃÖµ¾ÍÊÇ´Ó¸ÃÔ´µã³ö·¢µÄÂ·¾¶×î´óÖµ
+//	// //è·³å‡ºå¾ªç¯å è¿”å›disæ•°ç»„ä¸­çš„æœ€å¤§å€¼ï¼Œè¯¥å€¼å°±æ˜¯ä»è¯¥æºç‚¹å‡ºå‘çš„è·¯å¾„æœ€å¤§å€¼
 //	// maxtemp = int_min;
 //	// for (int i = 0; i < key.size(); i++)
 //	// {
@@ -99,35 +99,35 @@
 // //}
 //
 //
-//  //Íê³É×ªÖÃº¯Êı£¬½«Ò»¿Å¶ş²æÊ÷×ªÖÃÎªÒ»¸öº¬ÓĞ¶şÎ¬¾ØÕó£¬¾ØÕó°üº¬ËùÓĞÂ·¾¶ĞÅÏ¢ ºÍÒ»¸öº¬ÓĞkeyÖµµÄÒ»Î¬¾ØÕó Í¬Ê±·µ»ØÊ÷ÖĞ×î´óµÄÔªËØÖµ
-// //²âÊÔÍê³É ×ªÖÃ³É¹¦£¡
-// //·¨1  Í¨¹ı×ªÖÃÎªÁÚ½Ó¾ØÕó£¬È»ºó×Ôµ×ÏòÉÏÉú³Émaxtemp£¬µÃµ½½á¹û
+//  //å®Œæˆè½¬ç½®å‡½æ•°ï¼Œå°†ä¸€é¢—äºŒå‰æ ‘è½¬ç½®ä¸ºä¸€ä¸ªå«æœ‰äºŒç»´çŸ©é˜µï¼ŒçŸ©é˜µåŒ…å«æ‰€æœ‰è·¯å¾„ä¿¡æ¯ å’Œä¸€ä¸ªå«æœ‰keyå€¼çš„ä¸€ç»´çŸ©é˜µ åŒæ—¶è¿”å›æ ‘ä¸­æœ€å¤§çš„å…ƒç´ å€¼
+// //æµ‹è¯•å®Œæˆ è½¬ç½®æˆåŠŸï¼
+// //æ³•1  é€šè¿‡è½¬ç½®ä¸ºé‚»æ¥çŸ©é˜µï¼Œç„¶åè‡ªåº•å‘ä¸Šç”Ÿæˆmaxtempï¼Œå¾—åˆ°ç»“æœ
 // //int convert(treenode* root, vector<vector<int>> &path, vector<int> &key)
 // //{
-//	// treenode *temp; //¶¨Òå±éÀúÖ¸Õë
-//	// queue<treenode*> que; //¹¹½¨¶ÓÁĞ
-//	// que.push(root); //³õÊ¼»¯¶ÓÁĞ
-//	// int cnt = 0; //ÏÂ±ê¼ÆÊıÆ÷
+//	// treenode *temp; //å®šä¹‰éå†æŒ‡é’ˆ
+//	// queue<treenode*> que; //æ„å»ºé˜Ÿåˆ—
+//	// que.push(root); //åˆå§‹åŒ–é˜Ÿåˆ—
+//	// int cnt = 0; //ä¸‹æ ‡è®¡æ•°å™¨
 //	// int maxtemp = int_min;
 //	// while (!que.empty())
 //	// {
-//	//	 temp = que.front(); //Ö¸¶¨¶ÓÁĞµÚÒ»¸ö
+//	//	 temp = que.front(); //æŒ‡å®šé˜Ÿåˆ—ç¬¬ä¸€ä¸ª
 //	//	 if (temp->left != null)
 //	//	 {
 //	//		 que.push(temp->left);
-//	//		 path[cnt].push_back((cnt + que.size() - 1));  //¸¸Àà½ÚµãÂ·¾¶Ğ´Èë×ÓÀà½Úµã
-//	//		 path.push_back(vector<int>(1, cnt)); //×ÓÀà½ÚµãĞ´Èë¸¸Àà½Úµã
+//	//		 path[cnt].push_back((cnt + que.size() - 1));  //çˆ¶ç±»èŠ‚ç‚¹è·¯å¾„å†™å…¥å­ç±»èŠ‚ç‚¹
+//	//		 path.push_back(vector<int>(1, cnt)); //å­ç±»èŠ‚ç‚¹å†™å…¥çˆ¶ç±»èŠ‚ç‚¹
 //	//	 }
 //	//	 if (temp->right != null)
 //	//	 {
 //	//		 que.push(temp->right);
-//	//		 path[cnt].push_back((cnt + que.size() - 1));  //¸¸Àà½ÚµãÂ·¾¶Ğ´Èë×ÓÀà½Úµã
-//	//		 path.push_back(vector<int>(1, cnt)); //×ÓÀà½ÚµãĞ´Èë¸¸Àà½Úµã
+//	//		 path[cnt].push_back((cnt + que.size() - 1));  //çˆ¶ç±»èŠ‚ç‚¹è·¯å¾„å†™å…¥å­ç±»èŠ‚ç‚¹
+//	//		 path.push_back(vector<int>(1, cnt)); //å­ç±»èŠ‚ç‚¹å†™å…¥çˆ¶ç±»èŠ‚ç‚¹
 //	//	 }
-//	//	 key.push_back(temp->val); //µ±Ç°ÖµÑ¹Èë
+//	//	 key.push_back(temp->val); //å½“å‰å€¼å‹å…¥
 //	//	 maxtemp = max(maxtemp, temp->val);
-//	//	 ++cnt; //¼ÆÊıÆ÷Î¬»¤
-//	//	 que.pop(); //³ö¶ÓÁĞ,µ±Ç°½Úµã¿ÉÅ×Æú
+//	//	 ++cnt; //è®¡æ•°å™¨ç»´æŠ¤
+//	//	 que.pop(); //å‡ºé˜Ÿåˆ—,å½“å‰èŠ‚ç‚¹å¯æŠ›å¼ƒ
 //	// }
 //	// return maxtemp;
 // //}
@@ -138,17 +138,17 @@
 //	// int maxtemp = convert(root, path, key);
 //	// if (maxtemp < 0) return maxtemp;
 //	// if (key.size() == 1) return key[0];
-//	// queue<int> que; //¶ÓÁĞµü´úÆ÷
-//	// vector<bool> collected(key.size(), false); //¶ÓÁĞ±êÖ¾Î»
-//	// vector<bool> done(key.size(), false); //¶ÓÁĞ±êÖ¾Î»
+//	// queue<int> que; //é˜Ÿåˆ—è¿­ä»£å™¨
+//	// vector<bool> collected(key.size(), false); //é˜Ÿåˆ—æ ‡å¿—ä½
+//	// vector<bool> done(key.size(), false); //é˜Ÿåˆ—æ ‡å¿—ä½
 //	// int cnt = 0;
-//	// //³õÊ¼»¯¶ÓÁĞ Ñ¹ÈëËùÓĞÒ¶½Úµã
+//	// //åˆå§‹åŒ–é˜Ÿåˆ— å‹å…¥æ‰€æœ‰å¶èŠ‚ç‚¹
 //	// for (int i = 1; i < key.size(); i++)
 //	// {
 //	//	 if (path[i].size() == 1)
 //	//	 {
-//	//		 que.push(i); //ËùÓĞµÄÒ¶×Ó½ÚµãÈë¶Ó
-//	//		 collected[i] = true; //Èë¶Ó±êÖ¾
+//	//		 que.push(i); //æ‰€æœ‰çš„å¶å­èŠ‚ç‚¹å…¥é˜Ÿ
+//	//		 collected[i] = true; //å…¥é˜Ÿæ ‡å¿—
 //	//	 }
 //	// }
 //	// while (!que.empty())
@@ -157,7 +157,7 @@
 //	//	 if (path[index][0] > 0 && collected[path[index][0]] == false)
 //	//	 {
 //	//		 collected[path[index][0]] = true;
-//	//		 que.push(path[index][0]); //µ±Ç°½ÚµãµÄ¸¸Àà½ÚµãÈë¶Ó ¸ù½ÚµãÅÅ³ıÔÚÍâ
+//	//		 que.push(path[index][0]); //å½“å‰èŠ‚ç‚¹çš„çˆ¶ç±»èŠ‚ç‚¹å…¥é˜Ÿ æ ¹èŠ‚ç‚¹æ’é™¤åœ¨å¤–
 //	//	 }
 //	//	 if (path[index].size() == 3)
 //	//	 {
@@ -165,7 +165,7 @@
 //	//		 {
 //	//			 maxtemp = max(maxtemp, key[index] + key[path[index][1]] + key[path[index][2]]);
 //	//			 int temp = max(key[index] + key[path[index][1]], key[index] + key[path[index][2]]);
-//	//			 key[index] = max(key[index], temp); //¸üĞÂkeyÖµ È¡½Ï´óÕß
+//	//			 key[index] = max(key[index], temp); //æ›´æ–°keyå€¼ å–è¾ƒå¤§è€…
 //	//			 if (key[index] < 0) key[index] = 0;
 //	//			 done[index] = true;
 //	//			 que.pop();
@@ -173,15 +173,15 @@
 //	//		 else
 //	//		 {
 //	//			 done[index] = false;
-//	//			 que.push(index); //ÖØĞÂÈë¶Ó
-//	//			 que.pop(); //¶ÔÊ×³ö¶Ó
+//	//			 que.push(index); //é‡æ–°å…¥é˜Ÿ
+//	//			 que.pop(); //å¯¹é¦–å‡ºé˜Ÿ
 //	//		 }
 //	//	 }
 //	//	 else if (path[index].size() == 2)
 //	//	 {
 //	//		 if (done[path[index][1]] == true)
 //	//		 {
-//	//			 key[index] = max(key[index], key[index] + key[path[index][1]]); //¸üĞÂkeyÖµ È¡½Ï´óÕß
+//	//			 key[index] = max(key[index], key[index] + key[path[index][1]]); //æ›´æ–°keyå€¼ å–è¾ƒå¤§è€…
 //	//			 maxtemp = max(maxtemp, key[index]);
 //	//			 if (key[index] < 0) key[index] = 0;
 //	//			 done[index] = true;
@@ -190,8 +190,8 @@
 //	//		 else
 //	//		 {
 //	//			 done[index] = false;
-//	//			 que.push(index); //ÖØĞÂÈë¶Ó
-//	//			 que.pop(); //¶ÔÊ×³ö¶Ó
+//	//			 que.push(index); //é‡æ–°å…¥é˜Ÿ
+//	//			 que.pop(); //å¯¹é¦–å‡ºé˜Ÿ
 //	//		 }
 //	//	 }
 //	//	 else if (path[index].size() == 1)
@@ -208,8 +208,8 @@
 // //}
 //
 //
-////·¨2 Í¨¹ıµİ¹é£¬ÒòÎªÃ¿Ò»¸ö½ÚµãµÄ×î´óÖµ£¬Ò»¶¨Ö»´æÔÚ4ÖĞÇé¿ö£¬ 
-////1. ×Ô¼º 2.×Ô¼º+×ó±ß 3.×Ô¼º+ÓÒ±ß 4.×Ô¼º+×ó+ÓÒ
+////æ³•2 é€šè¿‡é€’å½’ï¼Œå› ä¸ºæ¯ä¸€ä¸ªèŠ‚ç‚¹çš„æœ€å¤§å€¼ï¼Œä¸€å®šåªå­˜åœ¨4ä¸­æƒ…å†µï¼Œ 
+////1. è‡ªå·± 2.è‡ªå·±+å·¦è¾¹ 3.è‡ªå·±+å³è¾¹ 4.è‡ªå·±+å·¦+å³
 //int cur(treenode* temp, int &maxsum)
 //{
 //	maxsum = max(maxsum, temp->val);

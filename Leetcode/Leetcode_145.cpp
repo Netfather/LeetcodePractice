@@ -24,7 +24,7 @@
 //};
 //
 //
-////Way1: ÏÈĞò±éÀúµÄµü´ú×ö·¨
+////Way1: å…ˆåºéå†çš„è¿­ä»£åšæ³•
 ////void Rec(TreeNode* root, vector<int> &res)
 ////{
 ////	if (!root) return;
@@ -42,7 +42,7 @@
 ////	return res;
 ////}
 //
-////Õ»²Ù×÷
+////æ ˆæ“ä½œ
 //vector<int> postorderTraversal(TreeNode* root) {
 //	vector<int> res;
 //

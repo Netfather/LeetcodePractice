@@ -12,7 +12,7 @@
 //#include <math.h>
 //using namespace std;
 //
-////·¨1£º ±©Á¦ËÑË÷+¼õÖ¦
+////æ³•1ï¼š æš´åŠ›æœç´¢+å‡æ
 ////bool IsPaldin(string input, int end)
 ////{
 ////	string temp = input.substr(0, end + 1);
@@ -50,7 +50,7 @@
 ////}
 //
 //
-////·¨2 ¼ÓÈëdp memoË¼Ïë£¬ÔÚ¼õÖ¦¹ı³ÌÖĞ£¬ÎÒÃÇ»á·¢ÏÖÆäÊµÓĞºÜ¶àµÄIsPaldinÅĞ¶¨ÊÇ±»ÖØ¸´µÄ£¬Òò´ËÒıÈëmemo±í¸ñ
+////æ³•2 åŠ å…¥dp memoæ€æƒ³ï¼Œåœ¨å‡æè¿‡ç¨‹ä¸­ï¼Œæˆ‘ä»¬ä¼šå‘ç°å…¶å®æœ‰å¾ˆå¤šçš„IsPaldinåˆ¤å®šæ˜¯è¢«é‡å¤çš„ï¼Œå› æ­¤å¼•å…¥memoè¡¨æ ¼
 //bool IsPaldin_memo(string &s, int start,int end,vector<vector<int>> &memo)
 //{
 //	if (memo[start][end] == 1) return true;
@@ -96,7 +96,7 @@
 //	vector<string> tempres;
 //	vector<vector<string>> res;
 //	if (s.empty()) return res;
-//	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0±íÊ¾Î´·ÃÎÊ¹ı£¬1±íÊ¾¿ÉÒÔ£¬2±íÊ¾¸ÃÎ»ÖÃ²»ĞĞ
+//	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0è¡¨ç¤ºæœªè®¿é—®è¿‡ï¼Œ1è¡¨ç¤ºå¯ä»¥ï¼Œ2è¡¨ç¤ºè¯¥ä½ç½®ä¸è¡Œ
 //	DP(s, tempres, res,memo,0);
 //	return res;
 //}

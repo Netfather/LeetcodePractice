@@ -34,14 +34,14 @@
 //	}
 //};
 //
-////Way1 ÀÏÀÏÊµÊµµİ¹éËû²»ÏãÃ´£¿ ²»ºÃÒâË¼ÓÉÓÚÑ­»·Í¼µÄ´æÔÚ£¬µİ¹éÒ²²»ĞĞ£¬Ö»ÄÜÍ¨¹ıÒ»¸ö´æ´¢Ó³Éä±í¸ñÀ´·´À¡
+////Way1 è€è€å®å®é€’å½’ä»–ä¸é¦™ä¹ˆï¼Ÿ ä¸å¥½æ„æ€ç”±äºå¾ªç¯å›¾çš„å­˜åœ¨ï¼Œé€’å½’ä¹Ÿä¸è¡Œï¼Œåªèƒ½é€šè¿‡ä¸€ä¸ªå­˜å‚¨æ˜ å°„è¡¨æ ¼æ¥åé¦ˆ
 //
 ////Node* cloneGraph(Node* node) {
 ////	if (!node) return NULL;
 ////	queue<Node*> Que;
 ////	queue<Node*> clone_Que;
-////	unordered_map<Node*,int> org_set; //´æ´¢Ô­Ê¼Ã¿¸ö½ÚµãµØÖ·Êı¾İµÄhashmap
-////	unordered_map<Node*,int> clone_set; //´æ´¢Ô­Ê¼Ã¿¸ö½ÚµãµØÖ·Êı¾İµÄhashmap
+////	unordered_map<Node*,int> org_set; //å­˜å‚¨åŸå§‹æ¯ä¸ªèŠ‚ç‚¹åœ°å€æ•°æ®çš„hashmap
+////	unordered_map<Node*,int> clone_set; //å­˜å‚¨åŸå§‹æ¯ä¸ªèŠ‚ç‚¹åœ°å€æ•°æ®çš„hashmap
 ////	Node* clonehead = new Node(node->val);
 ////	Node* clonenode = clonehead;
 ////
@@ -89,13 +89,13 @@
 ////	return clonehead;
 ////}
 //
-////¸Ä½ø°æ
+////æ”¹è¿›ç‰ˆ
 //Node* cloneGraph(Node* node) {
 //		if (!node) return NULL;
 //		queue<Node*> Que;
 //		queue<Node*> clone_Que;
-//		unordered_map<Node*,Node*> Refle_map; //´æ´¢Ô­Ê¼Ã¿¸ö½ÚµãµØÖ·Êı¾İµÄhashmap
-//		//unordered_map<Node*,int> clone_set; //´æ´¢Ô­Ê¼Ã¿¸ö½ÚµãµØÖ·Êı¾İµÄhashmap
+//		unordered_map<Node*,Node*> Refle_map; //å­˜å‚¨åŸå§‹æ¯ä¸ªèŠ‚ç‚¹åœ°å€æ•°æ®çš„hashmap
+//		//unordered_map<Node*,int> clone_set; //å­˜å‚¨åŸå§‹æ¯ä¸ªèŠ‚ç‚¹åœ°å€æ•°æ®çš„hashmap
 //		Node* clonehead = new Node(node->val);
 //		Node* clonenode = clonehead;
 //	
@@ -129,7 +129,7 @@
 //	}
 //
 //
-////////Way 2 µİ¹é
+////////Way 2 é€’å½’
 ////unordered_map<Node*, Node*> memo;
 ////Node* cloneGraph(Node* node) {
 ////	if (node == NULL) return NULL;

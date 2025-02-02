@@ -23,7 +23,7 @@ string reserve(string input)
 }
 string multiply(string num1, string num2) {
 	if (num1 == "0" || num2 == "0") return "0";
-	//¸ü³¤µÄÎªnum1 ¸ü¶ÌµÄÎªnum2
+	//æ›´é•¿çš„ä¸ºnum1 æ›´çŸ­çš„ä¸ºnum2
 	if (num1.length() < num2.length())
 	{
 		string temp;
@@ -37,7 +37,7 @@ string multiply(string num1, string num2) {
 	int j = num2.length() - 1;
 	int flag_mul = 0;
 	int temp = 0;
-	vector<vector<int>> store; //´æ´¢ÖĞ¼äÊı
+	vector<vector<int>> store; //å­˜å‚¨ä¸­é—´æ•°
 	for (; j >= 0; j--)
 	{
 		vector<int>line(count, 0);
@@ -60,7 +60,7 @@ string multiply(string num1, string num2) {
 		line.clear();
 		count = count + 1;
 	}
-	//¶ÔstoreÖĞµÄÃ¿Ò»ĞĞ½øĞĞ¼Ó·¨ÔËËãÈ»ºóµÃµ½½á¹û
+	//å¯¹storeä¸­çš„æ¯ä¸€è¡Œè¿›è¡ŒåŠ æ³•è¿ç®—ç„¶åå¾—åˆ°ç»“æœ
 	string res;
 	int flag_add = 0;
 	i = 0;

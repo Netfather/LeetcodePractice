@@ -1,8 +1,8 @@
-//˼·��
-// Ԥ����һ�� moeny����  ���������Ϊ ��ȡѧ�ѵ�ֵ
-// money[ci] ��ʾ����ȡ ci��ѧ��ʱ �ж���ͷ��ţ��Ը��֧���۸��
-// ��������һ��ʼ��ci�������  �޷���O(n)ʱ���ڴ�����moeny����
-// ����Ӧ��������  Ȼ�����һ�鼴�� ʱ�临�Ӷ�Ϊ nlgn
+//思路：
+// 预处理一个 moeny数组  数组的索引为 收取学费的值
+// money[ci] 表示当收取 ci的学费时 有多少头奶牛是愿意支付价格的
+// 但是由于一开始是ci是乱序的  无法在O(n)时间内处理出moeny数组
+// 所以应该先排序  然后遍历一遍即可 时间复杂度为 nlgn
 
 #include <iostream>
 #include <algorithm>

@@ -1,6 +1,6 @@
 /*
-//输入的数字不相等
-//只需要检测完成非正数部分
+//杈撳叆鐨勬暟瀛椾笉鐩哥瓑
+//鍙渶瑕佹娴嬪畬鎴愰潪姝ｆ暟閮ㄥ垎
 #include <iostream>
 #include <algorithm>
 #include <string>

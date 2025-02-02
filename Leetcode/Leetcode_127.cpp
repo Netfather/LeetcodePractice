@@ -11,8 +11,8 @@
 //#include <math.h>
 //using namespace std;
 //
-////¹¹½¨´ÊÊ÷½á¹¹
-////·¨1 Ê¹ÓÃÉÏÒ»ÌâµÄ³É¹û£¬ºÜÂı¡£
+////æ„å»ºè¯æ ‘ç»“æ„
+////æ³•1 ä½¿ç”¨ä¸Šä¸€é¢˜çš„æˆæœï¼Œå¾ˆæ…¢ã€‚
 ////struct WordTree
 ////{
 ////	string content;
@@ -30,8 +30,8 @@
 ////int FindHeightladder(string beginWord, vector<string>& wordList, string endWord)
 ////{
 ////	WordTree* root = new WordTree(beginWord);
-////	unordered_set<string> words(wordList.begin(), wordList.end()); //½«Ô­Êı¾İ×ªÒÆµ½wordsµÄÊı×éÖĞ£¬¸ÃÊı×é¿ÉÒÔÖ±½ÓÍ¨¹ıÏÂ±êË÷Òı
-////	unordered_map<string, int> dicindex; //×Öµä²éÕÒ string ¶ÔÓ¦±»Ê¹ÓÃÁË¶àÉÙ´Î
+////	unordered_set<string> words(wordList.begin(), wordList.end()); //å°†åŸæ•°æ®è½¬ç§»åˆ°wordsçš„æ•°ç»„ä¸­ï¼Œè¯¥æ•°ç»„å¯ä»¥ç›´æ¥é€šè¿‡ä¸‹æ ‡ç´¢å¼•
+////	unordered_map<string, int> dicindex; //å­—å…¸æŸ¥æ‰¾ string å¯¹åº”è¢«ä½¿ç”¨äº†å¤šå°‘æ¬¡
 ////	//vector<int> eraseListIndex;
 ////	queue<WordTree*> Que;
 ////	int flag = 0;
@@ -39,18 +39,18 @@
 ////	int upbound = 1;
 ////	int height = 1;
 ////	Que.push(root);
-////	WordTree* temp; //¹¹½¨±éÀúÖ¸Õë
+////	WordTree* temp; //æ„å»ºéå†æŒ‡é’ˆ
 ////	while (!Que.empty())
 ////	{
 ////		++cnt;
 ////		auto temp = Que.front();
-////		//¼¼ÇÉµã£¬Ê¹ÓÃµ¥´Ê±éÀú¶ø²»Ê¹ÓÃwordList±éÀúÀ´½ÚÊ¡¿Õ¼ä
+////		//æŠ€å·§ç‚¹ï¼Œä½¿ç”¨å•è¯éå†è€Œä¸ä½¿ç”¨wordListéå†æ¥èŠ‚çœç©ºé—´
 ////		for (int l = 0; l < temp->content.size(); l++)
 ////		{
 ////			for (char c = 'a'; c <= 'z'; c++)
 ////			{
 ////				if (temp->content.at(l) == c) continue;
-////				char old = temp->content.at(l); //Ôİ´æ
+////				char old = temp->content.at(l); //æš‚å­˜
 ////				temp->content.at(l) = c;
 ////				if (words.count(temp->content))
 ////				{
@@ -71,7 +71,7 @@
 ////			{
 ////				if (dicindex[*test] > 0)
 ////				{
-////					test = words.erase(test); //Èç¹ûÕâ¸ö×Ö·û²»ÊÇÖÕÖ¹×Ö·û£¬ÄÇÃ´¾ÍÉ¾³ı
+////					test = words.erase(test); //å¦‚æœè¿™ä¸ªå­—ç¬¦ä¸æ˜¯ç»ˆæ­¢å­—ç¬¦ï¼Œé‚£ä¹ˆå°±åˆ é™¤
 ////				}
 ////				else test++;
 ////			}
@@ -95,13 +95,13 @@
 ////	if (temp != wordList.end()) wordList.erase(temp);
 ////	return FindHeightladder(beginWord, wordList, endWord);
 ////}
-////Ê¹ÓÃ¶ÓÁĞÖ±½Óµü´úÃ¿Ò»²ã£¬Èç¹ûÏàµÈ£¬ÄÇÃ´·µ»Øint
+////ä½¿ç”¨é˜Ÿåˆ—ç›´æ¥è¿­ä»£æ¯ä¸€å±‚ï¼Œå¦‚æœç›¸ç­‰ï¼Œé‚£ä¹ˆè¿”å›int
 //int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
 //	vector<string>::iterator temp;
 //	temp = find(wordList.begin(), wordList.end(), endWord);
 //	if (temp == wordList.end()) return 0;
-//	unordered_set<string> words(wordList.begin(), wordList.end()); //½«Ô­Êı¾İ×ªÒÆµ½wordsµÄÊı×éÖĞ£¬¸ÃÊı×é¿ÉÒÔÖ±½ÓÍ¨¹ıÏÂ±êË÷Òı
-//	queue<string> SingleFloor; //Ã¿Ò»²ã
+//	unordered_set<string> words(wordList.begin(), wordList.end()); //å°†åŸæ•°æ®è½¬ç§»åˆ°wordsçš„æ•°ç»„ä¸­ï¼Œè¯¥æ•°ç»„å¯ä»¥ç›´æ¥é€šè¿‡ä¸‹æ ‡ç´¢å¼•
+//	queue<string> SingleFloor; //æ¯ä¸€å±‚
 //	SingleFloor.push(beginWord);
 //	int cnt = 0;
 //	int height = 1;
@@ -110,13 +110,13 @@
 //	{
 //		++cnt;
 //		auto temp = SingleFloor.front();
-//		//¼¼ÇÉµã£¬Ê¹ÓÃµ¥´Ê±éÀú¶ø²»Ê¹ÓÃwordList±éÀúÀ´½ÚÊ¡¿Õ¼ä
+//		//æŠ€å·§ç‚¹ï¼Œä½¿ç”¨å•è¯éå†è€Œä¸ä½¿ç”¨wordListéå†æ¥èŠ‚çœç©ºé—´
 //		for (int l = 0; l < temp.size(); l++)
 //		{
 //			for (char c = 'a'; c <= 'z'; c++)
 //			{
 //				if (temp.at(l) == c) continue;
-//				char old = temp.at(l); //Ôİ´æ
+//				char old = temp.at(l); //æš‚å­˜
 //				temp.at(l) = c;
 //				if (words.count(temp))
 //				{

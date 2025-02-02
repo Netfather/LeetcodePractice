@@ -1,4 +1,4 @@
-//算法笔记，这道题主要考察vector容器的使用方法，基础知识，包括构造之类的
+//绠楁硶绗旇锛岃繖閬撻涓昏鑰冨療vector瀹瑰櫒鐨勪娇鐢ㄦ柟娉曪紝鍩虹鐭ヨ瘑锛屽寘鎷瀯閫犱箣绫荤殑
 /*
 #include <iostream>
 #include <algorithm>

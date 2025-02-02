@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -19,9 +19,9 @@
 using namespace std;
 
 const int N = 12;
-bool st[N]; // ¼ÇÂ¼Ä³¸öÊı×ÖÊÇ·ñ±»ÓÃ¹ı
+bool st[N]; // è®°å½•æŸä¸ªæ•°å­—æ˜¯å¦è¢«ç”¨è¿‡
 int n;
-int w[N];  // ¼ÇÂ¼µ±Ç°µÄ½á¹û
+int w[N];  // è®°å½•å½“å‰çš„ç»“æœ
 
 
 void dfs(int step)

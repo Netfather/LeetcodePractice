@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -19,8 +19,8 @@
 using namespace std;
 
 
-// ¿¼ÂÇÒ»¼þÊÂ  ¼´¶ÔÓÚ×Ö·û´®½øÐÐÒ»´Î²Ù×÷ ÊÇ·ñ»áµ¼ÖÂ  ·ÖÊýKµÄ±ä»¯Îª2  ´ð°¸ÊÇ²»»á
-// Òò´ËÕâµÀÌâÍË»¯Îª ÈçºÎ¿ìËÙ´¦ÀíÒ»¸ö×Ö·û´®µÄÓÅÁ¼·ÖÊýK ¶ø²Ù×÷Êý¾ÍÊÇ K - target_k
+// è€ƒè™‘ä¸€ä»¶äº‹  å³å¯¹äºŽå­—ç¬¦ä¸²è¿›è¡Œä¸€æ¬¡æ“ä½œ æ˜¯å¦ä¼šå¯¼è‡´  åˆ†æ•°Kçš„å˜åŒ–ä¸º2  ç­”æ¡ˆæ˜¯ä¸ä¼š
+// å› æ­¤è¿™é“é¢˜é€€åŒ–ä¸º å¦‚ä½•å¿«é€Ÿå¤„ç†ä¸€ä¸ªå­—ç¬¦ä¸²çš„ä¼˜è‰¯åˆ†æ•°K è€Œæ“ä½œæ•°å°±æ˜¯ K - target_k
 int main()
 {
 	int t;

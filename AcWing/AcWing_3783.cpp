@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -18,7 +18,7 @@
 #include <climits>
 using namespace std;
 
-//±¾ÖÊÊÇÇóÔ¼ÊıÎÊÌâ   ¸ø¶¨ Ò»¸öÕûÊın ÕÒµ½nµÄËùÓĞÔ¼Êı
+//æœ¬è´¨æ˜¯æ±‚çº¦æ•°é—®é¢˜   ç»™å®š ä¸€ä¸ªæ•´æ•°n æ‰¾åˆ°nçš„æ‰€æœ‰çº¦æ•°
 typedef long long LL;
 
 int main()
@@ -32,7 +32,7 @@ int main()
 		if (n % i == 0)
 		{
 			Yueshu.push_back(i);
-			if (n / i != i) Yueshu.push_back(n / i); //µÃµ½µÄ³ıÊıÒ²ÊÇÔ¼ÊıÖ®Ò»
+			if (n / i != i) Yueshu.push_back(n / i); //å¾—åˆ°çš„é™¤æ•°ä¹Ÿæ˜¯çº¦æ•°ä¹‹ä¸€
 		}
 	}
 	sort(Yueshu.begin(), Yueshu.end());

@@ -9,7 +9,7 @@
 #include <math.h>
 using namespace std;
 
-//对于全部固定排序的，使用二分查找函数  额外需要补充起始位置和末尾位置
+//瀵逛簬鍏ㄩ儴鍥哄畾鎺掑簭鐨勶紝浣跨敤浜屽垎鏌ユ壘鍑芥暟  棰濆闇�瑕佽ˉ鍏呰捣濮嬩綅缃拰鏈熬浣嶇疆
 bool ToBsearch(vector<int> &nums, int target, int start, int end)
 {
 	if (end <= start) return false;
@@ -25,7 +25,7 @@ bool ToBsearch(vector<int> &nums, int target, int start, int end)
 	return false;
 }
 bool search(vector<int>& nums, int target) {
-	//step1: 按照顺序找奇点，同时search
+	//step1: 鎸夌収椤哄簭鎵惧鐐癸紝鍚屾椂search
 	if (nums.empty()) return false;
 	int roatatepoint = 0;
 	int temp = nums[0];

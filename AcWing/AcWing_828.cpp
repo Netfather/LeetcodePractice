@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -17,10 +17,10 @@
 #include <cstring>
 #include <climits>
 using namespace std;
-//�ǳ��򵥵�һ���⣬����ջ���ֺ���ȳ��Ľṹ������ֻ��Ҫһ����β������������Ŀǰβ�������Ｔ��
+//非常简单的一道题，对于栈这种后进先出的结构，我们只需要一个队尾计数器来计算目前尾部在哪里即可
 const int N = 100010;
-int s[N]; //�洢��Ӧλ�õ�ջ
-int st = 0; //��ʾջβ���ڵ�λ��
+int s[N]; //存储对应位置的栈
+int st = 0; //表示栈尾所在的位置
 
 void push(int x)
 {

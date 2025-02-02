@@ -1,4 +1,4 @@
-//Ë¼Â·£º
+//æ€è·¯ï¼š
 
 #include <iostream>
 #include <algorithm>
@@ -20,14 +20,14 @@ using namespace std;
 
 const int N = 100010;
 int w[N];
-int c[N]; // ±íÊ¾²î·ÖÊı×é£¬±íÊ¾ ´Óc0 µ½ ci °üÀ¨¶Ëµã  ºÍµÄ½á¹ûµÈÓÚ w[i]
+int c[N]; // è¡¨ç¤ºå·®åˆ†æ•°ç»„ï¼Œè¡¨ç¤º ä»c0 åˆ° ci åŒ…æ‹¬ç«¯ç‚¹  å’Œçš„ç»“æœç­‰äº w[i]
 
 int main()
 {
 	int n, m;
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++) cin >> w[i];
-	for (int i = 1; i <= n; i++) c[i] = w[i] - w[i - 1];  //µÃµ½²î·ÖÊı×é
+	for (int i = 1; i <= n; i++) c[i] = w[i] - w[i - 1];  //å¾—åˆ°å·®åˆ†æ•°ç»„
 
 
 	while (m--)
@@ -38,11 +38,11 @@ int main()
 		c[r + 1] -= k;
 
 	}
-	//»¹Ô­Êı×é
+	//è¿˜åŸæ•°ç»„
 	for (int i = 1; i <= n; i++)
 	{
 		c[i] = c[i] + c[i - 1];
-		cout << c[i] << " ";  // ´Ó²î·ÖÊı×é»¹Ô­µ½  Ô­Êı×é
+		cout << c[i] << " ";  // ä»å·®åˆ†æ•°ç»„è¿˜åŸåˆ°  åŸæ•°ç»„
 	}
 	return 0;
 }

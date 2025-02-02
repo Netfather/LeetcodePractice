@@ -12,13 +12,13 @@ using namespace std;
 
 int minPathSum(vector<vector<int>>& grid) {
 	if (grid.empty()) return 0;
-	int m = grid.size(); //ĞĞ
-	int n = grid[0].size(); //ÁĞ
-	//Step1 : µÚÒ»ĞĞĞŞ¸Ä,ĞĞ²»¶¯£¬ÁĞ±ä»¯
+	int m = grid.size(); //è¡Œ
+	int n = grid[0].size(); //åˆ—
+	//Step1 : ç¬¬ä¸€è¡Œä¿®æ”¹,è¡Œä¸åŠ¨ï¼Œåˆ—å˜åŒ–
 	for (int j = 1; j < n; j++)	grid[0][j] = grid[0][j] + grid[0][j - 1];
-	//Step2: µÚÒ»ÁĞĞŞ¸Ä£¬ÁĞ²»¶¯£¬ĞĞ±ä»¯
+	//Step2: ç¬¬ä¸€åˆ—ä¿®æ”¹ï¼Œåˆ—ä¸åŠ¨ï¼Œè¡Œå˜åŒ–
 	for (int i = 1; i < m; i++)	grid[i][0] = grid[i][0] + grid[i - 1][0];
-	//Step3: ±éÀúÇó½â
+	//Step3: éå†æ±‚è§£
 	for (int i = 1; i < m; i++)
 	{
 		for (int j = 1; j < n; j++)

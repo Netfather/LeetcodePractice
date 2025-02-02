@@ -12,7 +12,7 @@
 //#include <math.h>
 //using namespace std;
 //
-////Way1: ¶¯Ì¬¹æ»®
+////Way1: åŠ¨æ€è§„åˆ’
 //bool IsPaldin_memo(string &s, int start, int end, vector<vector<int>> &memo)
 //{
 //	if (memo[start][end] == 1) return true;
@@ -68,7 +68,7 @@
 //
 //int minCut(string s) {
 //	if (s.empty()) return 0;
-//	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0±íÊ¾Î´·ÃÎÊ¹ı£¬1±íÊ¾¿ÉÒÔ£¬2±íÊ¾¸ÃÎ»ÖÃ²»ĞĞ
+//	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0è¡¨ç¤ºæœªè®¿é—®è¿‡ï¼Œ1è¡¨ç¤ºå¯ä»¥ï¼Œ2è¡¨ç¤ºè¯¥ä½ç½®ä¸è¡Œ
 //	vector<int> tempres(s.size(), -1);
 //	vector<vector<bool>>palin(s.size(), vector<bool>(s.size(), 0));
 //	for (int i = 0; i < s.size(); i++) {
@@ -78,7 +78,7 @@
 //	return DP_2(s, palin, 0, s.size() - 1, tempres);
 //}
 //
-//////Way2: Ì°ĞÄ  ²»¿É
+//////Way2: è´ªå¿ƒ  ä¸å¯
 ////bool DP(string &s, int &res, int &tempres, vector<vector<int>> &memo, int start, int end)
 ////{
 ////	if (start >= end)
@@ -90,7 +90,7 @@
 ////	int right_bound = end;
 ////	for (int i = end; i >= start; i--)
 ////	{
-////		//Ã¿Ò»²½Ë­·Ö¸îµÄ×î³¤£¬Ë­¾ÍÊÇ×îºÃµÄ
+////		//æ¯ä¸€æ­¥è°åˆ†å‰²çš„æœ€é•¿ï¼Œè°å°±æ˜¯æœ€å¥½çš„
 ////		if (IsPaldin_memo(s, start, i, memo))
 ////		{
 ////			left_bound = i;
@@ -137,7 +137,7 @@
 ////
 ////int minCut(string s) {
 ////	if (s.empty()) return 0;
-////	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0±íÊ¾Î´·ÃÎÊ¹ı£¬1±íÊ¾¿ÉÒÔ£¬2±íÊ¾¸ÃÎ»ÖÃ²»ĞĞ
+////	vector<vector<int>>memo(s.size(), vector<int>(s.size(), 0)); //0è¡¨ç¤ºæœªè®¿é—®è¿‡ï¼Œ1è¡¨ç¤ºå¯ä»¥ï¼Œ2è¡¨ç¤ºè¯¥ä½ç½®ä¸è¡Œ
 ////	int res = 0;
 ////	int tempres = 0;
 ////	if(DP(s, res,tempres, memo, 0,s.size() - 1)) return res;

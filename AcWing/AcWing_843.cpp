@@ -1,4 +1,4 @@
-//˼·��
+//思路：
 
 #include <iostream>
 #include <algorithm>
@@ -26,13 +26,13 @@ bool Zong[N];
 bool Zduijiao[2*N];
 bool Fuduijiao[2 * N];
 
-// dfsͨɱ�ķ�������  ��һ��д��ֹ���� �ڶ���дһ��ѭ�� ������һ�����еĿ����ԣ� ͬʱ��һ����Ҫ�ں������жϣ�״̬��д���ָ��ֳ�
-// ����⻹�и����ĵ���� ��ο����ж��������Ƿ���ͬһ���Խ�����  ʹ�� �ؾ��жϼ���  y= x + c  y = -x + c
+// dfs通杀的方法就是  第一区写终止条件 第二区写一个循环 遍历这一层所有的可能性， 同时这一区还要融合条件判断，状态改写，恢复现场
+// 这道题还有个核心点就是 如何快速判断两个点是否在同一个对角线上  使用 截距判断即可  y= x + c  y = -x + c
 void dfs(int depth)
 {
 	if (depth >= n)
 	{
-		//˵���Ѿ��ɹ��ҵ���һ���
+		//说明已经成功找到了一组解
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < n; j++)
@@ -45,7 +45,7 @@ void dfs(int depth)
 
 	for (int i = 0; i < n; i++)
 	{
-		if (!Zong[i] && !Zduijiao[depth + i] && !Fuduijiao[N + depth - i])   //��������û�����֣��Խ�û������ ��ζ������������ʺ�
+		if (!Zong[i] && !Zduijiao[depth + i] && !Fuduijiao[N + depth - i])   //满足纵行没有数字，对角没有数字 意味着这个点可以填皇后
 		{
 			g[depth][i] = 'Q';
 			Zong[i] = Zduijiao[depth + i] = Fuduijiao[N + depth - i] = true;
